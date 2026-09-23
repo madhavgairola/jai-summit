@@ -64,16 +64,16 @@ export default function TestApp() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
+    <div className="min-h-screen bg-[#eaeff4] text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
       
       {/* =========================================================================
           HERO LANDING: Framed Wireframe Concept (/test)
-          Light Cream Background + Clean Rounded Frame + Side-by-Side Logo & Heading
+          Signature Wander #eaeff4 Background + Clean Rounded Frame + Side-by-Side Logo & Heading
           ========================================================================= */}
-      <header className="relative w-full p-2.5 sm:p-5 lg:p-6 bg-[#faf8f5] flex flex-col justify-between min-h-[100dvh]" id="home">
+      <header className="relative w-full p-2.5 sm:p-5 lg:p-6 bg-[#eaeff4] flex flex-col justify-between min-h-[100dvh]" id="home">
         
         {/* Outer Rounded Container with Border (From User Wireframe Sketch) */}
-        <div className="relative z-10 w-full max-w-[1680px] mx-auto rounded-[24px] sm:rounded-[36px] border border-slate-300/80 bg-white/95 shadow-[0_10px_45px_-15px_rgba(15,23,42,0.10)] p-3.5 sm:p-6 lg:p-7 flex flex-col justify-between flex-1">
+        <div className="relative z-10 w-full max-w-[1680px] mx-auto rounded-[24px] sm:rounded-[36px] border border-slate-300/80 bg-[#eaeff4] shadow-[0_10px_35px_-15px_rgba(15,23,42,0.08)] p-3.5 sm:p-6 lg:p-7 flex flex-col justify-between flex-1">
           
           {/* =====================================================================
               TOP PILL BAR: Identical items to main site navbar (JIIT, Links, RIDE)
