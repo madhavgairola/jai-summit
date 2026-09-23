@@ -27,6 +27,18 @@
     10px 10px 24px rgba(0, 0, 0, 0.7);
 }
 
+/* 3D Extrusion Typography for Light/Cream Backgrounds (/test) */
+.text-3d-summit-dark {
+  color: #0f172a;
+  text-shadow: 
+    1px 1px 0 #93c5fd,
+    2px 2px 0 #60a5fa,
+    3px 3px 0 #3b82f6,
+    4px 4px 0 #2563eb,
+    5px 5px 0 #1d4ed8,
+    6px 6px 14px rgba(15, 23, 42, 0.2);
+}
+
 .text-vertical-year {
   writing-mode: vertical-rl;
   text-orientation: mixed;

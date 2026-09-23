@@ -20,7 +20,6 @@ import {
   Clock,
   Menu,
   X,
-  Layers,
   CheckCircle2
 } from 'lucide-react';
 
@@ -65,27 +64,24 @@ export default function TestApp() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070b14] text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
+    <div className="min-h-screen bg-[#faf8f5] text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
       
       {/* =========================================================================
           HERO LANDING: Framed Wireframe Concept (/test)
-          Outer rounded container with top pill bar & 2-column split stage
+          Light Cream Background + Clean Rounded Frame + Side-by-Side Logo & Heading
           ========================================================================= */}
-      <header className="relative w-full p-2 sm:p-4 lg:p-6 bg-[#070b14] flex flex-col justify-between min-h-[100dvh]" id="home">
+      <header className="relative w-full p-2.5 sm:p-5 lg:p-6 bg-[#faf8f5] flex flex-col justify-between min-h-[100dvh]" id="home">
         
-        {/* Subtle Ambient Background Lighting behind the frame */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/15 via-slate-950/80 to-[#070b14] pointer-events-none" />
-
         {/* Outer Rounded Container with Border (From User Wireframe Sketch) */}
-        <div className="relative z-10 w-full max-w-[1680px] mx-auto rounded-[24px] sm:rounded-[36px] border border-white/20 bg-slate-950/70 backdrop-blur-2xl shadow-[0_0_60px_rgba(0,0,0,0.8)] p-3 sm:p-5 lg:p-6 flex flex-col justify-between flex-1">
+        <div className="relative z-10 w-full max-w-[1680px] mx-auto rounded-[24px] sm:rounded-[36px] border border-slate-300/80 bg-white/95 shadow-[0_10px_45px_-15px_rgba(15,23,42,0.10)] p-3.5 sm:p-6 lg:p-7 flex flex-col justify-between flex-1">
           
           {/* =====================================================================
-              TOP PILL BAR: Full-width rounded horizontal navbar inside the outer frame
+              TOP PILL BAR: Identical items to main site navbar (JIIT, Links, RIDE)
               ===================================================================== */}
-          <nav className="relative z-20 w-full rounded-2xl sm:rounded-3xl border border-white/20 bg-slate-900/70 backdrop-blur-xl px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex items-center justify-between shadow-lg">
+          <nav className="relative z-20 w-full rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white shadow-sm px-4 sm:px-8 lg:px-12 h-[84px] max-h-[86px] flex items-center justify-between">
             
-            {/* Left: JIIT Logo + RIDE Logo */}
-            <div className="flex items-center gap-3 sm:gap-4">
+            {/* Left Side: JIIT Logo (always) + RIDE Logo (on mobile viewport next to each other) */}
+            <div className="flex items-center gap-2.5 sm:gap-3 md:gap-4">
               <a 
                 href="#home" 
                 className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
@@ -94,62 +90,65 @@ export default function TestApp() {
                 <img 
                   src="/imgs/jiit.png" 
                   alt="JIIT Logo" 
-                  className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                  className="h-11 sm:h-14 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
                 />
               </a>
 
-              <span className="h-6 w-px bg-white/20 hidden sm:block" />
-
+              {/* RIDE Logo: visible on mobile viewport (< lg) directly next to JIIT */}
               <a 
                 href="#about" 
-                className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
+                className="lg:hidden transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
                 title="RIDE Initiative"
               >
                 <img 
                   src="/imgs/ride.png" 
                   alt="RIDE Logo" 
-                  className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                  className="h-11 sm:h-14 md:h-[4.5rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
                 />
               </a>
             </div>
 
-            {/* Center: Navigation Links */}
+            {/* Center / Middle: Clean Navigation Links with Increased Font Size (Desktop) */}
             <div className="hidden lg:flex items-center justify-center gap-7 xl:gap-9">
-              <a href="#about" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              <a href="#about" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
                 About
               </a>
-              <a href="#thematic-areas" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              <a href="#thematic-areas" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
                 Themes
               </a>
-              <a href="#highlights" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              <a href="#highlights" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
                 Highlights
               </a>
-              <a href="#hackathon" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              <a href="#hackathon" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
                 Hackathon
               </a>
-              <a href="#schedule" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              <a href="#schedule" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
                 Schedule
               </a>
-              <a href="#directions" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              <a href="#directions" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
                 Venue
               </a>
             </div>
 
-            {/* Right: Toggle back to standard view + Mobile Menu Toggle */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            {/* Right Side: RIDE Logo on Desktop (lg:flex) + Mobile Menu Toggle Button */}
+            <div className="flex items-center gap-3 sm:gap-4">
+              {/* RIDE Logo: visible on desktop corner */}
               <a 
-                href="/" 
-                className="hidden sm:inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-slate-200 hover:text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold tracking-wide transition-all"
-                title="View original landing"
+                href="#about" 
+                className="hidden lg:flex transition-transform duration-200 hover:scale-105 items-center justify-center" 
+                title="RIDE Initiative"
               >
-                <span>Standard View</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <img 
+                  src="/imgs/ride.png" 
+                  alt="RIDE Logo" 
+                  className="h-14 sm:h-16 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                />
               </a>
 
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+                className="lg:hidden p-2 rounded-lg text-slate-800 hover:bg-slate-100 transition-colors"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -159,75 +158,75 @@ export default function TestApp() {
 
           {/* Mobile Navigation Drawer */}
           {mobileMenuOpen && (
-            <div className="lg:hidden fixed inset-x-4 top-24 z-50 bg-slate-900/95 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 shadow-2xl flex flex-col gap-4 text-center font-display animate-fadeIn">
-              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">About</a>
-              <a href="#thematic-areas" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Themes</a>
-              <a href="#highlights" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Highlights</a>
-              <a href="#hackathon" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Hackathon</a>
-              <a href="#schedule" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Schedule</a>
-              <a href="#directions" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Venue</a>
+            <div className="lg:hidden fixed inset-x-4 top-24 z-50 bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl p-6 shadow-2xl flex flex-col gap-4 text-center font-display animate-fadeIn">
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-slate-800 uppercase tracking-wider py-2 border-b border-slate-100">About</a>
+              <a href="#thematic-areas" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-slate-800 uppercase tracking-wider py-2 border-b border-slate-100">Themes</a>
+              <a href="#highlights" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-slate-800 uppercase tracking-wider py-2 border-b border-slate-100">Highlights</a>
+              <a href="#hackathon" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-slate-800 uppercase tracking-wider py-2 border-b border-slate-100">Hackathon</a>
+              <a href="#schedule" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-slate-800 uppercase tracking-wider py-2 border-b border-slate-100">Schedule</a>
+              <a href="#directions" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-slate-800 uppercase tracking-wider py-2 border-b border-slate-100">Venue</a>
               <a 
                 href={registrationLink} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-white text-slate-900 font-extrabold text-sm py-3 rounded-full uppercase tracking-wider mt-2 shadow-lg"
+                className="bg-slate-900 text-white font-extrabold text-sm py-3 rounded-full uppercase tracking-wider mt-2 shadow-lg"
               >
                 Register for Summit
-              </a>
-              <a 
-                href="/" 
-                className="text-xs font-semibold text-slate-400 py-1"
-              >
-                ← Return to Standard Site
               </a>
             </div>
           )}
 
           {/* =====================================================================
-              SPLIT HERO STAGE (Matching User Sketch Layout)
-              Left Column: Stacked Title + Stats
-              Right Column: Big Rounded Container (Option A: Cinematic Campus Window)
+              SPLIT HERO STAGE (Matching User Wireframe & Diagram)
+              Left: Side-by-side [AGENTIC AI / SUMMIT 2026] + [Enlarged Logo]
+              Right: Clean Framed Sector-128 Campus Image (No text on top)
               ===================================================================== */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 flex-1 items-center my-3 sm:my-5 min-h-0">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 flex-1 items-center my-4 sm:my-6 min-h-0">
             
             {/* -----------------------------------------------------------------
-                LEFT COLUMN: AGENTIC AI / SUMMIT 2026 Typography & Summit Info
+                LEFT COLUMN:
+                agentic ai      | logo
+                summit 2026 | logo
+                followed by date, cta button & stats
                 ----------------------------------------------------------------- */}
-            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left py-2 sm:py-4 px-2 sm:px-4">
+            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left py-2 sm:py-4 px-1 sm:px-3">
               
-              {/* Floating Summit Logo */}
-              <div className="mb-2 sm:mb-3">
-                <img 
-                  src="/imgs/ai-summit.png" 
-                  alt="Jaypee Agentic AI International Summit Logo" 
-                  className="h-16 sm:h-20 lg:h-24 w-auto object-contain logo-glow animate-float drop-shadow-lg"
-                />
-              </div>
-
-              {/* Stacked 2-Line 3D Heading matching user drawing */}
-              <div className="select-none mb-2 sm:mb-3">
-                {/* Line 1: AGENTIC AI */}
-                <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
-                  AGENTIC AI
-                </h1>
-
-                {/* Line 2: SUMMIT with vertical rotated 2026 */}
-                <div className="inline-flex items-center gap-2 sm:gap-3.5 mt-1 sm:mt-2">
-                  <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
-                    SUMMIT
+              {/* SIDE-BY-SIDE: Heading on the Left, Enlarged Logo on the Right */}
+              <div className="flex items-center gap-4 sm:gap-6 lg:gap-7 mb-3 sm:mb-4">
+                
+                {/* Stacked Heading: Line 1 = AGENTIC AI, Line 2 = SUMMIT + 2026 */}
+                <div className="flex flex-col select-none">
+                  <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.2rem] 2xl:text-[4.6rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
+                    AGENTIC AI
                   </h1>
-                  <span className="text-vertical-year font-display font-black text-lg sm:text-2xl lg:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest leading-none">
-                    2026
-                  </span>
+
+                  <div className="inline-flex items-center gap-2 sm:gap-3 mt-1 sm:mt-1.5">
+                    <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.2rem] 2xl:text-[4.6rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
+                      SUMMIT
+                    </h1>
+                    <span className="text-vertical-year font-display font-black text-lg sm:text-2xl lg:text-3xl xl:text-4xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest leading-none">
+                      2026
+                    </span>
+                  </div>
                 </div>
+
+                {/* Enlarged Official AI Summit Logo sitting right next to the text */}
+                <div className="shrink-0 animate-float">
+                  <img 
+                    src="/imgs/ai-summit.png" 
+                    alt="Jaypee Agentic AI International Summit Logo" 
+                    className="h-24 sm:h-32 md:h-40 lg:h-44 xl:h-48 w-auto object-contain logo-glow drop-shadow-xl cursor-pointer hover:scale-105 transition-transform"
+                  />
+                </div>
+
               </div>
 
               {/* Location & Date Line */}
-              <div className="mb-3 sm:mb-4">
-                <p className="font-display font-extrabold text-xs sm:text-sm md:text-base text-white tracking-widest uppercase drop-shadow-md">
+              <div className="mb-3.5 sm:mb-4">
+                <p className="font-display font-extrabold text-xs sm:text-sm md:text-base text-slate-800 tracking-widest uppercase">
                   JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
                 </p>
-                <p className="text-[11px] sm:text-xs font-semibold text-slate-300 tracking-wider mt-0.5">
+                <p className="text-[11px] sm:text-xs font-semibold text-slate-500 tracking-wider mt-0.5">
                   "Human Intelligence Meets Agentic Possibilities"
                 </p>
               </div>
@@ -238,41 +237,41 @@ export default function TestApp() {
                   href={registrationLink} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="bg-white hover:bg-slate-100 text-slate-950 font-display text-xs sm:text-sm font-extrabold px-8 sm:px-10 py-3 sm:py-3.5 rounded-full uppercase tracking-wider transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2 group"
+                  className="bg-slate-950 hover:bg-slate-900 text-white font-display text-xs sm:text-sm font-extrabold px-9 sm:px-11 py-3.5 sm:py-4 rounded-full uppercase tracking-wider transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2 group"
                 >
                   <span>Register for Summit</span>
-                  <ArrowUpRight className="w-4 h-4 text-blue-700 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="w-4 h-4 text-cyan-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
 
               {/* 4 Metric Counters (With Slow Animated Ticker) */}
-              <div className="w-full max-w-xl grid grid-cols-4 gap-2 sm:gap-4 border-t border-white/20 pt-3">
+              <div className="w-full max-w-xl grid grid-cols-4 gap-2 sm:gap-4 border-t border-slate-200 pt-3 sm:pt-3.5">
                 <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors leading-none">
                     {animatedStats.themes}
                   </span>
-                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">THEMES</span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-500 tracking-wider uppercase mt-1">THEMES</span>
                 </div>
 
                 <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors leading-none">
                     {animatedStats.events}
                   </span>
-                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">EVENTS</span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-500 tracking-wider uppercase mt-1">EVENTS</span>
                 </div>
 
                 <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors leading-none">
                     ₹{animatedStats.prize}M
                   </span>
-                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">PRIZE POOL</span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-500 tracking-wider uppercase mt-1">PRIZE POOL</span>
                 </div>
 
                 <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors leading-none">
                     ₹{animatedStats.preSeed}M
                   </span>
-                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">PRE-SEED</span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-500 tracking-wider uppercase mt-1">PRE-SEED</span>
                 </div>
               </div>
 
@@ -280,59 +279,17 @@ export default function TestApp() {
 
             {/* -----------------------------------------------------------------
                 RIGHT COLUMN: Big Rounded Box (From User Wireframe Sketch)
-                Option A: Sector 128 Campus Showcase + Glassmorphic Overlay
+                Clean Sector 128 Campus Photography with NO text or badges on top
                 ----------------------------------------------------------------- */}
             <div className="lg:col-span-6 xl:col-span-6 flex flex-col h-full w-full">
-              <div className="relative w-full h-[340px] sm:h-[420px] lg:h-[480px] xl:h-[540px] rounded-3xl sm:rounded-[32px] border border-white/25 overflow-hidden shadow-2xl flex flex-col justify-between group bg-slate-900/60">
+              <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[520px] rounded-3xl sm:rounded-[32px] border border-slate-300/80 overflow-hidden shadow-xl group bg-slate-100">
                 
-                {/* Sector-128 Campus Photography */}
+                {/* Clean Sector-128 Campus Photography Unobstructed */}
                 <img 
                   src="/imgs/jiit128.jpeg" 
-                  alt="JIIT Sector 128 Campus" 
-                  className="absolute inset-0 w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0"
+                  alt="Jaypee Institute of Information Technology, Sector 128 Noida Campus" 
+                  className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-
-                {/* Cinematic Glass Vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-slate-950/40 z-10" />
-
-                {/* Top Badge Overlay */}
-                <div className="relative z-20 p-3 sm:p-5 flex items-center justify-between">
-                  <div className="inline-flex items-center gap-2 bg-slate-950/80 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-white tracking-wide shadow-md">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>JIIT Wish Town • Sector 128, Noida</span>
-                  </div>
-
-                  <div className="bg-slate-950/80 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full text-[11px] font-bold text-cyan-300 uppercase tracking-wider">
-                    Summit Campus
-                  </div>
-                </div>
-
-                {/* Bottom Glass Overlay Card with Summit Highlights */}
-                <div className="relative z-20 m-3 sm:m-5 p-4 sm:p-5 rounded-2xl bg-slate-950/85 backdrop-blur-xl border border-white/20 shadow-2xl">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 font-display">
-                      Jaypee Agentic AI International Summit
-                    </span>
-                    <span className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2.5 py-0.5 rounded-full">
-                      Oct 30 – 31, 2026
-                    </span>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
-                    Convening international researchers, industry architects, and founders for autonomous systems, multimodal intelligence, and frontier agent engineering.
-                  </p>
-
-                  <div className="mt-3 pt-3 border-t border-white/15 grid grid-cols-2 gap-2 text-xs font-bold text-white">
-                    <div className="flex items-center gap-2 text-cyan-300">
-                      <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
-                      <span>₹1.5M Hackathon Pool</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-blue-300">
-                      <Rocket className="w-4 h-4 text-emerald-400 shrink-0" />
-                      <span>₹10M Pre-Seed Funding</span>
-                    </div>
-                  </div>
-                </div>
 
               </div>
             </div>
