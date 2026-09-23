@@ -187,14 +187,14 @@ export default function App() {
           {/* 3D SUMMIT + #062DB1 2026 Display Typography */}
           <div className="relative inline-flex items-center justify-center select-none my-0.5 sm:my-1 transition-transform duration-300 hover:scale-[1.01]">
             
-            {/* The Word "SUMMIT" with 3D Blue Extrusion */}
-            <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[7.2rem] tracking-tight leading-none text-3d-summit uppercase">
-              SUMMIT
+            {/* The Word "AI SUMMIT" with 3D Blue Extrusion */}
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] 2xl:text-[7rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+              AI SUMMIT
             </h1>
 
             {/* Rotated "2026" with user-specified color: #062DB1 */}
             <div className="ml-2 sm:ml-3.5 flex flex-col items-center justify-center">
-              <span className="text-vertical-year font-display font-black text-lg sm:text-2xl md:text-3xl lg:text-4xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
+              <span className="text-vertical-year font-display font-black text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
                 2026
               </span>
             </div>
