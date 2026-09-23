@@ -67,21 +67,21 @@ export default function TestApp() {
     <div className="min-h-screen bg-[#eaeff4] text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
       
       {/* =========================================================================
-          HERO LANDING: Framed Wireframe Concept (/test)
-          Signature Wander #eaeff4 Background + Clean Rounded Frame + Side-by-Side Logo & Heading
+          HERO LANDING: Clean Professional Layout (/test)
+          Signature Wander #eaeff4 Background + Freestanding Logos + Text-Only Taskbar + Broad Campus Frame
           ========================================================================= */}
-      <header className="relative w-full p-2.5 sm:p-5 lg:p-6 bg-[#eaeff4] flex flex-col justify-between min-h-[100dvh]" id="home">
+      <header className="relative w-full px-4 sm:px-8 lg:px-12 xl:px-16 pt-4 sm:pt-6 pb-6 sm:pb-10 bg-[#eaeff4] flex flex-col justify-between min-h-[100dvh]" id="home">
         
-        {/* Outer Rounded Container with Border (From User Wireframe Sketch) */}
-        <div className="relative z-10 w-full max-w-[1680px] mx-auto rounded-[24px] sm:rounded-[36px] border border-slate-300/80 bg-[#eaeff4] shadow-[0_10px_35px_-15px_rgba(15,23,42,0.08)] p-3.5 sm:p-6 lg:p-7 flex flex-col justify-between flex-1">
+        {/* Main Content Area (No Outer Box Line) */}
+        <div className="relative z-10 w-full max-w-[1720px] mx-auto flex flex-col justify-between flex-1 gap-6 lg:gap-8">
           
           {/* =====================================================================
-              TOP PILL BAR: Identical items to main site navbar (JIIT, Links, RIDE)
+              TOP HEADER ROW: JIIT Logo (Left) | Text-Only Taskbar (Center) | RIDE Logo (Right)
               ===================================================================== */}
-          <nav className="relative z-20 w-full rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white shadow-sm px-4 sm:px-8 lg:px-12 h-[84px] max-h-[86px] flex items-center justify-between">
+          <div className="relative z-30 w-full flex items-center justify-between gap-4">
             
-            {/* Left Side: JIIT Logo (always) + RIDE Logo (on mobile viewport next to each other) */}
-            <div className="flex items-center gap-2.5 sm:gap-3 md:gap-4">
+            {/* Left Corner: JIIT Institutional Logo (Outside the taskbar pill) */}
+            <div className="flex items-center gap-3 shrink-0">
               <a 
                 href="#home" 
                 className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
@@ -89,12 +89,12 @@ export default function TestApp() {
               >
                 <img 
                   src="/imgs/jiit.png" 
-                  alt="JIIT Logo" 
-                  className="h-11 sm:h-14 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                  alt="Jaypee Institute of Information Technology" 
+                  className="h-12 sm:h-14 md:h-16 lg:h-[4.4rem] w-auto object-contain [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.08))]"
                 />
               </a>
 
-              {/* RIDE Logo: visible on mobile viewport (< lg) directly next to JIIT */}
+              {/* RIDE Logo: visible on mobile (< lg) next to JIIT */}
               <a 
                 href="#about" 
                 className="lg:hidden transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
@@ -103,36 +103,37 @@ export default function TestApp() {
                 <img 
                   src="/imgs/ride.png" 
                   alt="RIDE Logo" 
-                  className="h-11 sm:h-14 md:h-[4.5rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.08))]"
                 />
               </a>
             </div>
 
-            {/* Center / Middle: Clean Navigation Links with Increased Font Size (Desktop) */}
-            <div className="hidden lg:flex items-center justify-center gap-7 xl:gap-9">
-              <a href="#about" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
-                About
-              </a>
-              <a href="#thematic-areas" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
-                Themes
-              </a>
-              <a href="#highlights" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
-                Highlights
-              </a>
-              <a href="#hackathon" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
-                Hackathon
-              </a>
-              <a href="#schedule" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
-                Schedule
-              </a>
-              <a href="#directions" className="text-sm lg:text-[15px] font-bold text-slate-800 hover:text-blue-600 transition-all duration-200 tracking-wider uppercase font-display hover:-translate-y-0.5">
-                Venue
-              </a>
-            </div>
+            {/* Center: THE TASKBAR (Floating Pill containing ONLY text links, NO logos!) */}
+            <nav className="hidden lg:flex items-center justify-center bg-white/95 backdrop-blur-md rounded-full border border-slate-200/90 px-8 xl:px-10 py-3 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.08)]">
+              <div className="flex items-center gap-7 xl:gap-9">
+                <a href="#about" className="text-[13px] font-bold tracking-wider text-slate-700 hover:text-blue-600 transition-colors uppercase font-display hover:-translate-y-0.5">
+                  About
+                </a>
+                <a href="#thematic-areas" className="text-[13px] font-bold tracking-wider text-slate-700 hover:text-blue-600 transition-colors uppercase font-display hover:-translate-y-0.5">
+                  Themes
+                </a>
+                <a href="#highlights" className="text-[13px] font-bold tracking-wider text-slate-700 hover:text-blue-600 transition-colors uppercase font-display hover:-translate-y-0.5">
+                  Highlights
+                </a>
+                <a href="#hackathon" className="text-[13px] font-bold tracking-wider text-slate-700 hover:text-blue-600 transition-colors uppercase font-display hover:-translate-y-0.5">
+                  Hackathon
+                </a>
+                <a href="#schedule" className="text-[13px] font-bold tracking-wider text-slate-700 hover:text-blue-600 transition-colors uppercase font-display hover:-translate-y-0.5">
+                  Schedule
+                </a>
+                <a href="#directions" className="text-[13px] font-bold tracking-wider text-slate-700 hover:text-blue-600 transition-colors uppercase font-display hover:-translate-y-0.5">
+                  Venue
+                </a>
+              </div>
+            </nav>
 
-            {/* Right Side: RIDE Logo on Desktop (lg:flex) + Mobile Menu Toggle Button */}
-            <div className="flex items-center gap-3 sm:gap-4">
-              {/* RIDE Logo: visible on desktop corner */}
+            {/* Right Corner: RIDE Logo (Desktop) + Mobile Menu Toggle Button */}
+            <div className="flex items-center gap-3 shrink-0">
               <a 
                 href="#about" 
                 className="hidden lg:flex transition-transform duration-200 hover:scale-105 items-center justify-center" 
@@ -141,20 +142,20 @@ export default function TestApp() {
                 <img 
                   src="/imgs/ride.png" 
                   alt="RIDE Logo" 
-                  className="h-14 sm:h-16 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                  className="h-12 sm:h-14 md:h-16 lg:h-[4.4rem] w-auto object-contain [filter:drop-shadow(0_1px_3px_rgba(0,0,0,0.08))]"
                 />
               </a>
 
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-slate-800 hover:bg-slate-100 transition-colors"
+                className="lg:hidden p-2.5 rounded-full bg-white border border-slate-200/90 text-slate-800 shadow-sm hover:bg-slate-50 transition-colors"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
-          </nav>
+          </div>
 
           {/* Mobile Navigation Drawer */}
           {mobileMenuOpen && (
@@ -177,67 +178,70 @@ export default function TestApp() {
           )}
 
           {/* =====================================================================
-              SPLIT HERO STAGE (Matching User Wireframe & Diagram)
-              Left: Side-by-side [AGENTIC AI / SUMMIT 2026] + [Enlarged Logo]
-              Right: Clean Framed Sector-128 Campus Image (No text on top)
+              SPLIT HERO STAGE
+              Left (5 cols): Side-by-side [AGENTIC AI / SUMMIT 2026] + [Summit Logo]
+              Right (7 cols): Broad, Expanded Sector-128 Campus Photography Window
               ===================================================================== */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 flex-1 items-center my-4 sm:my-6 min-h-0">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 flex-1 items-center my-auto min-h-0">
             
             {/* -----------------------------------------------------------------
-                LEFT COLUMN:
+                LEFT COLUMN (5 cols):
                 agentic ai      | logo
                 summit 2026 | logo
-                followed by date, cta button & stats
+                followed by date badge, cta button & stats
                 ----------------------------------------------------------------- */}
-            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left py-2 sm:py-4 px-1 sm:px-3">
+            <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center text-left py-2 sm:py-4">
               
-              {/* SIDE-BY-SIDE: Heading on the Left, Enlarged Logo on the Right */}
-              <div className="flex items-center gap-4 sm:gap-6 lg:gap-7 mb-3 sm:mb-4">
+              {/* SIDE-BY-SIDE: Heading on the Left, Summit Logo on the Right */}
+              <div className="flex items-center gap-3 sm:gap-5 mb-4">
                 
                 {/* Stacked Heading: Line 1 = AGENTIC AI, Line 2 = SUMMIT + 2026 */}
                 <div className="flex flex-col select-none">
-                  <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.2rem] 2xl:text-[4.6rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
+                  <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.35rem] 2xl:text-[3.75rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
                     AGENTIC AI
                   </h1>
 
                   <div className="inline-flex items-center gap-2 sm:gap-3 mt-1 sm:mt-1.5">
-                    <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.2rem] 2xl:text-[4.6rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
+                    <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.35rem] 2xl:text-[3.75rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
                       SUMMIT
                     </h1>
-                    <span className="text-vertical-year font-display font-black text-lg sm:text-2xl lg:text-3xl xl:text-4xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest leading-none">
+                    <span className="text-vertical-year font-display font-black text-base sm:text-xl lg:text-2xl xl:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest leading-none">
                       2026
                     </span>
                   </div>
                 </div>
 
-                {/* Enlarged Official AI Summit Logo sitting right next to the text */}
+                {/* Enlarged Official AI Summit Logo (Clean shadow, no neon glow) */}
                 <div className="shrink-0 animate-float">
                   <img 
                     src="/imgs/ai-summit.png" 
                     alt="Jaypee Agentic AI International Summit Logo" 
-                    className="h-24 sm:h-32 md:h-40 lg:h-44 xl:h-48 w-auto object-contain logo-glow drop-shadow-xl cursor-pointer hover:scale-105 transition-transform"
+                    className="h-20 sm:h-28 md:h-32 lg:h-36 xl:h-40 w-auto object-contain drop-shadow-[0_10px_20px_rgba(15,23,42,0.12)] cursor-pointer hover:scale-105 transition-transform"
                   />
                 </div>
 
               </div>
 
-              {/* Location & Date Line */}
-              <div className="mb-3.5 sm:mb-4">
-                <p className="font-display font-extrabold text-xs sm:text-sm md:text-base text-slate-800 tracking-widest uppercase">
-                  JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
-                </p>
-                <p className="text-[11px] sm:text-xs font-semibold text-slate-500 tracking-wider mt-0.5">
+              {/* Location & Date Pill Badge */}
+              <div className="mb-5 space-y-1.5">
+                <div className="inline-flex items-center gap-2 bg-white/90 border border-slate-200/90 px-3.5 py-1.5 rounded-full shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                  <span className="font-display font-extrabold text-[11px] sm:text-xs text-slate-800 tracking-wider uppercase">
+                    JIIT Sector 128, Noida &nbsp;|&nbsp; Oct 30 – 31, 2026
+                  </span>
+                </div>
+                <p className="text-xs sm:text-[13px] font-semibold text-slate-500 tracking-wide pl-1">
                   "Human Intelligence Meets Agentic Possibilities"
                 </p>
               </div>
 
               {/* Main CTA Register Button */}
-              <div className="mb-4 sm:mb-5">
+              <div className="mb-6 sm:mb-7">
                 <a 
                   href={registrationLink} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="bg-slate-950 hover:bg-slate-900 text-white font-display text-xs sm:text-sm font-extrabold px-9 sm:px-11 py-3.5 sm:py-4 rounded-full uppercase tracking-wider transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2 group"
+                  className="bg-slate-900 hover:bg-blue-600 text-white font-display text-xs sm:text-sm font-extrabold px-8 sm:px-10 py-3.5 sm:py-4 rounded-full uppercase tracking-wider transition-all duration-300 shadow-[0_4px_16px_rgba(15,23,42,0.15)] hover:shadow-[0_8px_25px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 inline-flex items-center gap-2.5 group"
                 >
                   <span>Register for Summit</span>
                   <ArrowUpRight className="w-4 h-4 text-cyan-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -245,7 +249,7 @@ export default function TestApp() {
               </div>
 
               {/* 4 Metric Counters (With Slow Animated Ticker) */}
-              <div className="w-full max-w-xl grid grid-cols-4 gap-2 sm:gap-4 border-t border-slate-200 pt-3 sm:pt-3.5">
+              <div className="w-full max-w-lg grid grid-cols-4 gap-2 sm:gap-4 border-t border-slate-300/80 pt-4">
                 <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
                   <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-slate-900 group-hover:text-blue-600 transition-colors leading-none">
                     {animatedStats.themes}
@@ -278,17 +282,17 @@ export default function TestApp() {
             </div>
 
             {/* -----------------------------------------------------------------
-                RIGHT COLUMN: Big Rounded Box (From User Wireframe Sketch)
-                Clean Sector 128 Campus Photography with NO text or badges on top
+                RIGHT COLUMN (7 cols): Broad, Expanded Campus Photography Window
+                Clean Sector 128 Campus Photography with increased width
                 ----------------------------------------------------------------- */}
-            <div className="lg:col-span-6 xl:col-span-6 flex flex-col h-full w-full">
-              <div className="relative w-full h-[320px] sm:h-[400px] lg:h-[460px] xl:h-[520px] rounded-3xl sm:rounded-[32px] border border-slate-300/80 overflow-hidden shadow-xl group bg-slate-100">
+            <div className="lg:col-span-7 xl:col-span-7 flex flex-col h-full w-full justify-center">
+              <div className="relative w-full h-[340px] sm:h-[420px] lg:h-[480px] xl:h-[530px] rounded-3xl sm:rounded-[32px] border border-slate-300/80 overflow-hidden shadow-[0_20px_50px_-15px_rgba(15,23,42,0.12)] group bg-slate-100">
                 
-                {/* Clean Sector-128 Campus Photography Unobstructed */}
+                {/* Clean Broad Sector-128 Campus Photography */}
                 <img 
                   src="/imgs/jiit128.jpeg" 
                   alt="Jaypee Institute of Information Technology, Sector 128 Noida Campus" 
-                  className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-[center_35%] scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
               </div>
