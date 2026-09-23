@@ -203,7 +203,7 @@ export default function App() {
           {/* Location & Date Line */}
           <div className="mt-2 sm:mt-3 mb-4 sm:mb-5">
             <p className="font-display font-extrabold text-xs sm:text-base md:text-lg text-white tracking-widest uppercase drop-shadow-md">
-              JIIT WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
+              JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
             </p>
             <p className="text-[11px] sm:text-xs font-semibold text-slate-100 tracking-wider mt-0.5 drop-shadow-sm">
               "Human Intelligence Meets Agentic Possibilities"
