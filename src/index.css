@@ -102,3 +102,78 @@
     scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
   }
 }
+
+/* ==========================================================================
+   SHORT-VIEWPORT ADAPTIVE SCALING (@media max-height)
+   Prevents hero content from overflowing or getting clipped on 
+   1366x768 or 125%/150% scaled laptops (viewport height <= 760px).
+   Leaves standard/large screens (height > 760px) 100% full-sized, bold, and spacious.
+   ========================================================================== */
+
+@media (max-height: 760px) {
+  .hero-navbar {
+    height: 68px !important;
+    max-height: 68px !important;
+  }
+  .hero-corner-logo {
+    height: 3.75rem !important; /* 60px */
+  }
+  .hero-summit-logo {
+    height: 8rem !important; /* 128px */
+  }
+  .hero-title-text {
+    font-size: 3.5rem !important;
+  }
+  .hero-year-text {
+    font-size: 1.6rem !important;
+  }
+  .hero-location-box {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.85rem !important;
+  }
+  .hero-cta-box {
+    margin-bottom: 0.85rem !important;
+  }
+  .hero-stats-box {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    gap: 1.5rem !important;
+  }
+  .hero-stat-num {
+    font-size: 1.85rem !important;
+  }
+}
+
+@media (max-height: 660px) {
+  .hero-navbar {
+    height: 56px !important;
+    max-height: 56px !important;
+  }
+  .hero-corner-logo {
+    height: 3rem !important; /* 48px */
+  }
+  .hero-summit-logo {
+    height: 6.5rem !important; /* 104px */
+  }
+  .hero-title-text {
+    font-size: 2.75rem !important;
+  }
+  .hero-year-text {
+    font-size: 1.25rem !important;
+  }
+  .hero-location-box {
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  .hero-cta-box {
+    margin-bottom: 0.6rem !important;
+  }
+  .hero-stats-box {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+    gap: 1rem !important;
+  }
+  .hero-stat-num {
+    font-size: 1.5rem !important;
+  }
+}

@@ -87,7 +87,7 @@ export default function App() {
         {/* =====================================================================
             TOP NAVBAR: Logos on Both Corners, Centered Navigation Menu
             ===================================================================== */}
-        <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[84px] flex items-center justify-between">
+        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[84px] flex items-center justify-between">
           
           {/* Top Left: Official JIIT Logo (Option 1: Soft White Contour / Glow) */}
           <div className="flex items-center">
@@ -99,7 +99,7 @@ export default function App() {
               <img 
                 src="/imgs/jiit.png" 
                 alt="JIIT Logo" 
-                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="hero-corner-logo h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
           </div>
@@ -136,7 +136,7 @@ export default function App() {
               <img 
                 src="/imgs/ride.png" 
                 alt="RIDE Logo" 
-                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="hero-corner-logo h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
 
@@ -181,7 +181,7 @@ export default function App() {
             <img 
               src="/imgs/ai-summit.png" 
               alt="Jaypee Agentic AI International Summit Logo" 
-              className="h-24 sm:h-32 md:h-40 lg:h-44 w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
+              className="hero-summit-logo h-24 sm:h-32 md:h-40 lg:h-44 w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
             />
           </div>
 
@@ -189,20 +189,20 @@ export default function App() {
           <div className="relative inline-flex items-center justify-center select-none my-0.5 sm:my-1 transition-transform duration-300 hover:scale-[1.01]">
             
             {/* The Words "AGENTIC AI SUMMIT" with 3D Blue Extrusion */}
-            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.8rem] 2xl:text-[5.5rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+            <h1 className="hero-title-text font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.8rem] 2xl:text-[5.5rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
               AGENTIC AI SUMMIT
             </h1>
 
             {/* Rotated "2026" with user-specified color: #062DB1 */}
             <div className="ml-2 sm:ml-3.5 flex flex-col items-center justify-center">
-              <span className="text-vertical-year font-display font-black text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
+              <span className="hero-year-text text-vertical-year font-display font-black text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
                 2026
               </span>
             </div>
           </div>
 
           {/* Location & Date Line */}
-          <div className="mt-2 sm:mt-3 mb-4 sm:mb-5">
+          <div className="hero-location-box mt-2 sm:mt-3 mb-4 sm:mb-5">
             <p className="font-display font-extrabold text-xs sm:text-base md:text-lg text-white tracking-widest uppercase drop-shadow-md">
               JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
             </p>
@@ -212,7 +212,7 @@ export default function App() {
           </div>
 
           {/* Main (Single) Register Button */}
-          <div className="mb-4 sm:mb-6">
+          <div className="hero-cta-box mb-4 sm:mb-6">
             <a 
               href={registrationLink} 
               target="_blank" 
@@ -225,11 +225,11 @@ export default function App() {
           </div>
 
           {/* 4 Metric Stat Columns with Slow Animated Number Ticker */}
-          <div className="w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-4 sm:gap-10 border-t border-white/20 pt-3 pb-3 sm:pb-4">
+          <div className="hero-stats-box w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-4 sm:gap-10 border-t border-white/20 pt-3 pb-3 sm:pb-4">
             
             {/* Stat 1: Number of Themes */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="hero-stat-num font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 {animatedStats.themes}
               </span>
               <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">THEMES</span>
@@ -237,7 +237,7 @@ export default function App() {
 
             {/* Stat 2: Number of Events (7 from Brochure) */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="hero-stat-num font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 {animatedStats.events}
               </span>
               <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">EVENTS</span>
@@ -245,7 +245,7 @@ export default function App() {
 
             {/* Stat 3: Prize Pool */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="hero-stat-num font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 ₹{animatedStats.prize}M
               </span>
               <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">PRIZE POOL</span>
@@ -253,7 +253,7 @@ export default function App() {
 
             {/* Stat 4: Pre-Seed Funding Pool */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="hero-stat-num font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 ₹{animatedStats.preSeed}M
               </span>
               <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">PRE-SEED POOL</span>
