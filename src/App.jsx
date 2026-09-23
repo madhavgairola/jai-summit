@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Calendar, 
   MapPin, 
@@ -25,6 +25,43 @@ import {
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const registrationLink = "https://forms.gle/E1x9CT8mF5z1R4YC8";
+
+  // Animated number counter ticker for stats (slowed down for satisfying smooth roll)
+  const [animatedStats, setAnimatedStats] = useState({
+    themes: 0,
+    events: 0,
+    prize: "0.0",
+    preSeed: 0
+  });
+
+  useEffect(() => {
+    let startTime = null;
+    const duration = 2800; // 2.8s slow, deliberate counter
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      // Smooth cubic ease out
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      setAnimatedStats({
+        themes: Math.round(ease * 4),
+        events: Math.round(ease * 7),
+        prize: (ease * 1.5).toFixed(1),
+        preSeed: Math.round(ease * 10)
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    const timer = setTimeout(() => {
+      requestAnimationFrame(step);
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
@@ -138,12 +175,12 @@ export default function App() {
             ===================================================================== */}
         <div className="relative z-20 w-full max-w-6xl 2xl:max-w-7xl mx-auto px-6 my-auto text-center flex flex-col items-center justify-center py-2 sm:py-4">
           
-          {/* Prominent Official AI Summit Logo */}
-          <div className="mb-2 sm:mb-3 transition-transform duration-300 hover:scale-105">
+          {/* Prominent Official AI Summit Logo with Interactive Hover Animation */}
+          <div className="mb-2 sm:mb-3">
             <img 
               src="/imgs/ai-summit.png" 
               alt="Jaypee Agentic AI International Summit Logo" 
-              className="h-24 sm:h-32 md:h-40 lg:h-44 w-auto object-contain logo-glow mx-auto"
+              className="h-24 sm:h-32 md:h-40 lg:h-44 w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
             />
           </div>
 
@@ -186,25 +223,39 @@ export default function App() {
             </a>
           </div>
 
-          {/* 3 Metric Stat Columns: THEMES, EVENTS, PRIZE POOL (No Days, No Pre-Seed) */}
-          <div className="w-full max-w-3xl lg:max-w-4xl grid grid-cols-3 gap-6 sm:gap-14 border-t border-white/20 pt-3 pb-3 sm:pb-4">
+          {/* 4 Metric Stat Columns with Slow Animated Number Ticker */}
+          <div className="w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-4 sm:gap-10 border-t border-white/20 pt-3 pb-3 sm:pb-4">
             
             {/* Stat 1: Number of Themes */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">4</span>
+              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+                {animatedStats.themes}
+              </span>
               <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">THEMES</span>
             </div>
 
             {/* Stat 2: Number of Events (7 from Brochure) */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">7</span>
+              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+                {animatedStats.events}
+              </span>
               <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">EVENTS</span>
             </div>
 
             {/* Stat 3: Prize Pool */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">₹1.5M</span>
+              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+                ₹{animatedStats.prize}M
+              </span>
               <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">PRIZE POOL</span>
+            </div>
+
+            {/* Stat 4: Pre-Seed Funding Pool */}
+            <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
+              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+                ₹{animatedStats.preSeed}M
+              </span>
+              <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">PRE-SEED POOL</span>
             </div>
 
           </div>
