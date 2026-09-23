@@ -89,7 +89,7 @@ export default function App() {
             ===================================================================== */}
         <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[84px] flex items-center justify-between">
           
-          {/* Top Left: Official JIIT Logo */}
+          {/* Top Left: Official JIIT Logo (Option 1: Soft White Contour / Glow) */}
           <div className="flex items-center">
             <a 
               href="#home" 
@@ -99,7 +99,7 @@ export default function App() {
               <img 
                 src="/imgs/jiit.png" 
                 alt="JIIT Logo" 
-                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
+                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
           </div>
@@ -126,7 +126,7 @@ export default function App() {
             </a>
           </div>
 
-          {/* Top Right: Official RIDE Logo & Mobile Menu Toggle */}
+          {/* Top Right: Official RIDE Logo (Option 1: Soft White Contour / Glow) & Mobile Menu Toggle */}
           <div className="flex items-center gap-3 sm:gap-4">
             <a 
               href="#about" 
@@ -136,7 +136,7 @@ export default function App() {
               <img 
                 src="/imgs/ride.png" 
                 alt="RIDE Logo" 
-                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
+                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
 
