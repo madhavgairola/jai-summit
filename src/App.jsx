@@ -89,16 +89,16 @@ export default function App() {
             ===================================================================== */}
         <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[84px] flex items-center justify-between">
           
-          {/* Top Left: Official JIIT Logo */}
+          {/* Top Left: Official RIDE Logo */}
           <div className="flex items-center">
             <a 
-              href="#home" 
+              href="#about" 
               className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
-              title="Jaypee Institute of Information Technology"
+              title="RIDE Initiative"
             >
               <img 
-                src="/imgs/jiit.png" 
-                alt="JIIT Logo" 
+                src="/imgs/ride.png" 
+                alt="RIDE Logo" 
                 className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
               />
             </a>
@@ -126,16 +126,16 @@ export default function App() {
             </a>
           </div>
 
-          {/* Top Right: Official RIDE Logo & Mobile Menu Toggle */}
+          {/* Top Right: Official JIIT Logo & Mobile Menu Toggle */}
           <div className="flex items-center gap-3 sm:gap-4">
             <a 
-              href="#about" 
+              href="#home" 
               className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
-              title="RIDE Initiative"
+              title="Jaypee Institute of Information Technology"
             >
               <img 
-                src="/imgs/ride.png" 
-                alt="RIDE Logo" 
+                src="/imgs/jiit.png" 
+                alt="JIIT Logo" 
                 className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
               />
             </a>
