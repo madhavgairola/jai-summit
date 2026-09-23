@@ -50,10 +50,10 @@ export default function App() {
         {/* =====================================================================
             TOP NAVBAR: Transparent, No Tab Background, Clean Logos (No White Box)
             ===================================================================== */}
-        <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 pt-5 pb-2 flex items-center justify-between">
+        <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[84px] flex items-center justify-between">
           
           {/* Top Left: Official JIIT & RIDE Logos (NO white background box) */}
-          <div className="flex items-center gap-4 sm:gap-5">
+          <div className="flex items-center gap-5 sm:gap-6">
             <a 
               href="#home" 
               className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
@@ -62,11 +62,11 @@ export default function App() {
               <img 
                 src="/imgs/jiit.png" 
                 alt="JIIT Logo" 
-                className="h-11 sm:h-13 md:h-14 w-auto object-contain drop-shadow-md"
+                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
               />
             </a>
 
-            <div className="h-7 sm:h-9 w-px bg-white/30"></div>
+            <div className="h-9 sm:h-11 w-px bg-white/30"></div>
 
             <a 
               href="#about" 
@@ -76,7 +76,7 @@ export default function App() {
               <img 
                 src="/imgs/ride.png" 
                 alt="RIDE Logo" 
-                className="h-11 sm:h-13 md:h-14 w-auto object-contain drop-shadow-md"
+                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
               />
             </a>
           </div>
