@@ -87,7 +87,7 @@ export default function App() {
         {/* =====================================================================
             TOP NAVBAR: Logos on Both Corners, Centered Navigation Menu
             ===================================================================== */}
-        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[86px] flex items-center justify-between">
+        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 pt-2 sm:pt-2.5 h-[88px] max-h-[90px] flex items-center justify-between">
           
           {/* Top Left: Official JIIT Logo (Option 1: Soft White Contour / Glow) */}
           <div className="flex items-center">
