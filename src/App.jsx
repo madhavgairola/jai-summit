@@ -87,7 +87,7 @@ export default function App() {
         {/* =====================================================================
             TOP NAVBAR: Logos on Both Corners, Centered Navigation Menu
             ===================================================================== */}
-        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[86px] max-h-[88px] flex items-center justify-between">
+        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[86px] flex items-center justify-between">
           
           {/* Top Left: Official JIIT Logo (Option 1: Soft White Contour / Glow) */}
           <div className="flex items-center">
@@ -99,7 +99,7 @@ export default function App() {
               <img 
                 src="/imgs/jiit.png" 
                 alt="JIIT Logo" 
-                className="hero-corner-logo h-14 sm:h-18 md:h-[4.75rem] lg:h-[5.25rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="hero-corner-logo h-14 sm:h-16 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
           </div>
@@ -136,7 +136,7 @@ export default function App() {
               <img 
                 src="/imgs/ride.png" 
                 alt="RIDE Logo" 
-                className="hero-corner-logo h-14 sm:h-18 md:h-[4.75rem] lg:h-[5.25rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="hero-corner-logo h-14 sm:h-16 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
 
@@ -181,7 +181,7 @@ export default function App() {
             <img 
               src="/imgs/ai-summit.png" 
               alt="Jaypee Agentic AI International Summit Logo" 
-              className="hero-summit-logo h-26 sm:h-34 md:h-42 lg:h-48 w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
+              className="hero-summit-logo h-24 sm:h-32 md:h-40 lg:h-[11.5rem] w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
             />
           </div>
 
@@ -189,7 +189,7 @@ export default function App() {
           <div className="relative inline-flex items-center justify-center select-none my-0.5 sm:my-1 transition-transform duration-300 hover:scale-[1.01]">
             
             {/* The Words "AGENTIC AI SUMMIT" with 3D Blue Extrusion */}
-            <h1 className="hero-title-text font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4.2rem] xl:text-[5.0rem] 2xl:text-[5.5rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+            <h1 className="hero-title-text font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4.1rem] xl:text-[4.85rem] 2xl:text-[5.4rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
               AGENTIC AI SUMMIT
             </h1>
 
