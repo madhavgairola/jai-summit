@@ -53,6 +53,16 @@
     10px 10px 24px rgba(0, 0, 0, 0.7);
 }
 
+/* Refined Executive 3D Typography for /test */
+.text-3d-summit-pro {
+  color: #091325;
+  letter-spacing: -0.025em;
+  text-shadow: 
+    1px 1px 0 #93c5fd,
+    2px 2px 0 #3b82f6,
+    3px 3px 0 #1d4ed8,
+    4px 5px 12px rgba(11, 21, 40, 0.16);
+}
 
 .text-vertical-year {
   writing-mode: vertical-rl;
