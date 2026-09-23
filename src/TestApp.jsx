@@ -1,0 +1,899 @@
+import React, { useState, useEffect } from 'react';
+import { 
+  Calendar, 
+  MapPin, 
+  ArrowUpRight, 
+  Trophy, 
+  Rocket, 
+  ShieldCheck, 
+  Activity, 
+  MessageSquare, 
+  Lightbulb, 
+  Globe, 
+  BarChart3, 
+  Users, 
+  Store, 
+  MessagesSquare, 
+  ExternalLink,
+  ChevronRight,
+  Sparkles,
+  Clock,
+  Menu,
+  X,
+  Layers,
+  CheckCircle2
+} from 'lucide-react';
+
+export default function TestApp() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const registrationLink = "https://forms.gle/E1x9CT8mF5z1R4YC8";
+
+  // Animated number counter ticker for stats
+  const [animatedStats, setAnimatedStats] = useState({
+    themes: 0,
+    events: 0,
+    prize: "0.0",
+    preSeed: 0
+  });
+
+  useEffect(() => {
+    let startTime = null;
+    const duration = 2800; // 2.8s smooth roll
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      setAnimatedStats({
+        themes: Math.round(ease * 4),
+        events: Math.round(ease * 7),
+        prize: (ease * 1.5).toFixed(1),
+        preSeed: Math.round(ease * 10)
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    const timer = setTimeout(() => {
+      requestAnimationFrame(step);
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-[#070b14] text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
+      
+      {/* =========================================================================
+          HERO LANDING: Framed Wireframe Concept (/test)
+          Outer rounded container with top pill bar & 2-column split stage
+          ========================================================================= */}
+      <header className="relative w-full p-2 sm:p-4 lg:p-6 bg-[#070b14] flex flex-col justify-between min-h-[100dvh]" id="home">
+        
+        {/* Subtle Ambient Background Lighting behind the frame */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/15 via-slate-950/80 to-[#070b14] pointer-events-none" />
+
+        {/* Outer Rounded Container with Border (From User Wireframe Sketch) */}
+        <div className="relative z-10 w-full max-w-[1680px] mx-auto rounded-[24px] sm:rounded-[36px] border border-white/20 bg-slate-950/70 backdrop-blur-2xl shadow-[0_0_60px_rgba(0,0,0,0.8)] p-3 sm:p-5 lg:p-6 flex flex-col justify-between flex-1">
+          
+          {/* =====================================================================
+              TOP PILL BAR: Full-width rounded horizontal navbar inside the outer frame
+              ===================================================================== */}
+          <nav className="relative z-20 w-full rounded-2xl sm:rounded-3xl border border-white/20 bg-slate-900/70 backdrop-blur-xl px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex items-center justify-between shadow-lg">
+            
+            {/* Left: JIIT Logo + RIDE Logo */}
+            <div className="flex items-center gap-3 sm:gap-4">
+              <a 
+                href="#home" 
+                className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
+                title="Jaypee Institute of Information Technology"
+              >
+                <img 
+                  src="/imgs/jiit.png" 
+                  alt="JIIT Logo" 
+                  className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                />
+              </a>
+
+              <span className="h-6 w-px bg-white/20 hidden sm:block" />
+
+              <a 
+                href="#about" 
+                className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
+                title="RIDE Initiative"
+              >
+                <img 
+                  src="/imgs/ride.png" 
+                  alt="RIDE Logo" 
+                  className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))]"
+                />
+              </a>
+            </div>
+
+            {/* Center: Navigation Links */}
+            <div className="hidden lg:flex items-center justify-center gap-7 xl:gap-9">
+              <a href="#about" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+                About
+              </a>
+              <a href="#thematic-areas" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+                Themes
+              </a>
+              <a href="#highlights" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+                Highlights
+              </a>
+              <a href="#hackathon" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+                Hackathon
+              </a>
+              <a href="#schedule" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+                Schedule
+              </a>
+              <a href="#directions" className="text-sm font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+                Venue
+              </a>
+            </div>
+
+            {/* Right: Toggle back to standard view + Mobile Menu Toggle */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              <a 
+                href="/" 
+                className="hidden sm:inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-slate-200 hover:text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold tracking-wide transition-all"
+                title="View original landing"
+              >
+                <span>Standard View</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+                aria-label="Toggle Navigation Menu"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </nav>
+
+          {/* Mobile Navigation Drawer */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden fixed inset-x-4 top-24 z-50 bg-slate-900/95 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 shadow-2xl flex flex-col gap-4 text-center font-display animate-fadeIn">
+              <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">About</a>
+              <a href="#thematic-areas" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Themes</a>
+              <a href="#highlights" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Highlights</a>
+              <a href="#hackathon" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Hackathon</a>
+              <a href="#schedule" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Schedule</a>
+              <a href="#directions" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold text-white uppercase tracking-wider py-2 border-b border-white/10">Venue</a>
+              <a 
+                href={registrationLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white text-slate-900 font-extrabold text-sm py-3 rounded-full uppercase tracking-wider mt-2 shadow-lg"
+              >
+                Register for Summit
+              </a>
+              <a 
+                href="/" 
+                className="text-xs font-semibold text-slate-400 py-1"
+              >
+                ← Return to Standard Site
+              </a>
+            </div>
+          )}
+
+          {/* =====================================================================
+              SPLIT HERO STAGE (Matching User Sketch Layout)
+              Left Column: Stacked Title + Stats
+              Right Column: Big Rounded Container (Option A: Cinematic Campus Window)
+              ===================================================================== */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 flex-1 items-center my-3 sm:my-5 min-h-0">
+            
+            {/* -----------------------------------------------------------------
+                LEFT COLUMN: AGENTIC AI / SUMMIT 2026 Typography & Summit Info
+                ----------------------------------------------------------------- */}
+            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left py-2 sm:py-4 px-2 sm:px-4">
+              
+              {/* Floating Summit Logo */}
+              <div className="mb-2 sm:mb-3">
+                <img 
+                  src="/imgs/ai-summit.png" 
+                  alt="Jaypee Agentic AI International Summit Logo" 
+                  className="h-16 sm:h-20 lg:h-24 w-auto object-contain logo-glow animate-float drop-shadow-lg"
+                />
+              </div>
+
+              {/* Stacked 2-Line 3D Heading matching user drawing */}
+              <div className="select-none mb-2 sm:mb-3">
+                {/* Line 1: AGENTIC AI */}
+                <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+                  AGENTIC AI
+                </h1>
+
+                {/* Line 2: SUMMIT with vertical rotated 2026 */}
+                <div className="inline-flex items-center gap-2 sm:gap-3.5 mt-1 sm:mt-2">
+                  <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+                    SUMMIT
+                  </h1>
+                  <span className="text-vertical-year font-display font-black text-lg sm:text-2xl lg:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest leading-none">
+                    2026
+                  </span>
+                </div>
+              </div>
+
+              {/* Location & Date Line */}
+              <div className="mb-3 sm:mb-4">
+                <p className="font-display font-extrabold text-xs sm:text-sm md:text-base text-white tracking-widest uppercase drop-shadow-md">
+                  JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
+                </p>
+                <p className="text-[11px] sm:text-xs font-semibold text-slate-300 tracking-wider mt-0.5">
+                  "Human Intelligence Meets Agentic Possibilities"
+                </p>
+              </div>
+
+              {/* Main CTA Register Button */}
+              <div className="mb-4 sm:mb-5">
+                <a 
+                  href={registrationLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-white hover:bg-slate-100 text-slate-950 font-display text-xs sm:text-sm font-extrabold px-8 sm:px-10 py-3 sm:py-3.5 rounded-full uppercase tracking-wider transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2 group"
+                >
+                  <span>Register for Summit</span>
+                  <ArrowUpRight className="w-4 h-4 text-blue-700 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </div>
+
+              {/* 4 Metric Counters (With Slow Animated Ticker) */}
+              <div className="w-full max-w-xl grid grid-cols-4 gap-2 sm:gap-4 border-t border-white/20 pt-3">
+                <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                    {animatedStats.themes}
+                  </span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">THEMES</span>
+                </div>
+
+                <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                    {animatedStats.events}
+                  </span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">EVENTS</span>
+                </div>
+
+                <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                    ₹{animatedStats.prize}M
+                  </span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">PRIZE POOL</span>
+                </div>
+
+                <div className="flex flex-col group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-white leading-none group-hover:text-cyan-300 transition-colors">
+                    ₹{animatedStats.preSeed}M
+                  </span>
+                  <span className="font-display font-bold text-[9px] sm:text-[10px] text-slate-300 tracking-wider uppercase mt-1">PRE-SEED</span>
+                </div>
+              </div>
+
+            </div>
+
+            {/* -----------------------------------------------------------------
+                RIGHT COLUMN: Big Rounded Box (From User Wireframe Sketch)
+                Option A: Sector 128 Campus Showcase + Glassmorphic Overlay
+                ----------------------------------------------------------------- */}
+            <div className="lg:col-span-6 xl:col-span-6 flex flex-col h-full w-full">
+              <div className="relative w-full h-[340px] sm:h-[420px] lg:h-[480px] xl:h-[540px] rounded-3xl sm:rounded-[32px] border border-white/25 overflow-hidden shadow-2xl flex flex-col justify-between group bg-slate-900/60">
+                
+                {/* Sector-128 Campus Photography */}
+                <img 
+                  src="/imgs/jiit128.jpeg" 
+                  alt="JIIT Sector 128 Campus" 
+                  className="absolute inset-0 w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0"
+                />
+
+                {/* Cinematic Glass Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-slate-950/40 z-10" />
+
+                {/* Top Badge Overlay */}
+                <div className="relative z-20 p-3 sm:p-5 flex items-center justify-between">
+                  <div className="inline-flex items-center gap-2 bg-slate-950/80 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-white tracking-wide shadow-md">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>JIIT Wish Town • Sector 128, Noida</span>
+                  </div>
+
+                  <div className="bg-slate-950/80 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full text-[11px] font-bold text-cyan-300 uppercase tracking-wider">
+                    Summit Campus
+                  </div>
+                </div>
+
+                {/* Bottom Glass Overlay Card with Summit Highlights */}
+                <div className="relative z-20 m-3 sm:m-5 p-4 sm:p-5 rounded-2xl bg-slate-950/85 backdrop-blur-xl border border-white/20 shadow-2xl">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 font-display">
+                      Jaypee Agentic AI International Summit
+                    </span>
+                    <span className="text-[11px] font-semibold text-slate-300 bg-white/10 px-2.5 py-0.5 rounded-full">
+                      Oct 30 – 31, 2026
+                    </span>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
+                    Convening international researchers, industry architects, and founders for autonomous systems, multimodal intelligence, and frontier agent engineering.
+                  </p>
+
+                  <div className="mt-3 pt-3 border-t border-white/15 grid grid-cols-2 gap-2 text-xs font-bold text-white">
+                    <div className="flex items-center gap-2 text-cyan-300">
+                      <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
+                      <span>₹1.5M Hackathon Pool</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-blue-300">
+                      <Rocket className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>₹10M Pre-Seed Funding</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+      {/* =========================================================================
+          BODY SECTIONS: Full Summit Program, Themes, Hackathon, Venue & Schedule
+          ========================================================================= */}
+      <div className="bg-[#eaeff4] w-full">
+        <main className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 py-14 space-y-14">
+
+        {/* 1. OVERVIEW & 3 STACKED CARDS */}
+        <section className="bg-white rounded-3xl p-8 sm:p-14 shadow-wander-card border border-slate-200/80 transition-shadow duration-300 hover:shadow-xl" id="about">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            
+            {/* Left Column: Heading + Editorial Intro */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full font-display">
+                Summit Overview
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
+                Where Human Intelligence Meets Autonomous Execution
+              </h2>
+
+              <p className="text-slate-600 leading-relaxed text-base sm:text-lg">
+                Hosted at Jaypee Institute of Information Technology (JIIT) Wish Town Campus in Sector-128, Noida, JAI 2026 convenes academic researchers, industry architects, and student innovators to pioneer the frontier of agentic AI systems.
+              </p>
+
+              <div className="text-xs font-bold uppercase tracking-widest text-slate-400 font-display">
+                Real Problems &nbsp;|&nbsp; Intelligent Agents &nbsp;|&nbsp; Lasting Impact
+              </div>
+            </div>
+
+            {/* Right Column: 3 Stacked Slate-Blue Cards */}
+            <div className="lg:col-span-5 flex flex-col gap-4">
+              
+              <div className="bg-[#6b7f94] hover:bg-[#5a6e83] text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-300 hover:translate-x-2 shadow-sm hover:shadow-md cursor-pointer group">
+                <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <Trophy className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base sm:text-lg text-white font-display">Agentic AI Hackathon</h3>
+                  <p className="text-slate-100 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                    Build autonomous problem-solving agents backed by an exciting INR 1.5 Million prize pool.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-[#6b7f94] hover:bg-[#5a6e83] text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-300 hover:translate-x-2 shadow-sm hover:shadow-md cursor-pointer group">
+                <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <Rocket className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base sm:text-lg text-white font-display">Pre-Seed Funding Pool</h3>
+                  <p className="text-slate-100 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                    INR 10 Million dedicated backing for high-impact autonomous agent spin-offs and student startups.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-[#6b7f94] hover:bg-[#5a6e83] text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-300 hover:translate-x-2 shadow-sm hover:shadow-md cursor-pointer group">
+                <div className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <ShieldCheck className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-base sm:text-lg text-white font-display">RIDE Initiative</h3>
+                  <p className="text-slate-100 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                    Research, Innovation & Direct Engagement powering sustainable and responsible AI governance.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* 2. THEMATIC AREAS */}
+        <section className="space-y-8" id="thematic-areas">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full font-display">
+              Core Focus
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+              Four Frontier Thematic Pillars
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Engineered to translate agentic architectures from theoretical formulation into autonomous real-world deployments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* Theme 1 */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-wander-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600">
+                  <Activity className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-display">Theme 01</span>
+                <h3 className="text-xl font-bold text-slate-900 font-display">Healthcare & Life Sciences</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Autonomous diagnostic copilots, genomic discovery pipelines, closed-loop clinical trial triage, and personalized patient monitoring systems.
+                </p>
+              </div>
+              <div className="pt-6 mt-6 border-t border-slate-100 text-xs font-semibold text-cyan-700 flex items-center gap-1">
+                <span>Autonomous Care Pathways</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
+
+            {/* Theme 2 */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-wander-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600">
+                  <BarChart3 className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-display">Theme 02</span>
+                <h3 className="text-xl font-bold text-slate-900 font-display">Finance & Economic Systems</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Decentralized algorithmic trading agents, automated underwriting, adaptive AML forensics, and real-time counterparty risk arbitration.
+                </p>
+              </div>
+              <div className="pt-6 mt-6 border-t border-slate-100 text-xs font-semibold text-blue-700 flex items-center gap-1">
+                <span>Algorithmic Governance</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
+
+            {/* Theme 3 */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-wander-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-display">Theme 03</span>
+                <h3 className="text-xl font-bold text-slate-900 font-display">Urban Infrastructure & Energy</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Grid balance coordination, multimodal logistics dispatchers, climate-resilient water infrastructure, and autonomous traffic orchestration.
+                </p>
+              </div>
+              <div className="pt-6 mt-6 border-t border-slate-100 text-xs font-semibold text-indigo-700 flex items-center gap-1">
+                <span>Self-Healing Urban Grids</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
+
+            {/* Theme 4 */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-wander-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 font-display">Theme 04</span>
+                <h3 className="text-xl font-bold text-slate-900 font-display">Safety, Ethics & Alignment</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Provable safety guarantees, constitutional multi-agent sandboxing, interpretability under tool-use, and human-in-the-loop escalation frameworks.
+                </p>
+              </div>
+              <div className="pt-6 mt-6 border-t border-slate-100 text-xs font-semibold text-emerald-700 flex items-center gap-1">
+                <span>Constitutional Alignment</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 3. SUMMIT HIGHLIGHTS & EVENTS */}
+        <section className="bg-white rounded-3xl p-8 sm:p-14 shadow-wander-card border border-slate-200/80" id="highlights">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-slate-100">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full font-display">
+                Curated Agenda
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3 font-display">
+                Seven Signature Summit Tracks
+              </h2>
+            </div>
+            <p className="text-slate-500 text-sm max-w-md">
+              A meticulously engineered two-day international conference featuring visionary keynotes, hands-on masterclasses, and an investment pitch arena.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {/* Event 1 */}
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs font-bold font-display">01</span>
+                <h3 className="font-bold text-slate-900 font-display">Global Keynote Addresses</h3>
+              </div>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Visionary insights delivered by pioneering researchers from top international AI labs, frontier model labs, and global think-tanks.
+              </p>
+            </div>
+
+            {/* Event 2 */}
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-8 h-8 rounded-lg bg-cyan-600 text-white flex items-center justify-center text-xs font-bold font-display">02</span>
+                <h3 className="font-bold text-slate-900 font-display">Thematic Expert Panels</h3>
+              </div>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Critical cross-sector debates reconciling regulatory compliance, safety bottlenecks, enterprise tool integration, and compute optimization.
+              </p>
+            </div>
+
+            {/* Event 3 */}
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-xs font-bold font-display">03</span>
+                <h3 className="font-bold text-slate-900 font-display">Agentic AI Hackathon</h3>
+              </div>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                36-hour sprint challenging multidisciplinary engineering squads to construct production-ready autonomous agents tackling real-world problem sets.
+              </p>
+            </div>
+
+            {/* Event 4 */}
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs font-bold font-display">04</span>
+                <h3 className="font-bold text-slate-900 font-display">Startup & Investor Arena</h3>
+              </div>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Curated pitch arena where selected founders showcase autonomous solutions before active angel syndicates and venture venture partners.
+              </p>
+            </div>
+
+            {/* Event 5 */}
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center text-xs font-bold font-display">05</span>
+                <h3 className="font-bold text-slate-900 font-display">Hands-On Masterclasses</h3>
+              </div>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Deep-dive developer bootcamps exploring multi-agent orchestrations, memory vector graphs, MCP protocols, and human escalation systems.
+              </p>
+            </div>
+
+            {/* Event 6 */}
+            <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-8 h-8 rounded-lg bg-rose-600 text-white flex items-center justify-center text-xs font-bold font-display">06</span>
+                <h3 className="font-bold text-slate-900 font-display">Research Paper Colloquium</h3>
+              </div>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Peer-reviewed academic proceedings publishing novel architectures in reinforcement learning from agent feedback and cognitive planning.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 4. HACKATHON SPOTLIGHT */}
+        <section className="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden" id="hackathon">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-cyan-300 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider font-display">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Flagship 36-Hour Hackathon</span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-display">
+                Build Autonomous Agents. <br />
+                Win from <span className="text-cyan-300">INR 1.5 Million</span>.
+              </h2>
+
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                Open to students, independent researchers, and professional builders worldwide. Teams will construct multi-agent systems, synthetic memory graphs, and task-specific reasoning frameworks evaluated by principal researchers and active venture partners.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                  <div className="text-2xl font-black text-cyan-300 font-display">INR 1.5M</div>
+                  <div className="text-xs text-slate-300 font-medium mt-1">Guaranteed Cash Prize Pool</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
+                  <div className="text-2xl font-black text-emerald-400 font-display">INR 10M</div>
+                  <div className="text-xs text-slate-300 font-medium mt-1">Pre-Seed Venture Funding Pool</div>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <a 
+                  href={registrationLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-display text-sm font-extrabold px-8 py-3.5 rounded-full uppercase tracking-wider transition-all duration-200 shadow-xl hover:shadow-cyan-400/25 hover:scale-105 inline-flex items-center gap-2"
+                >
+                  <span>Apply for Hackathon</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 bg-white/5 backdrop-blur-xl border border-white/15 rounded-3xl p-6 sm:p-8 space-y-4">
+              <h3 className="text-lg font-bold text-white font-display border-b border-white/10 pb-3">
+                Evaluation Criteria & Tracks
+              </h3>
+              
+              <div className="space-y-3 text-xs sm:text-sm text-slate-300">
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span><strong>Autonomy Depth:</strong> Resilience across indeterminate tool outputs & self-healing loops.</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span><strong>Domain Relevance:</strong> Concrete impact aligned with the 4 Summit Thematic Pillars.</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span><strong>Alignment & Safety:</strong> Bounded resource usage, interpretability, and containment.</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span><strong>Commercial Viability:</strong> Eligibility for fast-track equity backing from our pre-seed pool.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 5. SCHEDULE (DAY 1 & DAY 2) */}
+        <section className="bg-white rounded-3xl p-8 sm:p-14 shadow-wander-card border border-slate-200/80" id="schedule">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full font-display">
+              Schedule Overview
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+              Two Intensive Days in Noida
+            </h2>
+            <p className="text-slate-500 text-sm">
+              30–31 October 2026 at Jaypee Institute of Information Technology, Wish Town Campus.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            {/* Day 1 */}
+            <div className="border border-slate-200 rounded-3xl p-6 sm:p-8 bg-slate-50/50 space-y-6">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+                <div>
+                  <span className="text-xs font-bold text-blue-700 uppercase tracking-widest font-display">Day 01</span>
+                  <h3 className="text-xl font-bold text-slate-900 font-display">Friday, October 30, 2026</h3>
+                </div>
+                <span className="text-xs font-semibold text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">
+                  Opening & Build Kickoff
+                </span>
+              </div>
+
+              <div className="space-y-4 text-sm">
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">08:30 AM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Delegate Registration & Morning Networking</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Main Atrium & Welcome Foyer</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">10:00 AM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Inaugural Ceremony & Presidential Keynote</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Auditorium Complex • Institute Leadership & Chief Guests</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">11:30 AM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Plenary Panel: Frontiers of Cognitive Agent Architectures</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Foundational Model Architects & Systems Researchers</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">01:00 PM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Networking Luncheon</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Campus Dining Court</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">02:00 PM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">36-Hour Agentic Hackathon Commencement</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Innovation Laboratories & Hack Space</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">04:30 PM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Technical Masterclasses & Paper Presentation Session A</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Parallel Track Theatres</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Day 2 */}
+            <div className="border border-slate-200 rounded-3xl p-6 sm:p-8 bg-slate-50/50 space-y-6">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+                <div>
+                  <span className="text-xs font-bold text-blue-700 uppercase tracking-widest font-display">Day 02</span>
+                  <h3 className="text-xl font-bold text-slate-900 font-display">Saturday, October 31, 2026</h3>
+                </div>
+                <span className="text-xs font-semibold text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">
+                  Demo Day & Awards
+                </span>
+              </div>
+
+              <div className="space-y-4 text-sm">
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">09:00 AM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Day 2 Keynote: Safety & Constitutional Alignment in Autonomous Swarms</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Auditorium Complex</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">10:30 AM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Startup Pitch Showcase & Investor Roundtables</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Venture Arena • 10M Pre-Seed Syndicate</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">01:00 PM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Networking Luncheon</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Campus Dining Court</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">02:30 PM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Hackathon Grand Finale Demos & Live Judging</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Main Stage • Top 10 Finalist Demonstrations</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pb-3 border-b border-slate-200/60">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">05:00 PM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Valedictory Ceremony & 1.5M Prize Distribution</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Auditorium Complex</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <span className="font-mono text-xs font-bold text-slate-400 pt-0.5 w-20 shrink-0">06:30 PM</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Closing Reception & High Tea</h4>
+                    <p className="text-xs text-slate-500 mt-0.5">Wish Town Promenade</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 6. VENUE & DIRECTIONS */}
+        <section className="bg-white rounded-3xl p-8 sm:p-14 shadow-wander-card border border-slate-200/80" id="directions">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div className="lg:col-span-6 space-y-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full font-display">
+                Summit Location
+              </span>
+
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+                JIIT Wish Town Campus, Sector-128, Noida
+              </h2>
+
+              <p className="text-slate-600 text-base leading-relaxed">
+                Jaypee Institute of Information Technology (JIIT) Sector-128 is an expansive, world-class educational hub situated right off the Noida-Greater Noida Expressway, offering seamless access from Central Delhi, Indira Gandhi International Airport (DEL), and Noida metro lines.
+              </p>
+
+              <div className="space-y-3 pt-2">
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-semibold">
+                  <MapPin className="w-5 h-5 text-blue-600 shrink-0" />
+                  <span>Sector 128, Jaypee Wish Town, Noida, Uttar Pradesh 201304</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-slate-700 font-semibold">
+                  <Calendar className="w-5 h-5 text-blue-600 shrink-0" />
+                  <span>Friday – Saturday, October 30 – 31, 2026</span>
+                </div>
+              </div>
+
+              <div className="pt-3 flex flex-wrap gap-4">
+                <a 
+                  href="https://maps.google.com/?q=Jaypee+Institute+of+Information+Technology+Sector+128+Noida" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-display text-xs sm:text-sm font-extrabold px-6 py-3 rounded-full uppercase tracking-wider transition-all inline-flex items-center gap-2 shadow-md hover:shadow-lg"
+                >
+                  <MapPin className="w-4 h-4" />
+                  <span>Open in Google Maps</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 rounded-3xl overflow-hidden border border-slate-200 shadow-lg relative h-[360px] sm:h-[420px]">
+              <img 
+                src="/imgs/jiit128.jpeg" 
+                alt="Jaypee Institute of Information Technology Sector 128 Noida" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <p className="text-xs font-bold uppercase tracking-wider text-cyan-300 font-display">Campus Landmark</p>
+                  <h4 className="text-lg font-extrabold font-display">Interdisciplinary Studies & Innovation Campus</h4>
+                  <p className="text-xs text-slate-300 mt-0.5">Jaypee Wish Town, Sector 128, Noida</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        </main>
+
+        {/* FOOTER */}
+        <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+          <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <img src="/imgs/jiit.png" alt="JIIT" className="h-9 w-auto object-contain opacity-90" />
+              <div className="h-6 w-px bg-slate-800" />
+              <img src="/imgs/ride.png" alt="RIDE" className="h-9 w-auto object-contain opacity-90" />
+            </div>
+            
+            <p className="text-xs text-center sm:text-left text-slate-500 font-medium">
+              © 2026 Jaypee Agentic AI International Summit (JAI 2026). Jaypee Institute of Information Technology, Sector-128 Noida.
+            </p>
+
+            <div className="flex items-center gap-4 text-xs font-bold font-display text-slate-400">
+              <a href="#about" className="hover:text-white transition-colors">About</a>
+              <a href="#thematic-areas" className="hover:text-white transition-colors">Themes</a>
+              <a href="#hackathon" className="hover:text-white transition-colors">Hackathon</a>
+              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">Standard View</a>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+
+    </div>
+  );
+}
