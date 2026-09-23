@@ -87,10 +87,10 @@ export default function App() {
         {/* =====================================================================
             TOP NAVBAR: Logos on Both Corners, Centered Navigation Menu
             ===================================================================== */}
-        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 pt-2 sm:pt-2.5 h-[88px] max-h-[90px] flex items-center justify-between">
+        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-16 pt-2 sm:pt-2.5 h-[84px] max-h-[86px] flex items-center justify-between">
           
-          {/* Top Left: Official JIIT Logo (Option 1: Soft White Contour / Glow) */}
-          <div className="flex items-center">
+          {/* Left Side: JIIT Logo (always) + RIDE Logo (on phone / mobile viewport next to each other) */}
+          <div className="flex items-center gap-2.5 sm:gap-3 md:gap-4">
             <a 
               href="#home" 
               className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
@@ -99,12 +99,25 @@ export default function App() {
               <img 
                 src="/imgs/jiit.png" 
                 alt="JIIT Logo" 
-                className="hero-corner-logo h-14 sm:h-16 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="hero-corner-logo h-11 sm:h-14 md:h-[4.5rem] lg:h-[5.05rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+              />
+            </a>
+
+            {/* RIDE Logo: visible on mobile viewport (< lg) directly next to JIIT */}
+            <a 
+              href="#about" 
+              className="lg:hidden transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
+              title="RIDE Initiative"
+            >
+              <img 
+                src="/imgs/ride.png" 
+                alt="RIDE Logo" 
+                className="hero-corner-logo h-11 sm:h-14 md:h-[4.5rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
           </div>
 
-          {/* Center / Middle: Clean Navigation Links with Increased Font Size */}
+          {/* Center / Middle: Clean Navigation Links with Increased Font Size (Desktop) */}
           <div className="hidden lg:flex items-center justify-center gap-7 xl:gap-9">
             <a href="#about" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
               About
@@ -126,11 +139,12 @@ export default function App() {
             </a>
           </div>
 
-          {/* Top Right: Official RIDE Logo (Option 1: Soft White Contour / Glow) & Mobile Menu Toggle */}
+          {/* Right Side: RIDE Logo on Desktop (lg:flex) + Mobile Menu Toggle Button */}
           <div className="flex items-center gap-3 sm:gap-4">
+            {/* RIDE Logo: visible on desktop corner */}
             <a 
               href="#about" 
-              className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
+              className="hidden lg:flex transition-transform duration-200 hover:scale-105 items-center justify-center" 
               title="RIDE Initiative"
             >
               <img 
