@@ -78,8 +78,8 @@ export default function App() {
           className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-100 transition-transform duration-1000 ease-out"
         />
 
-        {/* Lighter, Less Dominant Neutral Cinematic Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/15 to-slate-950/50 z-10 backdrop-brightness-100" />
+        {/* Cinematic Neutral Contrast Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-900/25 to-slate-950/65 z-10 backdrop-brightness-95" />
 
         {/* Soft Center Backlight for Logo & Typography Contrast */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14)_0%,transparent_65%)] z-10 pointer-events-none" />
