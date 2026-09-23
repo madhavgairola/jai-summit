@@ -87,7 +87,7 @@ export default function App() {
         {/* =====================================================================
             TOP NAVBAR: Logos on Both Corners, Centered Navigation Menu
             ===================================================================== */}
-        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[88px] max-h-[92px] flex items-center justify-between">
+        <nav className="hero-navbar relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[86px] max-h-[88px] flex items-center justify-between">
           
           {/* Top Left: Official JIIT Logo (Option 1: Soft White Contour / Glow) */}
           <div className="flex items-center">
@@ -99,7 +99,7 @@ export default function App() {
               <img 
                 src="/imgs/jiit.png" 
                 alt="JIIT Logo" 
-                className="hero-corner-logo h-16 sm:h-20 md:h-[5.25rem] lg:h-[5.75rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="hero-corner-logo h-14 sm:h-18 md:h-[4.75rem] lg:h-[5.25rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
           </div>
@@ -136,7 +136,7 @@ export default function App() {
               <img 
                 src="/imgs/ride.png" 
                 alt="RIDE Logo" 
-                className="hero-corner-logo h-16 sm:h-20 md:h-[5.25rem] lg:h-[5.75rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="hero-corner-logo h-14 sm:h-18 md:h-[4.75rem] lg:h-[5.25rem] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
 
@@ -174,35 +174,35 @@ export default function App() {
         {/* =====================================================================
             HERO CENTER STAGE (Balanced to fit in 100vh)
             ===================================================================== */}
-        <div className="relative z-20 w-full max-w-6xl 2xl:max-w-7xl mx-auto px-6 my-auto text-center flex flex-col items-center justify-center py-2 sm:py-3">
+        <div className="relative z-20 w-full max-w-6xl 2xl:max-w-7xl mx-auto px-6 my-auto text-center flex flex-col items-center justify-center py-2 sm:py-3.5">
           
           {/* Prominent Official AI Summit Logo with Gentle Floating Motion & Hover Pop */}
-          <div className="mb-1.5 sm:mb-2 animate-float">
+          <div className="mb-2 sm:mb-2.5 animate-float">
             <img 
               src="/imgs/ai-summit.png" 
               alt="Jaypee Agentic AI International Summit Logo" 
-              className="hero-summit-logo h-28 sm:h-36 md:h-44 lg:h-52 w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
+              className="hero-summit-logo h-26 sm:h-34 md:h-42 lg:h-48 w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
             />
           </div>
 
           {/* 3D AGENTIC AI SUMMIT + #062DB1 2026 Display Typography */}
-          <div className="relative inline-flex items-center justify-center select-none my-0.5 transition-transform duration-300 hover:scale-[1.01]">
+          <div className="relative inline-flex items-center justify-center select-none my-0.5 sm:my-1 transition-transform duration-300 hover:scale-[1.01]">
             
             {/* The Words "AGENTIC AI SUMMIT" with 3D Blue Extrusion */}
-            <h1 className="hero-title-text font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4.4rem] xl:text-[5.2rem] 2xl:text-[5.8rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+            <h1 className="hero-title-text font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4.2rem] xl:text-[5.0rem] 2xl:text-[5.5rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
               AGENTIC AI SUMMIT
             </h1>
 
             {/* Rotated "2026" with user-specified color: #062DB1 */}
             <div className="ml-2 sm:ml-3.5 flex flex-col items-center justify-center">
-              <span className="hero-year-text text-vertical-year font-display font-black text-sm sm:text-base md:text-xl lg:text-3xl xl:text-4xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
+              <span className="hero-year-text text-vertical-year font-display font-black text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
                 2026
               </span>
             </div>
           </div>
 
           {/* Location & Date Line */}
-          <div className="hero-location-box mt-1.5 sm:mt-2 mb-3 sm:mb-3.5">
+          <div className="hero-location-box mt-2 sm:mt-2.5 mb-3.5 sm:mb-4">
             <p className="font-display font-extrabold text-xs sm:text-base md:text-lg text-white tracking-widest uppercase drop-shadow-md">
               JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
             </p>
@@ -212,7 +212,7 @@ export default function App() {
           </div>
 
           {/* Main (Single) Register Button */}
-          <div className="hero-cta-box mb-3 sm:mb-4">
+          <div className="hero-cta-box mb-3.5 sm:mb-4.5">
             <a 
               href={registrationLink} 
               target="_blank" 
@@ -225,7 +225,7 @@ export default function App() {
           </div>
 
           {/* 4 Metric Stat Columns with Slow Animated Number Ticker */}
-          <div className="hero-stats-box w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-4 sm:gap-10 border-t border-white/20 pt-2.5 pb-2.5 sm:pb-3">
+          <div className="hero-stats-box w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-4 sm:gap-10 border-t border-white/20 pt-3 pb-3 sm:pb-3.5">
             
             {/* Stat 1: Number of Themes */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
