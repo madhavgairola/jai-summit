@@ -5,8 +5,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
   }
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -49,21 +47,44 @@
   box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.25);
 }
 
-/* Sleek Floating Scrollbar (100% Transparent Track, No Light Border Stripe) */
+/* 100% Transparent Scrollbar Background / Track (WebKit & Blink) */
+*::-webkit-scrollbar,
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
+*::-webkit-scrollbar-corner,
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.4);
-  border-radius: 9999px;
+  background-color: rgba(148, 163, 184, 0.45) !important;
+  border-radius: 9999px !important;
 }
 
+*::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.75);
+  background-color: rgba(100, 116, 139, 0.8) !important;
+}
+
+/* Firefox-only transparent track support */
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+  }
 }

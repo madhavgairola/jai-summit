@@ -27,7 +27,7 @@ export default function App() {
   const registrationLink = "https://forms.gle/E1x9CT8mF5z1R4YC8";
 
   return (
-    <div className="min-h-screen bg-[#eaeff4] text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-800 antialiased selection:bg-slate-900 selection:text-white font-sans">
       
       {/* =========================================================================
           HERO LANDING: 100% Viewport Height (Entire landing visible without scrolling)
@@ -216,7 +216,8 @@ export default function App() {
       {/* =========================================================================
           BODY SECTIONS: Broader Layout Container (max-w-[1600px])
           ========================================================================= */}
-      <main className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 py-14 space-y-14">
+      <div className="bg-[#eaeff4] w-full">
+        <main className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 py-14 space-y-14">
 
         {/* 1. OVERVIEW & 3 STACKED CARDS (Wander.ph 2-Column Section) */}
         <section className="bg-white rounded-3xl p-8 sm:p-14 shadow-wander-card border border-slate-200/80 transition-shadow duration-300 hover:shadow-xl" id="about">
@@ -802,6 +803,7 @@ export default function App() {
 
         </div>
       </footer>
+      </div>
 
     </div>
   );
