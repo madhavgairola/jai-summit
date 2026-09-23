@@ -175,8 +175,8 @@ export default function App() {
             ===================================================================== */}
         <div className="relative z-20 w-full max-w-6xl 2xl:max-w-7xl mx-auto px-6 my-auto text-center flex flex-col items-center justify-center py-2 sm:py-4">
           
-          {/* Prominent Official AI Summit Logo with Interactive Hover Animation */}
-          <div className="mb-2 sm:mb-3">
+          {/* Prominent Official AI Summit Logo with Gentle Floating Motion & Hover Pop */}
+          <div className="mb-2 sm:mb-3 animate-float">
             <img 
               src="/imgs/ai-summit.png" 
               alt="Jaypee Agentic AI International Summit Logo" 
