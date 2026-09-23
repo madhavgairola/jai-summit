@@ -69,7 +69,7 @@ export default function App() {
       {/* =========================================================================
           HERO LANDING: 100% Viewport Height (Entire landing visible without scrolling)
           ========================================================================= */}
-      <header className="relative w-full h-screen max-h-screen flex flex-col justify-between overflow-hidden bg-slate-950" id="home">
+      <header className="relative w-full h-[100dvh] min-h-[500px] flex flex-col justify-between overflow-hidden bg-slate-950" id="home">
         
         {/* Campus Background Image covering the entire landing */}
         <img 
@@ -87,7 +87,7 @@ export default function App() {
         {/* =====================================================================
             TOP NAVBAR: Logos on Both Corners, Centered Navigation Menu
             ===================================================================== */}
-        <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[84px] flex items-center justify-between">
+        <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 h-[clamp(3.5rem,7.5vh,5.25rem)] flex items-center justify-between shrink-0">
           
           {/* Top Left: Official JIIT Logo (Option 1: Soft White Contour / Glow) */}
           <div className="flex items-center">
@@ -99,29 +99,29 @@ export default function App() {
               <img 
                 src="/imgs/jiit.png" 
                 alt="JIIT Logo" 
-                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="h-[clamp(2.75rem,6vh,4.75rem)] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
           </div>
 
-          {/* Center / Middle: Clean Navigation Links with Increased Font Size */}
-          <div className="hidden lg:flex items-center justify-center gap-7 xl:gap-9">
-            <a href="#about" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+          {/* Center / Middle: Clean Navigation Links with Dynamic Font Size */}
+          <div className="hidden lg:flex items-center justify-center gap-5 xl:gap-8">
+            <a href="#about" className="text-xs xl:text-[14.5px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
               About
             </a>
-            <a href="#thematic-areas" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+            <a href="#thematic-areas" className="text-xs xl:text-[14.5px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
               Themes
             </a>
-            <a href="#highlights" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+            <a href="#highlights" className="text-xs xl:text-[14.5px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
               Highlights
             </a>
-            <a href="#hackathon" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+            <a href="#hackathon" className="text-xs xl:text-[14.5px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
               Hackathon
             </a>
-            <a href="#schedule" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+            <a href="#schedule" className="text-xs xl:text-[14.5px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
               Schedule
             </a>
-            <a href="#directions" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+            <a href="#directions" className="text-xs xl:text-[14.5px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
               Venue
             </a>
           </div>
@@ -136,7 +136,7 @@ export default function App() {
               <img 
                 src="/imgs/ride.png" 
                 alt="RIDE Logo" 
-                className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
+                className="h-[clamp(2.75rem,6vh,4.75rem)] w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.85))_drop-shadow(0_1px_3px_rgba(255,255,255,0.95))]"
               />
             </a>
 
@@ -172,93 +172,92 @@ export default function App() {
         )}
 
         {/* =====================================================================
-            HERO CENTER STAGE (Balanced to fit in 100vh)
+            HERO CENTER STAGE (Dynamic clamp scaling to guarantee fit in 100vh)
             ===================================================================== */}
-        <div className="relative z-20 w-full max-w-6xl 2xl:max-w-7xl mx-auto px-6 my-auto text-center flex flex-col items-center justify-center py-2 sm:py-4">
+        <div className="relative z-20 w-full max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 flex-1 flex flex-col items-center justify-center text-center my-auto min-h-0">
           
           {/* Prominent Official AI Summit Logo with Gentle Floating Motion & Hover Pop */}
-          <div className="mb-2 sm:mb-3 animate-float">
+          <div className="mb-[clamp(0.2rem,1vh,0.75rem)] animate-float shrink-0">
             <img 
               src="/imgs/ai-summit.png" 
               alt="Jaypee Agentic AI International Summit Logo" 
-              className="h-24 sm:h-32 md:h-40 lg:h-44 w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
+              className="h-[clamp(3.5rem,11.5vh,9.5rem)] w-auto object-contain logo-glow mx-auto cursor-pointer transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_35px_rgba(56,189,248,0.75)]"
             />
           </div>
 
           {/* 3D AGENTIC AI SUMMIT + #062DB1 2026 Display Typography */}
-          <div className="relative inline-flex items-center justify-center select-none my-0.5 sm:my-1 transition-transform duration-300 hover:scale-[1.01]">
+          <div className="relative inline-flex items-center justify-center select-none my-[clamp(0.1rem,0.5vh,0.35rem)] transition-transform duration-300 hover:scale-[1.01] shrink-0">
             
             {/* The Words "AGENTIC AI SUMMIT" with 3D Blue Extrusion */}
-            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.8rem] 2xl:text-[5.5rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+            <h1 className="font-display font-black text-[clamp(1.5rem,min(4.8vw,5.5vh),4.8rem)] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
               AGENTIC AI SUMMIT
             </h1>
 
             {/* Rotated "2026" with user-specified color: #062DB1 */}
-            <div className="ml-2 sm:ml-3.5 flex flex-col items-center justify-center">
-              <span className="text-vertical-year font-display font-black text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
+            <div className="ml-1.5 sm:ml-2.5 md:ml-3 flex flex-col items-center justify-center">
+              <span className="text-vertical-year font-display font-black text-[clamp(0.7rem,min(1.8vw,2.1vh),1.8rem)] text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest leading-none">
                 2026
               </span>
             </div>
           </div>
 
           {/* Location & Date Line */}
-          <div className="mt-2 sm:mt-3 mb-4 sm:mb-5">
-            <p className="font-display font-extrabold text-xs sm:text-base md:text-lg text-white tracking-widest uppercase drop-shadow-md">
+          <div className="mt-[clamp(0.15rem,0.7vh,0.6rem)] mb-[clamp(0.35rem,1.3vh,0.9rem)] shrink-0">
+            <p className="font-display font-extrabold text-[clamp(0.65rem,1.35vh,1rem)] text-white tracking-widest uppercase drop-shadow-md">
               JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
             </p>
-            <p className="text-[11px] sm:text-xs font-semibold text-slate-100 tracking-wider mt-0.5 drop-shadow-sm">
+            <p className="text-[clamp(0.58rem,1.05vh,0.75rem)] font-semibold text-slate-100 tracking-wider mt-0.5 drop-shadow-sm">
               "Human Intelligence Meets Agentic Possibilities"
             </p>
           </div>
 
           {/* Main (Single) Register Button */}
-          <div className="mb-4 sm:mb-6">
+          <div className="mb-[clamp(0.35rem,1.5vh,1.15rem)] shrink-0">
             <a 
               href={registrationLink} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-slate-950 hover:bg-slate-900 border border-white/30 text-white font-display text-xs sm:text-sm font-extrabold px-9 sm:px-11 py-3 sm:py-3.5 rounded-full uppercase tracking-wider transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 hover:border-cyan-300 inline-flex items-center gap-2 group"
+              className="bg-slate-950 hover:bg-slate-900 border border-white/30 text-white font-display text-[clamp(0.68rem,1.2vh,0.875rem)] font-extrabold px-[clamp(1.5rem,3vw,2.75rem)] py-[clamp(0.45rem,1vh,0.85rem)] rounded-full uppercase tracking-wider transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105 hover:border-cyan-300 inline-flex items-center gap-2 group"
             >
               <span>Register for Summit</span>
-              <ArrowUpRight className="w-4 h-4 text-cyan-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
 
           {/* 4 Metric Stat Columns with Slow Animated Number Ticker */}
-          <div className="w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-4 sm:gap-10 border-t border-white/20 pt-3 pb-3 sm:pb-4">
+          <div className="w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-2 sm:gap-6 md:gap-10 border-t border-white/20 pt-[clamp(0.35rem,1vh,0.75rem)] pb-[clamp(0.25rem,0.7vh,0.75rem)] shrink-0">
             
             {/* Stat 1: Number of Themes */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="font-display font-black text-[clamp(1.2rem,3.1vh,2.5rem)] text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 {animatedStats.themes}
               </span>
-              <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">THEMES</span>
+              <span className="font-display font-bold text-[clamp(0.55rem,0.95vh,0.75rem)] text-slate-200 tracking-widest uppercase mt-0.5 sm:mt-1">THEMES</span>
             </div>
 
             {/* Stat 2: Number of Events (7 from Brochure) */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="font-display font-black text-[clamp(1.2rem,3.1vh,2.5rem)] text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 {animatedStats.events}
               </span>
-              <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">EVENTS</span>
+              <span className="font-display font-bold text-[clamp(0.55rem,0.95vh,0.75rem)] text-slate-200 tracking-widest uppercase mt-0.5 sm:mt-1">EVENTS</span>
             </div>
 
             {/* Stat 3: Prize Pool */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="font-display font-black text-[clamp(1.2rem,3.1vh,2.5rem)] text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 ₹{animatedStats.prize}M
               </span>
-              <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">PRIZE POOL</span>
+              <span className="font-display font-bold text-[clamp(0.55rem,0.95vh,0.75rem)] text-slate-200 tracking-widest uppercase mt-0.5 sm:mt-1">PRIZE POOL</span>
             </div>
 
             {/* Stat 4: Pre-Seed Funding Pool */}
             <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-              <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
+              <span className="font-display font-black text-[clamp(1.2rem,3.1vh,2.5rem)] text-white leading-none group-hover:text-cyan-300 transition-colors drop-shadow-sm">
                 ₹{animatedStats.preSeed}M
               </span>
-              <span className="font-display font-bold text-[10px] sm:text-xs text-slate-200 tracking-widest uppercase mt-1">PRE-SEED POOL</span>
+              <span className="font-display font-bold text-[clamp(0.55rem,0.95vh,0.75rem)] text-slate-200 tracking-widest uppercase mt-0.5 sm:mt-1">PRE-SEED POOL</span>
             </div>
-
           </div>
 
         </div>
