@@ -79,18 +79,18 @@ export default function App() {
         />
 
         {/* Lighter, Less Dominant Neutral Cinematic Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-900/25 to-slate-950/65 z-10 backdrop-brightness-[0.98]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/15 to-slate-950/50 z-10 backdrop-brightness-100" />
 
         {/* Soft Center Backlight for Logo & Typography Contrast */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14)_0%,transparent_65%)] z-10 pointer-events-none" />
 
         {/* =====================================================================
-            TOP NAVBAR: Transparent, No Tab Background, Clean Logos (No White Box)
+            TOP NAVBAR: Logos on Both Corners, Centered Navigation Menu
             ===================================================================== */}
         <nav className="relative z-20 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-16 h-[84px] max-h-[84px] flex items-center justify-between">
           
-          {/* Top Left: Official JIIT & RIDE Logos (NO white background box) */}
-          <div className="flex items-center gap-5 sm:gap-6">
+          {/* Top Left: Official JIIT Logo */}
+          <div className="flex items-center">
             <a 
               href="#home" 
               className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
@@ -102,9 +102,32 @@ export default function App() {
                 className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
               />
             </a>
+          </div>
 
-            <div className="h-9 sm:h-11 w-px bg-white/30"></div>
+          {/* Center / Middle: Clean Navigation Links with Increased Font Size */}
+          <div className="hidden lg:flex items-center justify-center gap-7 xl:gap-9">
+            <a href="#about" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              About
+            </a>
+            <a href="#thematic-areas" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              Themes
+            </a>
+            <a href="#highlights" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              Highlights
+            </a>
+            <a href="#hackathon" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              Hackathon
+            </a>
+            <a href="#schedule" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              Schedule
+            </a>
+            <a href="#directions" className="text-sm lg:text-[15px] font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-wider uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
+              Venue
+            </a>
+          </div>
 
+          {/* Top Right: Official RIDE Logo & Mobile Menu Toggle */}
+          <div className="flex items-center gap-3 sm:gap-4">
             <a 
               href="#about" 
               className="transition-transform duration-200 hover:scale-105 flex items-center justify-center" 
@@ -116,38 +139,16 @@ export default function App() {
                 className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto object-contain drop-shadow-md"
               />
             </a>
-          </div>
 
-          {/* Top Right: Clean Text Navigation Links (Single Register Button Kept in Hero Center) */}
-          <div className="hidden lg:flex items-center gap-9">
-            <a href="#about" className="text-xs font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-widest uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
-              About
-            </a>
-            <a href="#thematic-areas" className="text-xs font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-widest uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
-              Themes
-            </a>
-            <a href="#highlights" className="text-xs font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-widest uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
-              Highlights
-            </a>
-            <a href="#hackathon" className="text-xs font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-widest uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
-              Hackathon
-            </a>
-            <a href="#schedule" className="text-xs font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-widest uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
-              Schedule
-            </a>
-            <a href="#directions" className="text-xs font-bold text-white hover:text-cyan-300 transition-all duration-200 tracking-widest uppercase font-display drop-shadow-sm hover:-translate-y-0.5">
-              Venue
-            </a>
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
-            aria-label="Toggle Navigation Menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </nav>
 
         {/* Mobile Navigation Drawer */}
@@ -184,17 +185,17 @@ export default function App() {
             />
           </div>
 
-          {/* 3D SUMMIT + #062DB1 2026 Display Typography */}
+          {/* 3D AGENTIC AI SUMMIT + #062DB1 2026 Display Typography */}
           <div className="relative inline-flex items-center justify-center select-none my-0.5 sm:my-1 transition-transform duration-300 hover:scale-[1.01]">
             
-            {/* The Word "AI SUMMIT" with 3D Blue Extrusion */}
-            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] 2xl:text-[7rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
-              AI SUMMIT
+            {/* The Words "AGENTIC AI SUMMIT" with 3D Blue Extrusion */}
+            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.8rem] 2xl:text-[5.5rem] tracking-tight leading-none text-3d-summit uppercase whitespace-nowrap">
+              AGENTIC AI SUMMIT
             </h1>
 
             {/* Rotated "2026" with user-specified color: #062DB1 */}
             <div className="ml-2 sm:ml-3.5 flex flex-col items-center justify-center">
-              <span className="text-vertical-year font-display font-black text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
+              <span className="text-vertical-year font-display font-black text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest">
                 2026
               </span>
             </div>
