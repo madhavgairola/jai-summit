@@ -197,12 +197,12 @@ export default function TestApp() {
                 
                 {/* Stacked Heading: Line 1 = AGENTIC AI, Line 2 = SUMMIT + 2026 */}
                 <div className="flex flex-col select-none">
-                  <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.35rem] 2xl:text-[3.75rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
+                  <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.35rem] 2xl:text-[3.75rem] tracking-tight leading-none text-3d-summit-pro uppercase whitespace-nowrap">
                     AGENTIC AI
                   </h1>
 
                   <div className="inline-flex items-center gap-2 sm:gap-3 mt-1 sm:mt-1.5">
-                    <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.35rem] 2xl:text-[3.75rem] tracking-tight leading-none text-3d-summit-dark uppercase whitespace-nowrap">
+                    <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.35rem] 2xl:text-[3.75rem] tracking-tight leading-none text-3d-summit-pro uppercase whitespace-nowrap">
                       SUMMIT
                     </h1>
                     <span className="text-vertical-year font-display font-black text-base sm:text-xl lg:text-2xl xl:text-3xl text-[#062DB1] drop-shadow-[1px_1px_0_#ffffff] tracking-widest leading-none">
