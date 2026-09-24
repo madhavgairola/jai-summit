@@ -224,42 +224,43 @@ export default function App() {
           {/* =====================================================================
               1. FULL WIDTH COLLEGE BANNER WITH ROUNDED BOTTOM CORNERS
               & INTEGRATED HEADER AND BOTTOM-LEFT HERO TYPOGRAPHY
+              (Proportioned so the landing page fits at first glance per inspiration)
               ===================================================================== */}
-          <div className="relative w-full overflow-hidden bg-slate-950 rounded-b-[36px] sm:rounded-b-[48px] md:rounded-b-[56px] lg:rounded-b-[64px] shadow-2xl">
+          <div className="relative w-full overflow-hidden bg-slate-950 rounded-b-[32px] sm:rounded-b-[44px] md:rounded-b-[52px] lg:rounded-b-[60px] shadow-2xl h-[320px] sm:h-[360px] md:h-[400px] lg:h-[430px] xl:h-[450px]">
             
-            {/* Campus Background Image - Cropped bottom flags per inspiration */}
+            {/* Campus Background Image - Cropped bottom flags & potted plants completely */}
             <img 
               src="/imgs/jiit128.jpeg" 
               alt="Jaypee Institute of Information Technology - Sector 128 Noida" 
-              className="absolute inset-0 w-full h-full object-cover object-[center_16%] pointer-events-none select-none"
+              className="absolute inset-0 w-full h-full object-cover object-[center_6%] pointer-events-none select-none"
             />
 
             {/* Soft sky-glass gradient across the top behind navbar & logos */}
-            <div className="absolute top-0 inset-x-0 h-32 sm:h-40 bg-gradient-to-b from-white/75 via-white/35 to-transparent dark:from-slate-950/85 dark:via-slate-950/45 dark:to-transparent pointer-events-none" />
+            <div className="absolute top-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-b from-white/75 via-white/35 to-transparent dark:from-slate-950/85 dark:via-slate-950/45 dark:to-transparent pointer-events-none" />
 
             {/* Smooth dark blue/slate gradient covering the left half for hero typography */}
             <div className="absolute inset-y-0 left-0 w-full md:w-[72%] lg:w-[62%] xl:w-[55%] bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/65 to-transparent pointer-events-none" />
 
             {/* Subtle bottom shadow along the rounded boundary */}
-            <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
 
-            {/* Content Container inside the Banner (Calibrated height to crop flags) */}
-            <div className="relative z-10 w-full min-h-[380px] sm:min-h-[430px] md:min-h-[470px] lg:min-h-[510px] xl:min-h-[530px] flex flex-col justify-between p-4 sm:p-6 lg:p-8 xl:px-14">
+            {/* Content Container inside the Banner */}
+            <div className="relative z-10 w-full h-full flex flex-col justify-between py-3 sm:py-4 lg:py-5 px-3 sm:px-6 lg:px-10 xl:px-14">
               
-              {/* TOP HEADER ROW */}
-              <header className="w-full flex items-center justify-between gap-3 sm:gap-4">
+              {/* TOP HEADER ROW - Perfectly padded so RIDE logo is NEVER cropped */}
+              <header className="w-full flex items-center justify-between gap-2 sm:gap-4">
                 
-                {/* Extreme Left: Enlarged JIIT Logo + Text in PURE WHITE for Light Mode (No background box) */}
-                <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+                {/* Extreme Left: Enlarged JIIT Logo in Top Bar + Text in PURE WHITE for Light Mode */}
+                <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
                   <button 
                     onClick={() => navigateTo('home')}
-                    className="flex items-center gap-3 sm:gap-4 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
+                    className="flex items-center gap-2.5 sm:gap-3.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                     title="Jaypee Institute of Information Technology"
                   >
                     <img 
                       src="/imgs/jiit.png" 
                       alt="JIIT Logo" 
-                      className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain logo-clean-drop shrink-0"
+                      className="h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22 w-auto object-contain logo-clean-drop shrink-0"
                     />
                     <div className="hidden sm:flex flex-col select-none">
                       <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
@@ -275,11 +276,11 @@ export default function App() {
                   </button>
                 </div>
 
-                {/* Center: Frosted Capsule Pill Navbar + Theme Toggle Pill (Visible on lg/laptops without being forced to sidebar!) */}
-                <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+                {/* Center: Frosted Capsule Pill Navbar + Theme Toggle Pill */}
+                <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink">
                   
                   {/* Floating Frosted Pill Nav */}
-                  <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2.5 md:px-3 lg:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
+                  <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2 md:px-2.5 lg:px-3 py-1 sm:py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
                     <button 
                       onClick={() => navigateTo('home')}
                       className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm"
@@ -288,43 +289,43 @@ export default function App() {
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'about')}
-                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       About
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'highlights')}
-                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Highlights
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'thematic-areas')}
-                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Themes
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'hackathon')}
-                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Hackathon
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'schedule')}
-                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Schedule
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'directions')}
-                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Venue
                     </button>
                     <button 
                       onClick={() => navigateTo('team')}
-                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Team
                     </button>
@@ -335,8 +336,8 @@ export default function App() {
 
                 </div>
 
-                {/* Extreme Right: Enlarged RIDE Logo (No background box) */}
-                <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+                {/* Extreme Right: Enlarged RIDE Logo (Padded from edge so NEVER cropped) */}
+                <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-1 sm:pr-3">
                   <div className="lg:hidden">
                     <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                   </div>
@@ -349,7 +350,7 @@ export default function App() {
                     <img 
                       src="/imgs/ride.png" 
                       alt="RIDE Logo" 
-                      className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain logo-clean-drop"
+                      className="h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22 w-auto object-contain logo-clean-drop shrink-0"
                     />
                   </div>
 
@@ -366,33 +367,33 @@ export default function App() {
               </header>
 
               {/* BOTTOM-LEFT HERO TYPOGRAPHY & DETAILS */}
-              <div className="w-full max-w-3xl pb-3 sm:pb-6 lg:pb-8 pt-6 sm:pt-10 text-left">
-                <p className="font-display font-bold text-[11px] sm:text-xs md:text-sm tracking-[0.22em] text-slate-300 uppercase mb-1.5 sm:mb-2">
+              <div className="w-full max-w-2xl pb-2 sm:pb-3 lg:pb-4 pt-2 sm:pt-4 text-left">
+                <p className="font-display font-bold text-[10px] sm:text-xs tracking-[0.2em] text-slate-300 uppercase mb-1">
                   JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY
                 </p>
 
                 {/* Main Headline with Gradient "Meets Impact" adhering to inspiration */}
-                <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] text-white tracking-tight leading-[1.08]">
+                <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.3rem] text-white tracking-tight leading-[1.08]">
                   Where Innovation <br />
-                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#00d2ff] to-[#2563eb] bg-clip-text text-transparent drop-shadow-[0_2px_16px_rgba(56,189,248,0.35)]">
+                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#00d2ff] to-[#2563eb] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(56,189,248,0.35)]">
                     Meets Impact
                   </span>
                 </h1>
 
-                <p className="text-slate-200 text-xs sm:text-sm md:text-base font-normal max-w-xl leading-relaxed mt-2 sm:mt-3">
+                <p className="text-slate-200 text-xs sm:text-sm font-normal max-w-lg leading-snug mt-1.5 sm:mt-2">
                   Bringing together curious minds, cutting-edge ideas and real-world solutions for a smarter tomorrow.
                 </p>
 
                 {/* Bolder, Larger Location & Date Badge */}
-                <div className="flex flex-wrap items-center gap-3 sm:gap-5 text-sm sm:text-base md:text-lg text-white mt-4 sm:mt-6 font-bold tracking-wide drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                  <div className="flex items-center gap-2 sm:gap-2.5">
-                    <MapPin className="w-5 h-5 text-sky-400 shrink-0 drop-shadow" />
-                    <span className="font-extrabold text-white text-sm sm:text-base md:text-lg">JIIT Sector 128, Wish Town, Noida</span>
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm md:text-base text-white mt-3 sm:mt-4 font-bold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 shrink-0 drop-shadow" />
+                    <span className="font-extrabold text-white text-xs sm:text-sm md:text-base">JIIT Sector 128, Wish Town, Noida</span>
                   </div>
-                  <span className="hidden sm:inline text-slate-400 font-semibold text-lg sm:text-xl">|</span>
-                  <div className="flex items-center gap-2 sm:gap-2.5">
-                    <Calendar className="w-5 h-5 text-sky-400 shrink-0 drop-shadow" />
-                    <span className="font-extrabold text-white text-sm sm:text-base md:text-lg">October 30 – 31, 2026</span>
+                  <span className="hidden sm:inline text-slate-400 font-semibold text-base sm:text-lg">|</span>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 shrink-0 drop-shadow" />
+                    <span className="font-extrabold text-white text-xs sm:text-sm md:text-base">October 30 – 31, 2026</span>
                   </div>
                 </div>
               </div>
@@ -419,13 +420,14 @@ export default function App() {
           {/* =====================================================================
               2. CENTERPIECE AGENTIC AI SUMMIT LOGO & FLOATING STATS CARD
               WITH FLOWING CURVED WAVE GRAPHICS IN THE BACKGROUND
+              (Proportioned so the entire landing page fits at first glance without scrolling!)
               ===================================================================== */}
-          <section className="relative w-full overflow-hidden pt-8 pb-14 sm:pt-12 sm:pb-20" id="home">
+          <section className="relative w-full overflow-hidden pt-4 pb-8 sm:pt-6 sm:pb-10" id="home">
             
             {/* Flowing Curved Background Wave Paths (matching reference image) */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
               {/* Soft subtle radial ambient glow centered behind the logo */}
-              <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-blue-400/10 via-sky-300/15 to-blue-600/10 dark:from-blue-600/20 dark:via-cyan-500/15 dark:to-indigo-600/20 rounded-full blur-3xl" />
+              <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-blue-400/10 via-sky-300/15 to-blue-600/10 dark:from-blue-600/20 dark:via-cyan-500/15 dark:to-indigo-600/20 rounded-full blur-3xl" />
 
               {/* Elegant SVG Curved Waves matching reference design */}
               <svg 
@@ -468,56 +470,56 @@ export default function App() {
 
             <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
               
-              {/* PRIMARY PROMINENT OFFICIAL AGENTIC AI SUMMIT LOGO */}
-              <div className="mb-8 sm:mb-12 animate-float">
+              {/* PRIMARY PROMINENT OFFICIAL AGENTIC AI SUMMIT LOGO (Proportioned to fit in first glance) */}
+              <div className="mb-4 sm:mb-5 animate-float">
                 <img 
                   src="/imgs/ai-summit.png" 
                   alt="Jaypee Agentic AI International Summit Logo" 
-                  className={`h-40 sm:h-52 md:h-64 lg:h-72 w-auto object-contain mx-auto cursor-pointer transition-all duration-300 hover:scale-105 ${
+                  className={`h-24 sm:h-32 md:h-36 lg:h-40 w-auto object-contain mx-auto cursor-pointer transition-all duration-300 hover:scale-105 ${
                     darkMode ? 'logo-glow-dark' : 'logo-glow-light'
                   }`}
                 />
               </div>
 
-              {/* FLOATING 4-COLUMN STATS CARD */}
-              <div className="w-full max-w-3xl lg:max-w-4xl bg-white/95 dark:bg-[#0c162d]/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 px-4 sm:px-8 py-5 sm:py-6 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800">
+              {/* FLOATING 4-COLUMN STATS CARD (With matching Agentic AI font colors) */}
+              <div className="w-full max-w-3xl lg:max-w-4xl bg-white/95 dark:bg-[#0c162d]/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_6px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_6px_25px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 px-4 sm:px-8 py-3 sm:py-3.5 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800">
                 
                 {/* Stat 1: Themes */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-[#0b2253] dark:text-white leading-none">
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#0c2b75] dark:text-white leading-none">
                     {animatedStats.themes}
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
                     THEMES
                   </span>
                 </div>
 
                 {/* Stat 2: Events */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-[#0b2253] dark:text-white leading-none">
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#0c2b75] dark:text-white leading-none">
                     {animatedStats.events}
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
                     EVENTS
                   </span>
                 </div>
 
-                {/* Stat 3: Prize Pool */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-600 dark:text-cyan-400 leading-none">
+                {/* Stat 3: Prize Pool (Agentic AI vibrant blue) */}
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
                     ₹{animatedStats.prize}M
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
                     PRIZE POOL
                   </span>
                 </div>
 
-                {/* Stat 4: Pre-Seed Pool */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-600 dark:text-cyan-400 leading-none">
+                {/* Stat 4: Pre-Seed Pool (Agentic AI vibrant blue) */}
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
                     ₹{animatedStats.preSeed}M
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
                     PRE-SEED POOL
                   </span>
                 </div>
