@@ -169,23 +169,23 @@ export default function App() {
               </div>
 
               {/* Center Pill Nav + Theme Toggle */}
-              <div className="hidden xl:flex items-center gap-3">
-                <nav className="flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm">
-                  <button onClick={() => navigateTo('home')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Home</button>
-                  <button onClick={() => navigateTo('home', 'about')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">About</button>
-                  <button onClick={() => navigateTo('home', 'highlights')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Highlights</button>
-                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Themes</button>
-                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Hackathon</button>
-                  <button onClick={() => navigateTo('home', 'schedule')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Schedule</button>
-                  <button onClick={() => navigateTo('home', 'directions')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Venue</button>
-                  <button onClick={() => navigateTo('team')} className="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-blue-600 text-white shadow-sm cursor-pointer">Team</button>
+              <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+                <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2.5 md:px-3 lg:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                  <button onClick={() => navigateTo('home')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Home</button>
+                  <button onClick={() => navigateTo('home', 'about')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">About</button>
+                  <button onClick={() => navigateTo('home', 'highlights')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Highlights</button>
+                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Themes</button>
+                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Hackathon</button>
+                  <button onClick={() => navigateTo('home', 'schedule')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Schedule</button>
+                  <button onClick={() => navigateTo('home', 'directions')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Venue</button>
+                  <button onClick={() => navigateTo('team')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-semibold bg-blue-600 text-white shadow-sm cursor-pointer">Team</button>
                 </nav>
                 <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
               </div>
 
               {/* RIDE Logo */}
-              <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-                <div className="xl:hidden">
+              <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+                <div className="lg:hidden">
                   <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                 </div>
 
@@ -203,7 +203,7 @@ export default function App() {
 
                 <button 
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="xl:hidden p-2 rounded-xl text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="lg:hidden p-2 rounded-xl text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
@@ -227,11 +227,11 @@ export default function App() {
               ===================================================================== */}
           <div className="relative w-full overflow-hidden bg-slate-950 rounded-b-[36px] sm:rounded-b-[48px] md:rounded-b-[56px] lg:rounded-b-[64px] shadow-2xl">
             
-            {/* Campus Background Image */}
+            {/* Campus Background Image - Cropped bottom flags per inspiration */}
             <img 
               src="/imgs/jiit128.jpeg" 
               alt="Jaypee Institute of Information Technology - Sector 128 Noida" 
-              className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+              className="absolute inset-0 w-full h-full object-cover object-[center_16%] pointer-events-none select-none"
             />
 
             {/* Soft sky-glass gradient across the top behind navbar & logos */}
@@ -243,13 +243,13 @@ export default function App() {
             {/* Subtle bottom shadow along the rounded boundary */}
             <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
 
-            {/* Content Container inside the Banner */}
-            <div className="relative z-10 w-full min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px] xl:min-h-[640px] flex flex-col justify-between p-4 sm:p-6 lg:p-8 xl:px-14">
+            {/* Content Container inside the Banner (Calibrated height to crop flags) */}
+            <div className="relative z-10 w-full min-h-[380px] sm:min-h-[430px] md:min-h-[470px] lg:min-h-[510px] xl:min-h-[530px] flex flex-col justify-between p-4 sm:p-6 lg:p-8 xl:px-14">
               
               {/* TOP HEADER ROW */}
-              <header className="w-full flex items-center justify-between gap-4">
+              <header className="w-full flex items-center justify-between gap-3 sm:gap-4">
                 
-                {/* Extreme Left: Enlarged JIIT Logo + Text (No background box) */}
+                {/* Extreme Left: Enlarged JIIT Logo + Text in PURE WHITE for Light Mode (No background box) */}
                 <div className="flex items-center gap-3 sm:gap-4 shrink-0">
                   <button 
                     onClick={() => navigateTo('home')}
@@ -261,70 +261,70 @@ export default function App() {
                       alt="JIIT Logo" 
                       className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain logo-clean-drop shrink-0"
                     />
-                    <div className="flex flex-col select-none">
-                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                    <div className="hidden sm:flex flex-col select-none">
+                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         Jaypee Institute of
                       </span>
-                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         Information Technology
                       </span>
-                      <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
+                      <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-white/95 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         विद्या तत्व ज्योतिसम
                       </span>
                     </div>
                   </button>
                 </div>
 
-                {/* Center: Frosted Capsule Pill Navbar + Theme Toggle Pill */}
-                <div className="hidden xl:flex items-center gap-3">
+                {/* Center: Frosted Capsule Pill Navbar + Theme Toggle Pill (Visible on lg/laptops without being forced to sidebar!) */}
+                <div className="hidden lg:flex items-center gap-2 xl:gap-3">
                   
                   {/* Floating Frosted Pill Nav */}
-                  <nav className="flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
+                  <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2.5 md:px-3 lg:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
                     <button 
                       onClick={() => navigateTo('home')}
-                      className="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm"
+                      className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm"
                     >
                       Home
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'about')}
-                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       About
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'highlights')}
-                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Highlights
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'thematic-areas')}
-                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Themes
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'hackathon')}
-                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Hackathon
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'schedule')}
-                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Schedule
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'directions')}
-                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Venue
                     </button>
                     <button 
                       onClick={() => navigateTo('team')}
-                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Team
                     </button>
@@ -336,8 +336,8 @@ export default function App() {
                 </div>
 
                 {/* Extreme Right: Enlarged RIDE Logo (No background box) */}
-                <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-                  <div className="xl:hidden">
+                <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+                  <div className="lg:hidden">
                     <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                   </div>
 
@@ -353,10 +353,10 @@ export default function App() {
                     />
                   </div>
 
-                  {/* Mobile Hamburger Menu Button */}
+                  {/* Mobile Hamburger Menu Button (Only for narrow mobile viewports <1024px) */}
                   <button 
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="xl:hidden p-2 rounded-xl bg-white/70 dark:bg-slate-900/80 text-slate-800 dark:text-white shadow-md hover:bg-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                    className="lg:hidden p-2 rounded-xl bg-white/70 dark:bg-slate-900/80 text-slate-800 dark:text-white shadow-md hover:bg-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
                     aria-label="Toggle Menu"
                   >
                     {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -366,31 +366,33 @@ export default function App() {
               </header>
 
               {/* BOTTOM-LEFT HERO TYPOGRAPHY & DETAILS */}
-              <div className="w-full max-w-3xl pb-4 sm:pb-8 lg:pb-10 pt-10 sm:pt-16 text-left">
-                <p className="font-display font-bold text-[11px] sm:text-xs md:text-sm tracking-[0.22em] text-slate-300 uppercase mb-2 sm:mb-2.5">
+              <div className="w-full max-w-3xl pb-3 sm:pb-6 lg:pb-8 pt-6 sm:pt-10 text-left">
+                <p className="font-display font-bold text-[11px] sm:text-xs md:text-sm tracking-[0.22em] text-slate-300 uppercase mb-1.5 sm:mb-2">
                   JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY
                 </p>
 
-                <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] text-white tracking-tight leading-[1.08]">
+                {/* Main Headline with Gradient "Meets Impact" adhering to inspiration */}
+                <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] text-white tracking-tight leading-[1.08]">
                   Where Innovation <br />
-                  <span className="text-[#38bdf8] drop-shadow-[0_2px_14px_rgba(56,189,248,0.45)]">
+                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#00d2ff] to-[#2563eb] bg-clip-text text-transparent drop-shadow-[0_2px_16px_rgba(56,189,248,0.35)]">
                     Meets Impact
                   </span>
                 </h1>
 
-                <p className="text-slate-200 text-xs sm:text-sm md:text-base font-normal max-w-xl leading-relaxed mt-2.5 sm:mt-3.5">
+                <p className="text-slate-200 text-xs sm:text-sm md:text-base font-normal max-w-xl leading-relaxed mt-2 sm:mt-3">
                   Bringing together curious minds, cutting-edge ideas and real-world solutions for a smarter tomorrow.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-slate-200 mt-4 sm:mt-6 font-medium">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-white shrink-0" />
-                    <span>JIIT Sector 128, Wish Town, Noida</span>
+                {/* Bolder, Larger Location & Date Badge */}
+                <div className="flex flex-wrap items-center gap-3 sm:gap-5 text-sm sm:text-base md:text-lg text-white mt-4 sm:mt-6 font-bold tracking-wide drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <MapPin className="w-5 h-5 text-sky-400 shrink-0 drop-shadow" />
+                    <span className="font-extrabold text-white text-sm sm:text-base md:text-lg">JIIT Sector 128, Wish Town, Noida</span>
                   </div>
-                  <span className="hidden sm:inline text-slate-400">|</span>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-white shrink-0" />
-                    <span>October 30 – 31, 2026</span>
+                  <span className="hidden sm:inline text-slate-400 font-semibold text-lg sm:text-xl">|</span>
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <Calendar className="w-5 h-5 text-sky-400 shrink-0 drop-shadow" />
+                    <span className="font-extrabold text-white text-sm sm:text-base md:text-lg">October 30 – 31, 2026</span>
                   </div>
                 </div>
               </div>
@@ -401,7 +403,7 @@ export default function App() {
 
           {/* Mobile Drawer */}
           {mobileMenuOpen && (
-            <div className="xl:hidden fixed inset-x-4 top-24 z-50 border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl p-6 rounded-3xl shadow-2xl flex flex-col gap-2.5 font-display animate-fadeIn">
+            <div className="lg:hidden fixed inset-x-4 top-24 z-50 border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl p-6 rounded-3xl shadow-2xl flex flex-col gap-2.5 font-display animate-fadeIn">
               <button onClick={() => navigateTo('home')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/50">Home</button>
               <button onClick={() => navigateTo('home', 'about')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">About</button>
               <button onClick={() => navigateTo('home', 'highlights')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Highlights</button>
