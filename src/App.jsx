@@ -139,39 +139,55 @@ export default function App() {
       {currentPage === 'team' ? (
         <div className="w-full">
           {/* Top Navbar for Team Page */}
-          <header className="sticky top-0 z-50 w-full backdrop-blur-xl border-b transition-colors duration-300 bg-white/90 dark:bg-[#070b16]/90 border-slate-200/80 dark:border-slate-800/80 shadow-sm">
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 py-2 sm:py-3 flex items-center justify-between gap-4">
+          <header className="sticky top-0 z-50 w-full backdrop-blur-xl border-b transition-colors duration-300 bg-white/95 dark:bg-[#070b16]/95 border-slate-200/80 dark:border-slate-800/80 shadow-sm">
+            <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-12 py-2 sm:py-3 flex items-center justify-between gap-4">
               
-              {/* JIIT Logo - No background card, enlarged */}
-              <div className="flex items-center gap-3">
+              {/* JIIT Logo + Text */}
+              <div className="flex items-center gap-3 sm:gap-4 shrink-0">
                 <button 
                   onClick={() => navigateTo('home')}
-                  className="flex items-center transition-transform hover:scale-105 cursor-pointer"
+                  className="flex items-center gap-3 sm:gap-3.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                   title="Jaypee Institute of Information Technology"
                 >
                   <img 
                     src="/imgs/jiit.png" 
                     alt="JIIT Logo" 
-                    className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain logo-clean-drop"
+                    className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain logo-clean-drop shrink-0"
                   />
+                  <div className="flex flex-col select-none">
+                    <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                      Jaypee Institute of
+                    </span>
+                    <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                      Information Technology
+                    </span>
+                    <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
+                      विद्या तत्व ज्योतिसम
+                    </span>
+                  </div>
                 </button>
               </div>
 
-              {/* Navigation Links */}
-              <nav className="hidden xl:flex items-center justify-center gap-1.5">
-                <button onClick={() => navigateTo('home')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 cursor-pointer">Home</button>
-                <button onClick={() => navigateTo('home', 'about')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 cursor-pointer">About</button>
-                <button onClick={() => navigateTo('home', 'highlights')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 cursor-pointer">Highlights</button>
-                <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 cursor-pointer">Themes</button>
-                <button onClick={() => navigateTo('home', 'hackathon')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 cursor-pointer">Hackathon</button>
-                <button onClick={() => navigateTo('home', 'schedule')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 cursor-pointer">Schedule</button>
-                <button onClick={() => navigateTo('home', 'directions')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 cursor-pointer">Venue</button>
-                <button onClick={() => navigateTo('team')} className="px-3.5 py-2 rounded-xl text-[15px] font-black uppercase tracking-wider font-display text-blue-700 dark:text-cyan-300 bg-blue-50 dark:bg-blue-950/70 cursor-pointer">Team</button>
-              </nav>
-
-              {/* Theme Toggle & RIDE Logo */}
-              <div className="flex items-center gap-3 sm:gap-5">
+              {/* Center Pill Nav + Theme Toggle */}
+              <div className="hidden xl:flex items-center gap-3">
+                <nav className="flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                  <button onClick={() => navigateTo('home')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Home</button>
+                  <button onClick={() => navigateTo('home', 'about')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">About</button>
+                  <button onClick={() => navigateTo('home', 'highlights')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Highlights</button>
+                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Themes</button>
+                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Hackathon</button>
+                  <button onClick={() => navigateTo('home', 'schedule')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Schedule</button>
+                  <button onClick={() => navigateTo('home', 'directions')} className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Venue</button>
+                  <button onClick={() => navigateTo('team')} className="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-blue-600 text-white shadow-sm cursor-pointer">Team</button>
+                </nav>
                 <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+              </div>
+
+              {/* RIDE Logo */}
+              <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+                <div className="xl:hidden">
+                  <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                </div>
 
                 <div 
                   onClick={() => navigateTo('home', 'about')}
@@ -187,7 +203,7 @@ export default function App() {
 
                 <button 
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="xl:hidden p-2 rounded-xl text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="xl:hidden p-2 rounded-xl text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
@@ -205,116 +221,139 @@ export default function App() {
               1. FULL SCREEN WIDTH RECTANGLE COLLEGE BANNER WITH OVERLAID NAVBAR
               COVERS WHOLE WIDTH OF DEVICE (EDGE-TO-EDGE), NOT FULL LENGTH OF DEVICE
               ===================================================================== */}
-          <div className="relative w-full overflow-hidden bg-slate-950">
+          {/* =====================================================================
+              1. FULL WIDTH COLLEGE BANNER WITH ROUNDED BOTTOM CORNERS
+              & INTEGRATED HEADER AND BOTTOM-LEFT HERO TYPOGRAPHY
+              ===================================================================== */}
+          <div className="relative w-full overflow-hidden bg-slate-950 rounded-b-[36px] sm:rounded-b-[48px] md:rounded-b-[56px] lg:rounded-b-[64px] shadow-2xl">
             
-            {/* Full Screen Width Rectangle Image (Spanning 100% of screen width, bounded banner height) */}
+            {/* Campus Background Image */}
             <img 
               src="/imgs/jiit128.jpeg" 
               alt="Jaypee Institute of Information Technology - Sector 128 Noida" 
-              className="w-full h-[280px] sm:h-[340px] md:h-[400px] lg:h-[460px] xl:h-[500px] object-cover object-center block select-none"
+              className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
             />
 
-            {/* Gentle subtle gradient over upper sky to ensure 100% button contrast */}
-            <div className="absolute top-0 inset-x-0 h-32 sm:h-44 bg-gradient-to-b from-slate-950/45 via-slate-950/15 to-transparent pointer-events-none" />
+            {/* Soft sky-glass gradient across the top behind navbar & logos */}
+            <div className="absolute top-0 inset-x-0 h-32 sm:h-40 bg-gradient-to-b from-white/75 via-white/35 to-transparent dark:from-slate-950/85 dark:via-slate-950/45 dark:to-transparent pointer-events-none" />
 
-            {/* OVERLAID NAVIGATION BAR: Transparent backdrop showing the college image behind it */}
-            <div className="absolute top-0 inset-x-0 z-30 pt-3 sm:pt-5 px-4 sm:px-8 lg:px-12 xl:px-16">
-              <nav className="w-full max-w-[1700px] mx-auto flex items-center justify-between gap-4">
+            {/* Smooth dark blue/slate gradient covering the left half for hero typography */}
+            <div className="absolute inset-y-0 left-0 w-full md:w-[72%] lg:w-[62%] xl:w-[55%] bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/65 to-transparent pointer-events-none" />
+
+            {/* Subtle bottom shadow along the rounded boundary */}
+            <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
+
+            {/* Content Container inside the Banner */}
+            <div className="relative z-10 w-full min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px] xl:min-h-[640px] flex flex-col justify-between p-4 sm:p-6 lg:p-8 xl:px-14">
+              
+              {/* TOP HEADER ROW */}
+              <header className="w-full flex items-center justify-between gap-4">
                 
-                {/* Extreme Left: Enlarged JIIT Logo with NO background behind it (as earlier!) */}
-                <div className="flex items-center shrink-0">
+                {/* Extreme Left: Enlarged JIIT Logo + Text (No background box) */}
+                <div className="flex items-center gap-3 sm:gap-4 shrink-0">
                   <button 
                     onClick={() => navigateTo('home')}
-                    className="flex items-center transition-transform duration-200 hover:scale-105 cursor-pointer focus:outline-none"
+                    className="flex items-center gap-3 sm:gap-4 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                     title="Jaypee Institute of Information Technology"
                   >
                     <img 
                       src="/imgs/jiit.png" 
                       alt="JIIT Logo" 
-                      className="h-16 sm:h-20 md:h-26 lg:h-32 xl:h-36 w-auto object-contain logo-clean-drop"
+                      className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain logo-clean-drop shrink-0"
                     />
+                    <div className="flex flex-col select-none">
+                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                        Jaypee Institute of
+                      </span>
+                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                        Information Technology
+                      </span>
+                      <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
+                        विद्या तत्व ज्योतिसम
+                      </span>
+                    </div>
                   </button>
                 </div>
 
-                {/* Center Navigation Links: Large, Bold, High-Legibility with Frosted Glass Pill */}
-                <div className="hidden xl:flex items-center justify-center gap-1.5 2xl:gap-2 px-5 py-2.5 rounded-full backdrop-blur-md bg-white/40 dark:bg-slate-950/50 border border-white/50 dark:border-white/20 shadow-xl">
-                  <button 
-                    onClick={() => navigateTo('home')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white bg-white/60 dark:bg-black/50 shadow-sm border border-white/40 dark:border-white/20 transition-all duration-200 cursor-pointer"
-                  >
-                    Home
-                  </button>
-
-                  <button 
-                    onClick={() => navigateTo('home', 'about')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white hover:bg-white/50 dark:hover:bg-black/40 hover:scale-105 transition-all duration-200 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] cursor-pointer"
-                  >
-                    About
-                  </button>
-
-                  <button 
-                    onClick={() => navigateTo('home', 'highlights')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white hover:bg-white/50 dark:hover:bg-black/40 hover:scale-105 transition-all duration-200 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] cursor-pointer"
-                  >
-                    Highlights
-                  </button>
-
-                  <button 
-                    onClick={() => navigateTo('home', 'thematic-areas')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white hover:bg-white/50 dark:hover:bg-black/40 hover:scale-105 transition-all duration-200 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] cursor-pointer"
-                  >
-                    Themes
-                  </button>
-
-                  <button 
-                    onClick={() => navigateTo('home', 'hackathon')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white hover:bg-white/50 dark:hover:bg-black/40 hover:scale-105 transition-all duration-200 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] cursor-pointer"
-                  >
-                    Hackathon
-                  </button>
-
-                  <button 
-                    onClick={() => navigateTo('home', 'schedule')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white hover:bg-white/50 dark:hover:bg-black/40 hover:scale-105 transition-all duration-200 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] cursor-pointer"
-                  >
-                    Schedule
-                  </button>
-
-                  <button 
-                    onClick={() => navigateTo('home', 'directions')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white hover:bg-white/50 dark:hover:bg-black/40 hover:scale-105 transition-all duration-200 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] cursor-pointer"
-                  >
-                    Venue
-                  </button>
-
-                  <button 
-                    onClick={() => navigateTo('team')}
-                    className="px-3.5 py-1.5 rounded-xl text-[15px] 2xl:text-[16px] font-black uppercase tracking-wider font-display text-slate-900 dark:text-white hover:bg-white/50 dark:hover:bg-black/40 hover:scale-105 transition-all duration-200 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] cursor-pointer"
-                  >
-                    Team
-                  </button>
-                </div>
-
-                {/* Extreme Right: Seamless Theme Toggle Switch + RIDE Logo with NO background behind it */}
-                <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+                {/* Center: Frosted Capsule Pill Navbar + Theme Toggle Pill */}
+                <div className="hidden xl:flex items-center gap-3">
                   
-                  {/* Modern Sliding Capsule Toggle Switch */}
+                  {/* Floating Frosted Pill Nav */}
+                  <nav className="flex items-center gap-1 sm:gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
+                    <button 
+                      onClick={() => navigateTo('home')}
+                      className="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm"
+                    >
+                      Home
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('home', 'about')}
+                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      About
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('home', 'highlights')}
+                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Highlights
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('home', 'thematic-areas')}
+                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Themes
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('home', 'hackathon')}
+                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Hackathon
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('home', 'schedule')}
+                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Schedule
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('home', 'directions')}
+                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Venue
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('team')}
+                      className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Team
+                    </button>
+                  </nav>
+
+                  {/* Theme Toggle Pill */}
                   <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-                  {/* Enlarged RIDE Logo with NO background behind it (as earlier!) */}
+                </div>
+
+                {/* Extreme Right: Enlarged RIDE Logo (No background box) */}
+                <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+                  <div className="xl:hidden">
+                    <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                  </div>
+
                   <div 
                     onClick={() => navigateTo('home', 'about')}
-                    className="flex items-center transition-transform duration-200 hover:scale-105 cursor-pointer"
+                    className="flex items-center transition-transform hover:scale-105 cursor-pointer"
                     title="RIDE Initiative (Research, Innovation, Development, Entrepreneurship)"
                   >
                     <img 
                       src="/imgs/ride.png" 
                       alt="RIDE Logo" 
-                      className="h-16 sm:h-20 md:h-26 lg:h-32 xl:h-36 w-auto object-contain logo-clean-drop"
+                      className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto object-contain logo-clean-drop"
                     />
                   </div>
 
-                  {/* Mobile Menu Button */}
+                  {/* Mobile Hamburger Menu Button */}
                   <button 
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     className="xl:hidden p-2 rounded-xl bg-white/70 dark:bg-slate-900/80 text-slate-800 dark:text-white shadow-md hover:bg-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
@@ -322,10 +361,40 @@ export default function App() {
                   >
                     {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                   </button>
-
                 </div>
 
-              </nav>
+              </header>
+
+              {/* BOTTOM-LEFT HERO TYPOGRAPHY & DETAILS */}
+              <div className="w-full max-w-3xl pb-4 sm:pb-8 lg:pb-10 pt-10 sm:pt-16 text-left">
+                <p className="font-display font-bold text-[11px] sm:text-xs md:text-sm tracking-[0.22em] text-slate-300 uppercase mb-2 sm:mb-2.5">
+                  JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY
+                </p>
+
+                <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] text-white tracking-tight leading-[1.08]">
+                  Where Innovation <br />
+                  <span className="text-[#38bdf8] drop-shadow-[0_2px_14px_rgba(56,189,248,0.45)]">
+                    Meets Impact
+                  </span>
+                </h1>
+
+                <p className="text-slate-200 text-xs sm:text-sm md:text-base font-normal max-w-xl leading-relaxed mt-2.5 sm:mt-3.5">
+                  Bringing together curious minds, cutting-edge ideas and real-world solutions for a smarter tomorrow.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-slate-200 mt-4 sm:mt-6 font-medium">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-white shrink-0" />
+                    <span>JIIT Sector 128, Wish Town, Noida</span>
+                  </div>
+                  <span className="hidden sm:inline text-slate-400">|</span>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-white shrink-0" />
+                    <span>October 30 – 31, 2026</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -346,110 +415,107 @@ export default function App() {
           )}
 
           {/* =====================================================================
-              2. MAIN HERO STAGE: CENTERPIECE AGENTIC AI LOGO GIVEN WHOLE IMPORTANCE
-              NO BACKGROUND CARD BEHIND IT, ENLARGED SIZE WITH RADIANT DROP SHADOW
+              2. CENTERPIECE AGENTIC AI SUMMIT LOGO & FLOATING STATS CARD
+              WITH FLOWING CURVED WAVE GRAPHICS IN THE BACKGROUND
               ===================================================================== */}
-          <section className="relative w-full overflow-hidden pt-4 pb-12 sm:pt-6 sm:pb-16" id="home">
+          <section className="relative w-full overflow-hidden pt-8 pb-14 sm:pt-12 sm:pb-20" id="home">
             
-            {/* Luminous dynamic ambient background glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-blue-500/10 via-cyan-400/15 to-blue-600/10 dark:from-blue-600/20 dark:via-cyan-500/15 dark:to-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
+            {/* Flowing Curved Background Wave Paths (matching reference image) */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+              {/* Soft subtle radial ambient glow centered behind the logo */}
+              <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-blue-400/10 via-sky-300/15 to-blue-600/10 dark:from-blue-600/20 dark:via-cyan-500/15 dark:to-indigo-600/20 rounded-full blur-3xl" />
 
-            <div className="relative z-10 max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
+              {/* Elegant SVG Curved Waves matching reference design */}
+              <svg 
+                className="absolute inset-0 w-full h-full opacity-40 dark:opacity-20" 
+                viewBox="0 0 1440 600" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+              >
+                <path 
+                  d="M-100 200 C 300 450, 600 150, 1540 350" 
+                  stroke="url(#blueWaveGrad1)" 
+                  strokeWidth="1.5" 
+                />
+                <path 
+                  d="M-50 480 C 400 200, 1000 550, 1500 180" 
+                  stroke="url(#blueWaveGrad2)" 
+                  strokeWidth="1.5" 
+                />
+                <path 
+                  d="M0 320 C 500 500, 950 100, 1440 280" 
+                  stroke="url(#blueWaveGrad1)" 
+                  strokeWidth="1" 
+                  strokeDasharray="4 4"
+                />
+                <defs>
+                  <linearGradient id="blueWaveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#93c5fd" stopOpacity="0.1" />
+                    <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#93c5fd" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="blueWaveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.1" />
+                    <stop offset="50%" stopColor="#2563eb" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.1" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
               
-              {/* PRIMARY PROMINENT OFFICIAL AGENTIC AI SUMMIT LOGO (No background box, enlarged, vibrant float) */}
-              <div className="mb-6 sm:mb-8 animate-float">
+              {/* PRIMARY PROMINENT OFFICIAL AGENTIC AI SUMMIT LOGO */}
+              <div className="mb-8 sm:mb-12 animate-float">
                 <img 
                   src="/imgs/ai-summit.png" 
                   alt="Jaypee Agentic AI International Summit Logo" 
-                  className={`h-36 sm:h-48 md:h-56 lg:h-64 xl:h-72 w-auto object-contain mx-auto cursor-pointer transition-all duration-300 hover:scale-105 ${
-                    darkMode ? 'logo-glow-dark hover:drop-shadow-[0_0_45px_rgba(56,189,248,0.85)]' : 'logo-glow-light hover:drop-shadow-[0_8px_35px_rgba(37,99,235,0.3)]'
+                  className={`h-40 sm:h-52 md:h-64 lg:h-72 w-auto object-contain mx-auto cursor-pointer transition-all duration-300 hover:scale-105 ${
+                    darkMode ? 'logo-glow-dark' : 'logo-glow-light'
                   }`}
                 />
               </div>
 
-              {/* 3D AGENTIC AI SUMMIT + 2026 Display Typography */}
-              <div className="relative inline-flex items-center justify-center select-none my-1 transition-transform duration-300 hover:scale-[1.01]">
-                
-                {/* Responsive 3D title text - Toned-down translucent blue in Light mode, luminous in Dark mode */}
-                <h1 className={`font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.6rem] xl:text-[5.2rem] tracking-tight leading-none uppercase whitespace-nowrap ${
-                  darkMode ? 'text-3d-summit-dark' : 'text-3d-summit-light'
-                }`}>
-                  AGENTIC AI SUMMIT
-                </h1>
-
-                {/* Rotated "2026" */}
-                <div className="ml-2 sm:ml-4 flex flex-col items-center justify-center">
-                  <span className="text-vertical-year font-display font-black text-base sm:text-2xl md:text-3xl lg:text-4xl text-[#062DB1] dark:text-cyan-400 drop-shadow-[1px_1px_0_#ffffff] dark:drop-shadow-[0_0_10px_rgba(56,189,248,0.6)] tracking-widest">
-                    2026
-                  </span>
-                </div>
-              </div>
-
-              {/* Summit Full Name & Taglines */}
-              <div className="mt-3 sm:mt-4 mb-6 max-w-3xl space-y-1.5">
-                <p className="font-display font-extrabold text-sm sm:text-base md:text-xl text-blue-900 dark:text-white tracking-widest uppercase">
-                  JIIT SECTOR 128, WISH TOWN, NOIDA &nbsp;|&nbsp; OCTOBER 30 – 31, 2026
-                </p>
-                <p className="text-xs sm:text-sm font-bold text-blue-700 dark:text-cyan-300 tracking-wider">
-                  "Human Intelligence Meets Agentic Possibilities"
-                </p>
-                <div className="text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 tracking-widest uppercase pt-1">
-                  REAL PROBLEMS &nbsp;|&nbsp; INTELLIGENT AGENTS &nbsp;|&nbsp; LASTING IMPACT
-                </div>
-              </div>
-
-              {/* Main Single CTA Button */}
-              <div className="mb-8">
-                <a 
-                  href={registrationLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-blue-600 hover:bg-blue-700 dark:bg-cyan-500 dark:hover:bg-cyan-400 text-white dark:text-slate-950 font-display text-sm sm:text-base font-black px-10 sm:px-12 py-3.5 sm:py-4 rounded-full uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-2xl hover:scale-105 inline-flex items-center gap-2.5 group"
-                >
-                  <span>Register for Summit</span>
-                  <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              </div>
-
-              {/* 4 Metric Stat Columns with Slow Animated Number Ticker */}
-              <div className="w-full max-w-4xl lg:max-w-5xl grid grid-cols-4 gap-4 sm:gap-8 border-t border-slate-200/90 dark:border-slate-800/90 pt-5 pb-2">
+              {/* FLOATING 4-COLUMN STATS CARD */}
+              <div className="w-full max-w-3xl lg:max-w-4xl bg-white/95 dark:bg-[#0c162d]/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 px-4 sm:px-8 py-5 sm:py-6 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800">
                 
                 {/* Stat 1: Themes */}
-                <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
+                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-[#0b2253] dark:text-white leading-none">
                     {animatedStats.themes}
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
                     THEMES
                   </span>
                 </div>
 
                 {/* Stat 2: Events */}
-                <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
+                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-[#0b2253] dark:text-white leading-none">
                     {animatedStats.events}
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
                     EVENTS
                   </span>
                 </div>
 
                 {/* Stat 3: Prize Pool */}
-                <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
+                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-600 dark:text-cyan-400 leading-none">
                     ₹{animatedStats.prize}M
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
                     PRIZE POOL
                   </span>
                 </div>
 
                 {/* Stat 4: Pre-Seed Pool */}
-                <div className="flex flex-col items-center group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
-                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-900 dark:text-white leading-none group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors">
+                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-1">
+                  <span className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-blue-600 dark:text-cyan-400 leading-none">
                     ₹{animatedStats.preSeed}M
                   </span>
-                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 tracking-widest uppercase mt-1.5">
+                  <span className="font-display font-extrabold text-[10px] sm:text-xs text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1.5">
                     PRE-SEED POOL
                   </span>
                 </div>
