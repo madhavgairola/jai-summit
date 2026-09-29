@@ -22,4 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
+# Local test route (local only, not on GitHub)
+src/TestApp.jsx
