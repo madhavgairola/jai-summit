@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local test route (local only, not on GitHub)
-src/TestApp.jsx
-src/components/ParticleWaveBackground.jsx
