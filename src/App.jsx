@@ -368,22 +368,16 @@ export default function App() {
               </header>
 
               {/* BOTTOM-LEFT HERO TYPOGRAPHY & DETAILS */}
-              <div className="w-full max-w-2xl pb-2 sm:pb-3 lg:pb-4 pt-2 sm:pt-4 text-left">
-                <p className="font-display font-bold text-[10px] sm:text-xs tracking-[0.2em] text-slate-300 uppercase mb-1">
-                  JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY
-                </p>
-
-                {/* Main Headline with Gradient "Meets Impact" adhering to inspiration */}
-                <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.3rem] text-white tracking-tight leading-[1.08]">
-                  Where Innovation <br />
-                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#00d2ff] to-[#2563eb] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(56,189,248,0.35)]">
-                    Meets Impact
+              <div className="w-full max-w-3xl lg:max-w-4xl pb-2 sm:pb-3 lg:pb-4 pt-2 sm:pt-4 text-left">
+                {/* Headline: JAI 2026 Hackathon (gradient blue) – Jaypee Agentic AI International Summit 2026 (white) */}
+                <h1 className="font-display font-black text-xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.9rem] tracking-tight leading-[1.14]">
+                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#00d2ff] to-[#2563eb] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(56,189,248,0.35)] block sm:inline">
+                    JAI 2026 Hackathon
+                  </span>
+                  <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+                    {" "}– Jaypee Agentic AI International Summit 2026
                   </span>
                 </h1>
-
-                <p className="text-slate-200 text-xs sm:text-sm font-normal max-w-lg leading-snug mt-1.5 sm:mt-2">
-                  Bringing together curious minds, cutting-edge ideas and real-world solutions for a smarter tomorrow.
-                </p>
 
                 {/* Bolder, Larger Location & Date Badge */}
                 <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm md:text-base text-white mt-3 sm:mt-4 font-bold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
@@ -580,11 +574,11 @@ export default function App() {
                   </h2>
                 </div>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Seven distinguished engagement tracks featured in the official summit brochure.
+                  Six distinguished engagement tracks featured in the official summit brochure.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 sm:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5">
                 
                 {/* 1. Global Tech Talks */}
                 <div className="group relative rounded-2xl p-5 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900 dark:to-slate-950 border border-slate-200/80 dark:border-slate-800 hover:border-blue-400 dark:hover:border-cyan-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between cursor-pointer">
@@ -601,22 +595,7 @@ export default function App() {
                   </p>
                 </div>
 
-                {/* 2. Research & Innovation */}
-                <div className="group relative rounded-2xl p-5 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900 dark:to-slate-950 border border-slate-200/80 dark:border-slate-800 hover:border-purple-400 dark:hover:border-purple-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between cursor-pointer">
-                  <div className="h-1 w-full bg-gradient-to-r from-purple-500 to-indigo-400 rounded-full mb-4 opacity-75 group-hover:opacity-100 transition-opacity" />
-                  <div>
-                    <div className="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-300 flex items-center justify-center mb-3 shadow-inner group-hover:scale-110 transition-transform">
-                      <Sparkles className="w-6 h-6" />
-                    </div>
-                    <span className="inline-block text-[10px] font-black uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/60 px-2 py-0.5 rounded-full mb-2">Academic</span>
-                    <h3 className="font-black text-base text-slate-900 dark:text-white font-display leading-snug">Research & Innovation</h3>
-                  </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
-                    Peer-reviewed papers and frontier prototypes in multi-agent intelligence.
-                  </p>
-                </div>
-
-                {/* 3. Industry Perspectives */}
+                {/* 2. Industry Perspectives */}
                 <div className="group relative rounded-2xl p-5 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900 dark:to-slate-950 border border-slate-200/80 dark:border-slate-800 hover:border-amber-400 dark:hover:border-amber-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between cursor-pointer">
                   <div className="h-1 w-full bg-gradient-to-r from-amber-500 to-orange-400 rounded-full mb-4 opacity-75 group-hover:opacity-100 transition-opacity" />
                   <div>
