@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import TeamPage from './components/TeamPage';
 import ThemeToggle from './components/ThemeToggle';
+import InteractiveCircuitry from './components/InteractiveCircuitry';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -228,11 +229,11 @@ export default function App() {
               ===================================================================== */}
           <div className="relative w-full overflow-hidden bg-slate-950 rounded-b-[32px] sm:rounded-b-[44px] md:rounded-b-[52px] lg:rounded-b-[60px] shadow-2xl h-[320px] sm:h-[360px] md:h-[400px] lg:h-[430px] xl:h-[450px]">
             
-            {/* Campus Background Image - Cropped bottom flags & potted plants completely */}
+            {/* Campus Background Image - Multidisciplinary Studies & Innovation Campus */}
             <img 
-              src="/imgs/jiit128.jpeg" 
+              src="/imgs/jiit-campus-new.png" 
               alt="Jaypee Institute of Information Technology - Sector 128 Noida" 
-              className="absolute inset-0 w-full h-full object-cover object-[center_6%] pointer-events-none select-none"
+              className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
             />
 
             {/* Soft sky-glass gradient across the top behind navbar & logos */}
@@ -419,59 +420,23 @@ export default function App() {
 
           {/* =====================================================================
               2. CENTERPIECE AGENTIC AI SUMMIT LOGO & FLOATING STATS CARD
-              WITH FLOWING CURVED WAVE GRAPHICS IN THE BACKGROUND
+              WITH INTERACTIVE 3D CIRCUITRY ANIMATION & MOUSE TRACKING
               (Proportioned so the entire landing page fits at first glance without scrolling!)
               ===================================================================== */}
-          <section className="relative w-full overflow-hidden pt-4 pb-8 sm:pt-6 sm:pb-10" id="home">
+          <section className="relative w-full overflow-hidden pt-4 pb-8 sm:pt-6 sm:pb-10 min-h-[300px]" id="home">
             
-            {/* Flowing Curved Background Wave Paths (matching reference image) */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-              {/* Soft subtle radial ambient glow centered behind the logo */}
-              <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-blue-400/10 via-sky-300/15 to-blue-600/10 dark:from-blue-600/20 dark:via-cyan-500/15 dark:to-indigo-600/20 rounded-full blur-3xl" />
+            {/* Interactive 3D Cybernetic Circuitry Canvas with Mouse Tracking & Pulses */}
+            <InteractiveCircuitry darkMode={darkMode} />
 
-              {/* Elegant SVG Curved Waves matching reference design */}
-              <svg 
-                className="absolute inset-0 w-full h-full opacity-40 dark:opacity-20" 
-                viewBox="0 0 1440 600" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-              >
-                <path 
-                  d="M-100 200 C 300 450, 600 150, 1540 350" 
-                  stroke="url(#blueWaveGrad1)" 
-                  strokeWidth="1.5" 
-                />
-                <path 
-                  d="M-50 480 C 400 200, 1000 550, 1500 180" 
-                  stroke="url(#blueWaveGrad2)" 
-                  strokeWidth="1.5" 
-                />
-                <path 
-                  d="M0 320 C 500 500, 950 100, 1440 280" 
-                  stroke="url(#blueWaveGrad1)" 
-                  strokeWidth="1" 
-                  strokeDasharray="4 4"
-                />
-                <defs>
-                  <linearGradient id="blueWaveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#93c5fd" stopOpacity="0.1" />
-                    <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#93c5fd" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="blueWaveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.1" />
-                    <stop offset="50%" stopColor="#2563eb" stopOpacity="0.35" />
-                    <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.1" />
-                  </linearGradient>
-                </defs>
-              </svg>
+            {/* Soft subtle radial ambient glow centered behind the logo */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+              <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-blue-400/10 via-sky-300/15 to-blue-600/10 dark:from-blue-600/20 dark:via-cyan-500/15 dark:to-indigo-600/20 rounded-full blur-3xl" />
             </div>
 
-            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
+            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center pointer-events-none">
               
               {/* PRIMARY PROMINENT OFFICIAL AGENTIC AI SUMMIT LOGO (Proportioned to fit in first glance) */}
-              <div className="mb-4 sm:mb-5 animate-float">
+              <div className="mb-4 sm:mb-5 animate-float pointer-events-auto">
                 <img 
                   src="/imgs/ai-summit.png" 
                   alt="Jaypee Agentic AI International Summit Logo" 
@@ -482,7 +447,7 @@ export default function App() {
               </div>
 
               {/* FLOATING 4-COLUMN STATS CARD (With matching Agentic AI font colors) */}
-              <div className="w-full max-w-3xl lg:max-w-4xl bg-white/95 dark:bg-[#0c162d]/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_6px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_6px_25px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 px-4 sm:px-8 py-3 sm:py-3.5 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800">
+              <div className="w-full max-w-3xl lg:max-w-4xl bg-white/95 dark:bg-[#0c162d]/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_6px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_6px_25px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 px-4 sm:px-8 py-3 sm:py-3.5 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800 pointer-events-auto">
                 
                 {/* Stat 1: Themes */}
                 <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
