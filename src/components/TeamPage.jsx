@@ -5,11 +5,7 @@ import {
   Camera, 
   Check, 
   Copy,
-  Search,
-  ChevronDown,
-  ChevronUp,
-  Info,
-  Sparkles
+  Search
 } from 'lucide-react';
 import { summitChairs, teamCategories, getInitials } from '../data/teamData';
 
@@ -18,9 +14,19 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [copiedFilename, setCopiedFilename] = useState(null);
   const [imageErrors, setImageErrors] = useState({});
-  const [showUploadGuide, setShowUploadGuide] = useState(false);
 
-  const handleImageError = (id) => {
+  const handleImageError = (id, e) => {
+    // If it was trying .jpg, fallback to .jpeg or vice versa
+    if (e && e.target && e.target.src) {
+      if (e.target.src.endsWith('.jpg')) {
+        e.target.src = e.target.src.replace(/\.jpg$/, '.jpeg');
+        return;
+      }
+      if (e.target.src.endsWith('.jpeg')) {
+        e.target.src = e.target.src.replace(/\.jpeg$/, '.png');
+        return;
+      }
+    }
     setImageErrors((prev) => ({ ...prev, [id]: true }));
   };
 
@@ -64,24 +70,14 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
 
         <div className="relative max-w-[1584px] mx-auto px-4 sm:px-8 lg:px-12">
           
-          {/* Top Row: Back to Home Button & Badges with Generous Bottom Spacing */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 sm:mb-10">
+          {/* Top Row: Back to Home Button with Generous Bottom Spacing */}
+          <div className="flex items-center justify-between gap-4 mb-8 sm:mb-10">
             <button 
               onClick={onNavigateHome}
               className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl text-sm font-black uppercase tracking-wider text-blue-700 dark:text-cyan-300 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-500 shadow-sm hover:shadow-md transition-all font-display group cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
               <span>Back to Summit Home</span>
-            </button>
-
-            {/* Toggle Helper Button */}
-            <button
-              onClick={() => setShowUploadGuide(!showUploadGuide)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700 transition-all font-display cursor-pointer"
-            >
-              <Camera className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" />
-              <span>Photo Upload Guide</span>
-              {showUploadGuide ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
             </button>
           </div>
 
@@ -100,31 +96,6 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
               Meet the faculty leadership and committee architects organizing the Jaypee Agentic AI International Summit at Jaypee Institute of Information Technology, Wish Town Campus, Sector-128, Noida.
             </p>
           </div>
-
-          {/* Collapsible Photo Upload Guide (Clean, Spacious & Non-Intrusive) */}
-          {showUploadGuide && (
-            <div className="mb-10 p-6 rounded-3xl bg-white/90 dark:bg-slate-900/90 border border-blue-200 dark:border-blue-900/60 shadow-lg backdrop-blur-md animate-fadeIn">
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-2xl bg-blue-100 dark:bg-blue-950 flex items-center justify-center shrink-0 text-blue-600 dark:text-cyan-400">
-                  <Camera className="w-5 h-5" />
-                </div>
-                <div className="space-y-2 flex-1">
-                  <h3 className="text-base font-black text-slate-900 dark:text-white font-display">
-                    Faculty Photo Upload Guide
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    To display actual pictures for any faculty member, upload their image file directly into the project folder:
-                  </p>
-                  <div className="inline-block bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 px-3.5 py-1.5 rounded-xl font-mono text-xs text-blue-700 dark:text-cyan-300 select-all">
-                    public/imgs/team/[filename].jpg
-                  </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 pt-1">
-                    Each card below specifies the exact filename required with a 1-click copy button. If no image is provided yet, a stylized initials badge is automatically displayed!
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* Search & Category Filter Controls - Distinct, Spacious & Well-Organized */}
           <div className="p-4 sm:p-5 rounded-3xl bg-white/80 dark:bg-slate-900/75 border border-slate-200/90 dark:border-slate-800 shadow-sm backdrop-blur-sm space-y-4">
@@ -211,7 +182,7 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
                           <img 
                             src={`/imgs/team/${chair.filename}`} 
                             alt={chair.name}
-                            onError={() => handleImageError(chair.filename)}
+                            onError={(e) => handleImageError(chair.filename, e)}
                             className="w-full h-full object-cover object-top"
                           />
                         ) : null}
@@ -307,7 +278,7 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
                           <img 
                             src={`/imgs/team/${member.filename}`} 
                             alt={member.name}
-                            onError={() => handleImageError(member.filename)}
+                            onError={(e) => handleImageError(member.filename, e)}
                             className="w-full h-full object-cover object-top"
                           />
                         ) : null}
@@ -364,38 +335,6 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
             </div>
           </section>
         ))}
-
-        {/* Complete Filename Upload Reference Grid */}
-        <section className="rounded-3xl p-8 sm:p-10 bg-slate-900 text-white space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 font-display">
-                Reference Table
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black font-display mt-1">
-                All Faculty Image Filenames
-              </h2>
-            </div>
-            <p className="text-xs text-slate-400 max-w-sm sm:text-right">
-              Upload photos with these exact names to <code className="text-cyan-300">public/imgs/team/</code>
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 text-xs font-mono">
-            {summitChairs.map((c, i) => (
-              <div key={i} className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <span className="text-slate-300 truncate mr-2">{c.name}</span>
-                <span className="text-cyan-400 font-bold shrink-0">{c.filename}</span>
-              </div>
-            ))}
-            {teamCategories.flatMap(cat => cat.members).map((m, i) => (
-              <div key={i} className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <span className="text-slate-300 truncate mr-2">{m.name}</span>
-                <span className="text-cyan-400 font-bold shrink-0">{m.filename}</span>
-              </div>
-            ))}
-          </div>
-        </section>
 
       </main>
     </div>

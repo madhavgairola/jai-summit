@@ -141,19 +141,19 @@ export default function App() {
         <div className="w-full">
           {/* Top Navbar for Team Page */}
           <header className="sticky top-0 z-50 w-full backdrop-blur-xl border-b transition-colors duration-300 bg-white/95 dark:bg-[#070b16]/95 border-slate-200/80 dark:border-slate-800/80 shadow-sm">
-            <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-12 py-2 sm:py-3 flex items-center justify-between gap-4">
+            <div className="w-full max-w-[1700px] mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4">
               
-              {/* JIIT Logo + Text */}
-              <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+              {/* Extreme Left: JIIT Logo + Text */}
+              <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0 pl-1">
                 <button 
                   onClick={() => navigateTo('home')}
-                  className="flex items-center gap-3 sm:gap-3.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
+                  className="flex items-center gap-2.5 sm:gap-3.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                   title="Jaypee Institute of Information Technology"
                 >
                   <img 
                     src="/imgs/jiit.png" 
                     alt="JIIT Logo" 
-                    className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain logo-clean-drop shrink-0"
+                    className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain logo-clean-drop shrink-0"
                   />
                   <div className="flex flex-col select-none">
                     <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
@@ -170,7 +170,7 @@ export default function App() {
               </div>
 
               {/* Center Pill Nav + Theme Toggle */}
-              <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+              <div className="hidden lg:flex items-center gap-1.5 xl:gap-3 shrink min-w-0">
                 <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2.5 md:px-3 lg:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm">
                   <button onClick={() => navigateTo('home')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Home</button>
                   <button onClick={() => navigateTo('home', 'about')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">About</button>
@@ -184,8 +184,8 @@ export default function App() {
                 <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
               </div>
 
-              {/* RIDE Logo */}
-              <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+              {/* Extreme Right: RIDE Logo - Equal size and height, padded so completely visible */}
+              <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-1 sm:pr-2">
                 <div className="lg:hidden">
                   <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                 </div>
@@ -193,12 +193,12 @@ export default function App() {
                 <div 
                   onClick={() => navigateTo('home', 'about')}
                   className="flex items-center transition-transform hover:scale-105 cursor-pointer"
-                  title="RIDE Initiative"
+                  title="RIDE Initiative (Research, Innovation, Development, Entrepreneurship)"
                 >
                   <img 
                     src="/imgs/ride.png" 
                     alt="RIDE Logo" 
-                    className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain logo-clean-drop"
+                    className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain logo-clean-drop shrink-0"
                   />
                 </div>
 
