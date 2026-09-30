@@ -21,8 +21,12 @@ import {
   Menu,
   X,
   ArrowRight,
+  ArrowUp,
   CheckCircle2,
-  Cpu
+  Cpu,
+  Mail,
+  Building2,
+  Handshake
 } from 'lucide-react';
 import TeamPage from './components/TeamPage';
 import ThemeToggle from './components/ThemeToggle';
@@ -31,6 +35,7 @@ import InteractiveCircuitry from './components/InteractiveCircuitry';
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const registrationLink = "https://forms.gle/E1x9CT8mF5z1R4YC8";
 
   // Light / Dark mode management
@@ -54,6 +59,19 @@ export default function App() {
   }, [darkMode]);
 
   const toggleDarkMode = () => setDarkMode(prev => !prev);
+
+  // Scroll to Top visibility listener
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 280);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Sync route with URL hash for deep linking (#team / #home)
   useEffect(() => {
@@ -99,13 +117,13 @@ export default function App() {
   const [animatedStats, setAnimatedStats] = useState({
     themes: 0,
     events: 0,
-    prize: "0.0",
+    prize: 0,
     preSeed: 0
   });
 
   useEffect(() => {
     let startTime = null;
-    const duration = 2800;
+    const duration = 2400;
 
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;
@@ -114,9 +132,9 @@ export default function App() {
 
       setAnimatedStats({
         themes: Math.round(ease * 4),
-        events: Math.round(ease * 7),
-        prize: (ease * 1.5).toFixed(1),
-        preSeed: Math.round(ease * 10)
+        events: Math.round(ease * 6),
+        prize: Math.round(ease * 15),
+        preSeed: Math.round(ease * 1)
       });
 
       if (progress < 1) {
@@ -179,6 +197,8 @@ export default function App() {
                   <button onClick={() => navigateTo('home', 'hackathon')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Hackathon</button>
                   <button onClick={() => navigateTo('home', 'schedule')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Schedule</button>
                   <button onClick={() => navigateTo('home', 'directions')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Venue</button>
+                  <button onClick={() => navigateTo('home', 'sponsors')} className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Sponsors</button>
+                  <button onClick={() => navigateTo('home', 'contact')} className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Contact</button>
                   <button onClick={() => navigateTo('team')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-semibold bg-blue-600 text-white shadow-sm cursor-pointer">Team</button>
                 </nav>
                 <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -325,6 +345,18 @@ export default function App() {
                       Venue
                     </button>
                     <button 
+                      onClick={() => navigateTo('home', 'sponsors')}
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Sponsors
+                    </button>
+                    <button 
+                      onClick={() => navigateTo('home', 'contact')}
+                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                    >
+                      Contact
+                    </button>
+                    <button 
                       onClick={() => navigateTo('team')}
                       className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
@@ -337,22 +369,10 @@ export default function App() {
 
                 </div>
 
-                {/* Extreme Right: Enlarged RIDE Logo (Padded from edge so NEVER cropped) */}
+                {/* Extreme Right Controls (Theme Toggle & Mobile Menu) */}
                 <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-1 sm:pr-3">
                   <div className="lg:hidden">
                     <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-                  </div>
-
-                  <div 
-                    onClick={() => navigateTo('home', 'about')}
-                    className="flex items-center transition-transform hover:scale-105 cursor-pointer"
-                    title="RIDE Initiative (Research, Innovation, Development, Entrepreneurship)"
-                  >
-                    <img 
-                      src="/imgs/ride.png" 
-                      alt="RIDE Logo" 
-                      className="h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22 w-auto object-contain logo-clean-drop shrink-0"
-                    />
                   </div>
 
                   {/* Mobile Hamburger Menu Button (Only for narrow mobile viewports <1024px) */}
@@ -407,7 +427,9 @@ export default function App() {
               <button onClick={() => navigateTo('home', 'hackathon')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Hackathon</button>
               <button onClick={() => navigateTo('home', 'schedule')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Schedule</button>
               <button onClick={() => navigateTo('home', 'directions')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Venue</button>
-              <button onClick={() => navigateTo('team')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Team (Faculty)</button>
+              <button onClick={() => navigateTo('home', 'sponsors')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Sponsors</button>
+              <button onClick={() => navigateTo('home', 'contact')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Contact</button>
+              <button onClick={() => navigateTo('team')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Team</button>
               <a href={registrationLink} target="_blank" rel="noopener noreferrer" className="mt-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm py-3 rounded-xl text-center uppercase tracking-wider shadow-lg">Register for Summit</a>
             </div>
           )}
@@ -466,7 +488,7 @@ export default function App() {
                 {/* Stat 3: Prize Pool (Agentic AI vibrant blue) */}
                 <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
                   <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
-                    ₹{animatedStats.prize}M
+                    ₹{animatedStats.prize}L
                   </span>
                   <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
                     PRIZE POOL
@@ -476,7 +498,7 @@ export default function App() {
                 {/* Stat 4: Pre-Seed Pool (Agentic AI vibrant blue) */}
                 <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
                   <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
-                    ₹{animatedStats.preSeed}M
+                    ₹{animatedStats.preSeed}Cr
                   </span>
                   <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
                     PRE-SEED POOL
@@ -493,75 +515,8 @@ export default function App() {
               ===================================================================== */}
           <main className="max-w-[1584px] mx-auto px-4 sm:px-6 lg:px-12 py-10 space-y-16">
 
-            {/* 1. OVERVIEW & 3 STACKED CARDS */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="about">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-                
-                {/* Left Column: Heading + Editorial Intro */}
-                <div className="lg:col-span-7 space-y-6">
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-blue-700 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-800 px-3.5 py-1 rounded-full font-display">
-                    Summit Overview
-                  </span>
-
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight font-display">
-                    Where Human Intelligence Meets Autonomous Execution
-                  </h2>
-
-                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
-                    Hosted at Jaypee Institute of Information Technology (JIIT) Wish Town Campus in Sector-128, Noida, JAI 2026 convenes academic researchers, industry architects, and student innovators to pioneer the frontier of agentic AI systems.
-                  </p>
-
-                  <div className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 font-display">
-                    Real Problems &nbsp;|&nbsp; Intelligent Agents &nbsp;|&nbsp; Lasting Impact
-                  </div>
-                </div>
-
-                {/* Right Column: 3 Stacked Cards */}
-                <div className="lg:col-span-5 flex flex-col gap-4">
-                  
-                  <div className="bg-slate-100 hover:bg-slate-200/80 dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-200 hover:translate-x-1.5 border border-slate-200 dark:border-slate-700/60 shadow-sm cursor-pointer group">
-                    <div className="w-11 h-11 rounded-xl bg-blue-600 dark:bg-cyan-500 text-white dark:text-slate-950 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                      <Trophy className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-extrabold text-base sm:text-lg font-display">Agentic AI Hackathon</h3>
-                      <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mt-0.5 leading-relaxed">
-                        Build autonomous problem-solving agents backed by an exciting INR 1.5 Million prize pool.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-100 hover:bg-slate-200/80 dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-200 hover:translate-x-1.5 border border-slate-200 dark:border-slate-700/60 shadow-sm cursor-pointer group">
-                    <div className="w-11 h-11 rounded-xl bg-blue-600 dark:bg-cyan-500 text-white dark:text-slate-950 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                      <Rocket className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-extrabold text-base sm:text-lg font-display">Pre-Seed Funding Pool</h3>
-                      <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mt-0.5 leading-relaxed">
-                        Access to an INR 10 Million pre-seed funding pool driven by RIDE to incubate promising AI ventures.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-slate-100 hover:bg-slate-200/80 dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-200 hover:translate-x-1.5 border border-slate-200 dark:border-slate-700/60 shadow-sm cursor-pointer group">
-                    <div className="w-11 h-11 rounded-xl bg-blue-600 dark:bg-cyan-500 text-white dark:text-slate-950 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                      <Globe className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-extrabold text-base sm:text-lg font-display">Institutional Collaboration</h3>
-                      <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mt-0.5 leading-relaxed">
-                        Organized by Jaypee Institute of Information Technology (JIIT) in partnership with the RIDE initiative.
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </section>
-
             {/* =====================================================================
-                2. SUMMIT HIGHLIGHTS (IMPROVED UI - ENGAGING, HIGH-TECH & VISUAL)
+                1. SUMMIT HIGHLIGHTS (IMPROVED UI - ENGAGING, HIGH-TECH & VISUAL)
                 ===================================================================== */}
             <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="highlights">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
@@ -636,7 +591,7 @@ export default function App() {
                     <h3 className="font-black text-base text-slate-900 dark:text-white font-display leading-snug">Agentic AI Hackathon</h3>
                   </div>
                   <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed font-semibold">
-                    INR 1.5M Prize Pool & INR 10M Pre-Seed Funding Pool.
+                    INR 15L Prize Pool & INR 1Cr Pre-Seed Funding Pool.
                   </p>
                 </div>
 
@@ -673,6 +628,73 @@ export default function App() {
               </div>
             </section>
 
+            {/* 2. OVERVIEW & 3 STACKED CARDS */}
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="about">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                
+                {/* Left Column: Heading + Editorial Intro */}
+                <div className="lg:col-span-7 space-y-6">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-blue-700 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-800 px-3.5 py-1 rounded-full font-display">
+                    Summit Overview
+                  </span>
+
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight font-display">
+                    Where Human Intelligence Meets Autonomous Execution
+                  </h2>
+
+                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
+                    Hosted at Jaypee Institute of Information Technology (JIIT) Wish Town Campus in Sector-128, Noida, JAI 2026 convenes academic researchers, industry architects, and student innovators to pioneer the frontier of agentic AI systems.
+                  </p>
+
+                  <div className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 font-display">
+                    Real Problems &nbsp;|&nbsp; Intelligent Agents &nbsp;|&nbsp; Lasting Impact
+                  </div>
+                </div>
+
+                {/* Right Column: 3 Stacked Cards */}
+                <div className="lg:col-span-5 flex flex-col gap-4">
+                  
+                  <div className="bg-slate-100 hover:bg-slate-200/80 dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-200 hover:translate-x-1.5 border border-slate-200 dark:border-slate-700/60 shadow-sm cursor-pointer group">
+                    <div className="w-11 h-11 rounded-xl bg-blue-600 dark:bg-cyan-500 text-white dark:text-slate-950 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                      <Trophy className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-extrabold text-base sm:text-lg font-display">Agentic AI Hackathon</h3>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                        Build autonomous problem-solving agents backed by an exciting INR 15 Lakh prize pool.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-100 hover:bg-slate-200/80 dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-200 hover:translate-x-1.5 border border-slate-200 dark:border-slate-700/60 shadow-sm cursor-pointer group">
+                    <div className="w-11 h-11 rounded-xl bg-blue-600 dark:bg-cyan-500 text-white dark:text-slate-950 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                      <Rocket className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-extrabold text-base sm:text-lg font-display">Pre-Seed Funding Pool</h3>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                        Access to an INR 1 Crore pre-seed funding pool driven by RIDE to incubate promising AI ventures.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-100 hover:bg-slate-200/80 dark:bg-slate-800/80 dark:hover:bg-slate-800 text-slate-900 dark:text-white p-6 rounded-2xl flex items-start gap-4 transition-all duration-200 hover:translate-x-1.5 border border-slate-200 dark:border-slate-700/60 shadow-sm cursor-pointer group">
+                    <div className="w-11 h-11 rounded-xl bg-blue-600 dark:bg-cyan-500 text-white dark:text-slate-950 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                      <Globe className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-extrabold text-base sm:text-lg font-display">Institutional Collaboration</h3>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                        Organized by Jaypee Institute of Information Technology (JIIT) in partnership with the RIDE initiative.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </section>
+
             {/* =====================================================================
                 3. KEY THEMATIC AREAS (IMPROVED UI - RICH LUXURY TRACK CARDS)
                 ===================================================================== */}
@@ -694,7 +716,7 @@ export default function App() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 {/* Track 1: Cybersecurity */}
-                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-blue-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-blue-500/80 dark:hover:border-cyan-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between min-h-[360px] cursor-pointer">
+                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-blue-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-blue-500/80 dark:hover:border-cyan-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between cursor-pointer">
                   <div>
                     <div className="flex items-center justify-between mb-5">
                       <div className="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
@@ -718,15 +740,10 @@ export default function App() {
                       <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-md">Auto-Forensics</span>
                     </div>
                   </div>
-
-                  <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-blue-600 dark:text-cyan-400 text-xs font-black uppercase tracking-wider font-display">
-                    <span>Explore Track</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </div>
                 </div>
 
                 {/* Track 2: Healthcare */}
-                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-emerald-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-emerald-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/80 dark:hover:border-emerald-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between min-h-[360px] cursor-pointer">
+                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-emerald-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-emerald-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-emerald-500/80 dark:hover:border-emerald-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between cursor-pointer">
                   <div>
                     <div className="flex items-center justify-between mb-5">
                       <div className="w-14 h-14 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
@@ -750,15 +767,10 @@ export default function App() {
                       <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-md">Biomedical LLMs</span>
                     </div>
                   </div>
-
-                  <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-emerald-600 dark:text-emerald-400 text-xs font-black uppercase tracking-wider font-display">
-                    <span>Explore Track</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </div>
                 </div>
 
                 {/* Track 3: Natural Language Processing */}
-                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-indigo-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-indigo-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-indigo-500/80 dark:hover:border-indigo-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between min-h-[360px] cursor-pointer">
+                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-indigo-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-indigo-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-indigo-500/80 dark:hover:border-indigo-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between cursor-pointer">
                   <div>
                     <div className="flex items-center justify-between mb-5">
                       <div className="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-110 transition-transform">
@@ -782,15 +794,10 @@ export default function App() {
                       <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-md">Autonomous Dialogue</span>
                     </div>
                   </div>
-
-                  <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-indigo-600 dark:text-indigo-400 text-xs font-black uppercase tracking-wider font-display">
-                    <span>Explore Track</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </div>
                 </div>
 
                 {/* Track 4: Open Innovation */}
-                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-amber-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-amber-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-amber-500/80 dark:hover:border-amber-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between min-h-[360px] cursor-pointer">
+                <div className="group relative rounded-3xl p-7 bg-gradient-to-b from-slate-50 via-white to-amber-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-amber-950/30 border border-slate-200/90 dark:border-slate-800 hover:border-amber-500/80 dark:hover:border-amber-400/80 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between cursor-pointer">
                   <div>
                     <div className="flex items-center justify-between mb-5">
                       <div className="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center shadow-lg shadow-amber-500/20 group-hover:scale-110 transition-transform">
@@ -813,11 +820,6 @@ export default function App() {
                       <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-md">Cross-Disciplinary</span>
                       <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-md">Frontier Tech</span>
                     </div>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-wider font-display">
-                    <span>Explore Track</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
 
@@ -855,12 +857,12 @@ export default function App() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div className="bg-white/10 border border-white/15 rounded-2xl p-6 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1">
                         <div className="text-xs font-extrabold uppercase tracking-wider text-amber-300 font-display">Exciting Prize Pool</div>
-                        <div className="text-2xl sm:text-4xl font-black text-white mt-1 font-display">INR 1.5 MILLION</div>
+                        <div className="text-2xl sm:text-4xl font-black text-white mt-1 font-display">INR 15 LAKH</div>
                       </div>
 
                       <div className="bg-white/10 border border-white/15 rounded-2xl p-6 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1">
                         <div className="text-xs font-extrabold uppercase tracking-wider text-cyan-300 font-display">Pre-Seed Funding Pool</div>
-                        <div className="text-2xl sm:text-4xl font-black text-white mt-1 font-display">INR 10 MILLION</div>
+                        <div className="text-2xl sm:text-4xl font-black text-white mt-1 font-display">INR 1 CRORE</div>
                       </div>
                     </div>
 
@@ -1054,7 +1056,7 @@ export default function App() {
                       </span>
                       <div>
                         <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Pre-Seed Venture Pitch Session</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Pitches for the INR 10 Million pre-seed funding pool.</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Pitches for the INR 1 Crore pre-seed funding pool.</p>
                       </div>
                     </div>
 
@@ -1064,7 +1066,7 @@ export default function App() {
                       </span>
                       <div>
                         <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Valedictory & Prize Distribution</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Awarding INR 1.5 Million in prizes and concluding remarks.</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Awarding INR 15 Lakh in prizes and concluding remarks.</p>
                       </div>
                     </div>
                   </div>
@@ -1138,6 +1140,122 @@ export default function App() {
               </div>
             </section>
 
+            {/* =====================================================================
+                7. SPONSORS & ECOSYSTEM PARTNERS
+                ===================================================================== */}
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-14 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 text-center" id="sponsors">
+              <div className="max-w-4xl mx-auto space-y-6">
+                <div>
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-800 px-4 py-1.5 rounded-full font-display">
+                    Summit Benefactors & Partners
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-display mt-3">
+                    Supported by RIDE
+                  </h2>
+                </div>
+
+                {/* Big Center RIDE Logo */}
+                <div className="py-6 sm:py-8 flex flex-col items-center justify-center">
+                  <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-inner max-w-sm sm:max-w-md w-full flex items-center justify-center transition-transform hover:scale-105 duration-300">
+                    <img 
+                      src="/imgs/ride.png" 
+                      alt="RIDE Initiative" 
+                      className="h-24 sm:h-32 md:h-36 w-auto object-contain logo-clean-drop"
+                    />
+                  </div>
+                  <p className="mt-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-display">
+                    Research, Innovation, Development & Entrepreneurship
+                  </p>
+                </div>
+
+                {/* Open for Sponsors Callout */}
+                <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/50 to-blue-50 dark:from-blue-950/40 dark:via-indigo-950/30 dark:to-blue-950/40 border border-blue-200 dark:border-blue-800/60 max-w-2xl mx-auto space-y-3">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-100/80 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 font-display">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Open for Sponsors</span>
+                  </div>
+                  <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                    We invite industry leaders, tech enterprises, and forward-thinking organizations to partner with JAI 2026. If you would like to apply to be an event sponsor, our partnership desk is open.
+                  </p>
+                  <div className="pt-2">
+                    <button 
+                      onClick={() => navigateTo('home', 'contact')}
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider bg-blue-600 hover:bg-blue-700 text-white font-display shadow-md transition-all cursor-pointer hover:scale-105"
+                    >
+                      <Handshake className="w-4 h-4" />
+                      <span>Contact Sponsorship Desk</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            {/* =====================================================================
+                8. CONTACT & LIAISON DESK
+                ===================================================================== */}
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="contact">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+                <div>
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 font-display">
+                    Get In Touch
+                  </span>
+                  <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight font-display mt-1">
+                    Contact & Inquiries
+                  </h2>
+                </div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/70 border border-amber-200 dark:border-amber-800 font-display">
+                  <span>Contact details pending at the moment</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                {/* Card 1: Sponsorship */}
+                <div className="rounded-2xl p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-cyan-400 flex items-center justify-center">
+                    <Handshake className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-black text-slate-900 dark:text-white font-display">Sponsorship Liaison</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    For corporate sponsorships, booth exhibitions, and ecosystem collaborations.
+                  </p>
+                  <div className="pt-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 italic">
+                    Liaison contact details will be announced shortly.
+                  </div>
+                </div>
+
+                {/* Card 2: Hackathon & Registrations */}
+                <div className="rounded-2xl p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                    <Trophy className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-black text-slate-900 dark:text-white font-display">Hackathon Desk</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    For participant inquiries, team formations, and challenge submissions.
+                  </p>
+                  <div className="pt-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 italic">
+                    Helpline contact details will be announced shortly.
+                  </div>
+                </div>
+
+                {/* Card 3: General Inquiries */}
+                <div className="rounded-2xl p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                    <Building2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-black text-slate-900 dark:text-white font-display">Campus Secretariat</h3>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Jaypee Institute of Information Technology, Sector 128, Wish Town, Noida.
+                  </p>
+                  <div className="pt-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 italic">
+                    Secretariat desk details will be announced shortly.
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
           </main>
         </div>
       )}
@@ -1181,6 +1299,12 @@ export default function App() {
               <button onClick={() => navigateTo('home', 'directions')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
                 Venue
               </button>
+              <button onClick={() => navigateTo('home', 'sponsors')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
+                Sponsors
+              </button>
+              <button onClick={() => navigateTo('home', 'contact')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
+                Contact
+              </button>
               <button onClick={() => navigateTo('team')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
                 Team
               </button>
@@ -1198,6 +1322,18 @@ export default function App() {
 
         </div>
       </footer>
+
+      {/* Small floating back-to-top button on the right side */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+          title="Scroll to top"
+          className="fixed bottom-6 right-6 z-50 p-2.5 sm:p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 border border-white/20 cursor-pointer group flex items-center justify-center animate-fadeIn"
+        >
+          <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-y-0.5" />
+        </button>
+      )}
 
     </div>
   );
