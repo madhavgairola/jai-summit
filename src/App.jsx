@@ -181,14 +181,14 @@ export default function App() {
                       Information Technology
                     </span>
                     <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
-                      विद्या तत्व ज्योतिसम
+                      विद्‌या तत्व ज्योतिसम:
                     </span>
                   </div>
                 </button>
               </div>
 
-              {/* Center Pill Nav + Theme Toggle */}
-              <div className="hidden lg:flex items-center gap-1.5 xl:gap-3 shrink min-w-0">
+              {/* Center Pill Nav */}
+              <div className="hidden lg:flex items-center shrink min-w-0">
                 <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2.5 md:px-3 lg:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm">
                   <button onClick={() => navigateTo('home')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Home</button>
                   <button onClick={() => navigateTo('home', 'about')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">About</button>
@@ -201,26 +201,11 @@ export default function App() {
                   <button onClick={() => navigateTo('home', 'contact')} className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Contact</button>
                   <button onClick={() => navigateTo('team')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-semibold bg-blue-600 text-white shadow-sm cursor-pointer">Team</button>
                 </nav>
-                <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
               </div>
 
-              {/* Extreme Right: RIDE Logo - Equal size and height, padded so completely visible */}
+              {/* Extreme Right: Theme Toggle & Mobile Menu */}
               <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-1 sm:pr-2">
-                <div className="lg:hidden">
-                  <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-                </div>
-
-                <div 
-                  onClick={() => navigateTo('home', 'about')}
-                  className="flex items-center transition-transform hover:scale-105 cursor-pointer"
-                  title="RIDE Initiative (Research, Innovation, Development, Entrepreneurship)"
-                >
-                  <img 
-                    src="/imgs/ride.png" 
-                    alt="RIDE Logo" 
-                    className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain logo-clean-drop shrink-0"
-                  />
-                </div>
+                <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
                 <button 
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -291,89 +276,81 @@ export default function App() {
                         Information Technology
                       </span>
                       <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-white/95 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-                        विद्या तत्व ज्योतिसम
+                        विद्‌या तत्व ज्योतिसम:
                       </span>
                     </div>
                   </button>
                 </div>
 
-                {/* Center: Frosted Capsule Pill Navbar + Theme Toggle Pill */}
-                <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink">
-                  
-                  {/* Floating Frosted Pill Nav */}
-                  <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2 md:px-2.5 lg:px-3 py-1 sm:py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
+                {/* Center: Frosted Capsule Pill Navbar */}
+                <div className="hidden lg:flex items-center shrink min-w-0">
+                  <nav className="flex items-center gap-0.5 md:gap-1 px-2 md:px-2.5 lg:px-3 py-1 sm:py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
                     <button 
                       onClick={() => navigateTo('home')}
-                      className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm"
+                      className="px-2.5 lg:px-3 xl:px-4 py-1.5 rounded-full text-xs xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm"
                     >
                       Home
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'about')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       About
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'highlights')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Highlights
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'thematic-areas')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Themes
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'hackathon')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Hackathon
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'schedule')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Schedule
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'directions')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Venue
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'sponsors')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Sponsors
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'contact')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Contact
                     </button>
                     <button 
                       onClick={() => navigateTo('team')}
-                      className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
                     >
                       Team
                     </button>
                   </nav>
-
-                  {/* Theme Toggle Pill */}
-                  <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-
                 </div>
 
                 {/* Extreme Right Controls (Theme Toggle & Mobile Menu) */}
-                <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-1 sm:pr-3">
-                  <div className="lg:hidden">
-                    <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-                  </div>
+                <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-2 sm:pr-4 lg:pr-6">
+                  <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
                   {/* Mobile Hamburger Menu Button (Only for narrow mobile viewports <1024px) */}
                   <button 
