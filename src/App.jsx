@@ -369,13 +369,13 @@ export default function App() {
 
               {/* BOTTOM-LEFT HERO TYPOGRAPHY & DETAILS */}
               <div className="w-full max-w-3xl lg:max-w-4xl pb-2 sm:pb-3 lg:pb-4 pt-2 sm:pt-4 text-left">
-                {/* Headline: JAI 2026 Hackathon (gradient blue) – Jaypee Agentic AI International Summit 2026 (white) */}
-                <h1 className="font-display font-black text-xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[2.9rem] tracking-tight leading-[1.14]">
-                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#00d2ff] to-[#2563eb] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(56,189,248,0.35)] block sm:inline">
-                    JAI 2026 Hackathon
+                {/* Headline: Jaypee Agentic AI (White) + International Summit 2026 (Gradient Blue) */}
+                <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.15rem] tracking-tight leading-[1.1]">
+                  <span className="text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] block">
+                    Jaypee Agentic AI
                   </span>
-                  <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
-                    {" "}– Jaypee Agentic AI International Summit 2026
+                  <span className="bg-gradient-to-r from-[#38bdf8] via-[#00d2ff] to-[#2563eb] bg-clip-text text-transparent drop-shadow-[0_2px_14px_rgba(56,189,248,0.35)] block mt-0.5 sm:mt-1">
+                    International Summit 2026
                   </span>
                 </h1>
 
