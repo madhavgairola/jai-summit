@@ -159,7 +159,7 @@ export default function App() {
         <div className="w-full">
           {/* Top Navbar for Team Page */}
           <header className="sticky top-0 z-50 w-full backdrop-blur-xl border-b transition-colors duration-300 bg-white/95 dark:bg-[#070b16]/95 border-slate-200/80 dark:border-slate-800/80 shadow-sm">
-            <div className="w-full max-w-[1700px] mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-2 sm:gap-4">
+            <div className="w-full max-w-[1700px] mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-3 lg:gap-4 xl:gap-6">
               
               {/* Extreme Left: JIIT Logo + Text */}
               <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0 pl-1">
@@ -171,7 +171,7 @@ export default function App() {
                   <img 
                     src="/imgs/jiit.png" 
                     alt="JIIT Logo" 
-                    className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto object-contain logo-clean-drop shrink-0"
+                    className="h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 w-auto object-contain logo-clean-drop shrink-0"
                   />
                   <div className="flex flex-col select-none">
                     <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
@@ -187,19 +187,19 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Center Pill Nav */}
-              <div className="hidden lg:flex items-center shrink min-w-0">
-                <nav className="flex items-center gap-0.5 md:gap-1 lg:gap-1.5 px-2.5 md:px-3 lg:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm">
-                  <button onClick={() => navigateTo('home')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Home</button>
-                  <button onClick={() => navigateTo('home', 'about')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">About</button>
-                  <button onClick={() => navigateTo('home', 'highlights')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Highlights</button>
-                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Themes</button>
-                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Hackathon</button>
-                  <button onClick={() => navigateTo('home', 'schedule')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Schedule</button>
-                  <button onClick={() => navigateTo('home', 'directions')} className="px-2 md:px-2.5 lg:px-3.5 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Venue</button>
-                  <button onClick={() => navigateTo('home', 'sponsors')} className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Sponsors</button>
-                  <button onClick={() => navigateTo('home', 'contact')} className="px-2 md:px-2.5 lg:px-3 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">Contact</button>
-                  <button onClick={() => navigateTo('team')} className="px-3 md:px-3.5 lg:px-4 py-1.5 rounded-full text-xs md:text-[13px] lg:text-sm font-semibold bg-blue-600 text-white shadow-sm cursor-pointer">Team</button>
+              {/* Center Pill Nav - Perfectly centered in available space with shrink-0, identical to Home page */}
+              <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-2 xl:px-4">
+                <nav className="flex items-center gap-0.5 xl:gap-1 px-2 lg:px-2.5 xl:px-3 py-1 sm:py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm shrink-0">
+                  <button onClick={() => navigateTo('home')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Home</button>
+                  <button onClick={() => navigateTo('home', 'about')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">About</button>
+                  <button onClick={() => navigateTo('home', 'highlights')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Highlights</button>
+                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Themes</button>
+                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Hackathon</button>
+                  <button onClick={() => navigateTo('home', 'schedule')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Schedule</button>
+                  <button onClick={() => navigateTo('home', 'directions')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Venue</button>
+                  <button onClick={() => navigateTo('home', 'sponsors')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Sponsors</button>
+                  <button onClick={() => navigateTo('home', 'contact')} className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Contact</button>
+                  <button onClick={() => navigateTo('team')} className="px-2.5 lg:px-3 xl:px-4 py-1.5 rounded-full text-xs xl:text-[13px] font-semibold bg-blue-600 text-white shadow-sm cursor-pointer whitespace-nowrap">Team</button>
                 </nav>
               </div>
 
@@ -251,10 +251,10 @@ export default function App() {
             <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
 
             {/* Content Container inside the Banner */}
-            <div className="relative z-10 w-full h-full flex flex-col justify-between py-3 sm:py-4 lg:py-5 px-3 sm:px-6 lg:px-10 xl:px-14">
+            <div className="relative z-10 w-full h-full flex flex-col justify-between py-3 sm:py-4 lg:py-5 px-3 sm:px-6 lg:px-8 xl:px-12">
               
-              {/* TOP HEADER ROW - Perfectly padded so RIDE logo is NEVER cropped */}
-              <header className="w-full flex items-center justify-between gap-2 sm:gap-4">
+              {/* TOP HEADER ROW - Perfectly padded with balanced spacing */}
+              <header className="w-full flex items-center justify-between gap-3 lg:gap-4 xl:gap-6">
                 
                 {/* Extreme Left: Enlarged JIIT Logo in Top Bar + Text in PURE WHITE for Light Mode */}
                 <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
@@ -266,7 +266,7 @@ export default function App() {
                     <img 
                       src="/imgs/jiit.png" 
                       alt="JIIT Logo" 
-                      className="h-14 sm:h-16 md:h-18 lg:h-20 xl:h-22 w-auto object-contain logo-clean-drop shrink-0"
+                      className="h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 w-auto object-contain logo-clean-drop shrink-0"
                     />
                     <div className="hidden sm:flex flex-col select-none">
                       <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
@@ -282,66 +282,66 @@ export default function App() {
                   </button>
                 </div>
 
-                {/* Center: Frosted Capsule Pill Navbar */}
-                <div className="hidden lg:flex items-center shrink min-w-0">
-                  <nav className="flex items-center gap-0.5 md:gap-1 px-2 md:px-2.5 lg:px-3 py-1 sm:py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md">
+                {/* Center: Frosted Capsule Pill Navbar - Perfectly centered with shrink-0 */}
+                <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-2 xl:px-4">
+                  <nav className="flex items-center gap-0.5 xl:gap-1 px-2 lg:px-2.5 xl:px-3 py-1 sm:py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md shrink-0">
                     <button 
                       onClick={() => navigateTo('home')}
-                      className="px-2.5 lg:px-3 xl:px-4 py-1.5 rounded-full text-xs xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm"
+                      className="px-2.5 lg:px-3 xl:px-4 py-1.5 rounded-full text-xs xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm whitespace-nowrap"
                     >
                       Home
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'about')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       About
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'highlights')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Highlights
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'thematic-areas')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Themes
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'hackathon')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Hackathon
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'schedule')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Schedule
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'directions')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Venue
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'sponsors')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Sponsors
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'contact')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Contact
                     </button>
                     <button 
                       onClick={() => navigateTo('team')}
-                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer"
+                      className="px-2 lg:px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Team
                     </button>
@@ -349,7 +349,7 @@ export default function App() {
                 </div>
 
                 {/* Extreme Right Controls (Theme Toggle & Mobile Menu) */}
-                <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-2 sm:pr-4 lg:pr-6">
+                <div className="flex items-center gap-2 sm:gap-3 shrink-0 pr-1 sm:pr-2">
                   <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
                   {/* Mobile Hamburger Menu Button (Only for narrow mobile viewports <1024px) */}

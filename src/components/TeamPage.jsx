@@ -325,6 +325,11 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
                             <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white font-display leading-snug">
                               {chair.name}
                             </h3>
+                            {chair.designation && (
+                              <p className="text-xs font-semibold text-blue-700 dark:text-cyan-300">
+                                {chair.designation}
+                              </p>
+                            )}
                             <p className="text-xs text-slate-500 dark:text-slate-400">
                               {chair.department}
                             </p>
@@ -407,6 +412,12 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
                             <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white font-display leading-tight">
                               {member.name}
                             </h3>
+
+                            {member.designation && (
+                              <p className="text-xs font-semibold text-blue-700 dark:text-cyan-300">
+                                {member.designation}
+                              </p>
+                            )}
 
                             <p className="text-[11px] text-slate-400">
                               {category.name}
