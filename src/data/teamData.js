@@ -151,8 +151,8 @@ export const studentCategories = [
     name: "Design and PR",
     description: "Visual identity, creative media, communications, and public relations.",
     members: [
-      { name: "Shriya Singh" },
-      { name: "Srishti Mehta" }
+      { name: "Srishti Mehta" },
+      { name: "Shriya Singh" }
     ]
   },
   {
@@ -160,10 +160,10 @@ export const studentCategories = [
     name: "Registration",
     description: "Participant onboarding, registrations, delegate passes, and helpdesk.",
     members: [
-      { name: "Lakshya Mishra" },
       { name: "Adhira Sethi" },
+      { name: "Vatsalya Singh" },
       { name: "Chehak Trehan" },
-      { name: "Vatsalya Singh" }
+      { name: "Lakshya Mishra" }
     ]
   },
   {
