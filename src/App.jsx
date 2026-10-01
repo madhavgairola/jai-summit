@@ -152,6 +152,32 @@ export default function App() {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-[#050811] text-slate-100' : 'bg-[#f4f7fb] text-slate-800'} font-sans selection:bg-blue-600 selection:text-white`}>
       
+      {/* Global Mobile Drawer Overlay and Navigation Card */}
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop overlay */}
+          <div 
+            className="lg:hidden fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm transition-opacity"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          
+          {/* Drawer Menu */}
+          <div className="lg:hidden fixed inset-x-3 sm:inset-x-6 top-20 sm:top-24 z-50 max-h-[85vh] overflow-y-auto border border-slate-200/90 dark:border-slate-800 bg-white/98 dark:bg-[#070b16]/98 backdrop-blur-2xl p-5 sm:p-6 rounded-3xl shadow-2xl flex flex-col gap-2 font-display animate-fadeIn">
+            <button onClick={() => { navigateTo('home'); setMobileMenuOpen(false); }} className={`text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl transition-colors ${currentPage === 'home' ? 'text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/50' : 'text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400'}`}>Home</button>
+            <button onClick={() => { navigateTo('home', 'about'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">About</button>
+            <button onClick={() => { navigateTo('home', 'highlights'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Highlights</button>
+            <button onClick={() => { navigateTo('home', 'thematic-areas'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Themes</button>
+            <button onClick={() => { navigateTo('home', 'hackathon'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Hackathon</button>
+            <button onClick={() => { navigateTo('home', 'schedule'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Schedule</button>
+            <button onClick={() => { navigateTo('home', 'directions'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Venue</button>
+            <button onClick={() => { navigateTo('home', 'sponsors'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Sponsors</button>
+            <button onClick={() => { navigateTo('home', 'contact'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Contact</button>
+            <button onClick={() => { navigateTo('team'); setMobileMenuOpen(false); }} className={`text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl transition-colors ${currentPage === 'team' ? 'text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/50' : 'text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400'}`}>Team</button>
+            <a href={registrationLink} target="_blank" rel="noopener noreferrer" className="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm py-3 rounded-xl text-center uppercase tracking-wider shadow-lg">Register for Summit</a>
+          </div>
+        </>
+      )}
+
       {/* =========================================================================
           VIEW ROUTER: Home Page vs Dedicated Faculty Team Webpage
           ========================================================================= */}
@@ -162,25 +188,25 @@ export default function App() {
             <div className="w-full max-w-[1750px] mx-auto px-2.5 sm:px-4 lg:px-4 xl:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-2 lg:gap-2.5 xl:gap-5">
               
               {/* Extreme Left: JIIT Logo + Text */}
-              <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+              <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
                 <button 
                   onClick={() => navigateTo('home')}
-                  className="flex items-center gap-2 sm:gap-2.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
+                  className="flex items-center gap-1.5 sm:gap-2.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                   title="Jaypee Institute of Information Technology"
                 >
                   <img 
                     src="/imgs/jiit.png" 
                     alt="JIIT Logo" 
-                    className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop shrink-0"
+                    className="h-11 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop shrink-0"
                   />
-                  <div className="hidden sm:flex flex-col select-none">
-                    <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                  <div className="flex flex-col select-none">
+                    <span className="font-display font-black text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
                       Jaypee Institute of
                     </span>
-                    <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                    <span className="font-display font-black text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
                       Information Technology
                     </span>
-                    <span className="text-[8.5px] sm:text-[9px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
+                    <span className="text-[6.5px] min-[380px]:text-[7.5px] sm:text-[9px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
                       विद्या तत्व ज्योतिसम:
                     </span>
                   </div>
@@ -204,7 +230,7 @@ export default function App() {
               </div>
 
               {/* Extreme Right: Theme Toggle, JYC Logo, & Mobile Menu */}
-              <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
+              <div className="flex items-center gap-1.5 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
                 <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
                 {/* JYC Logo on Top Right with text 'JYC PRESENTS' / 'JAI 2026' in 2 lines bold */}
@@ -212,13 +238,13 @@ export default function App() {
                   <img 
                     src="/imgs/jyc.png" 
                     alt="JYC Logo" 
-                    className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop"
+                    className="h-11 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop"
                   />
                   <div className="flex flex-col items-center justify-center mt-0.5 leading-[1.1]">
-                    <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                    <span className="font-display font-black text-[7px] min-[380px]:text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
                       JYC PRESENTS
                     </span>
-                    <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                    <span className="font-display font-black text-[7px] min-[380px]:text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
                       JAI 2026
                     </span>
                   </div>
@@ -226,10 +252,10 @@ export default function App() {
 
                 <button 
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="lg:hidden p-2 rounded-xl text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="lg:hidden p-1.5 sm:p-2 rounded-xl text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                   aria-label="Toggle Menu"
                 >
-                  {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                  {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
                 </button>
               </div>
 
@@ -250,7 +276,7 @@ export default function App() {
               & INTEGRATED HEADER AND BOTTOM-LEFT HERO TYPOGRAPHY
               (Proportioned so the landing page fits at first glance per inspiration)
               ===================================================================== */}
-          <div className="relative w-full overflow-hidden bg-slate-950 rounded-b-[32px] sm:rounded-b-[44px] md:rounded-b-[52px] lg:rounded-b-[60px] shadow-2xl h-[320px] sm:h-[360px] md:h-[400px] lg:h-[430px] xl:h-[450px]">
+          <div className="relative w-full overflow-hidden bg-slate-950 rounded-b-[32px] sm:rounded-b-[44px] md:rounded-b-[52px] lg:rounded-b-[60px] shadow-2xl min-h-[350px] sm:min-h-[360px] md:h-[400px] lg:h-[430px] xl:h-[450px]">
             
             {/* Campus Background Image - Multidisciplinary Studies & Innovation Campus */}
             <img 
@@ -275,25 +301,25 @@ export default function App() {
               <header className="w-full flex items-center justify-between gap-1.5 sm:gap-2 lg:gap-2.5 xl:gap-5">
                 
                 {/* Extreme Left: Enlarged JIIT Logo in Top Bar + Text in PURE WHITE for Light Mode */}
-                <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
                   <button 
                     onClick={() => navigateTo('home')}
-                    className="flex items-center gap-2 sm:gap-2.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
+                    className="flex items-center gap-1.5 sm:gap-2.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                     title="Jaypee Institute of Information Technology"
                   >
                     <img 
                       src="/imgs/jiit.png" 
                       alt="JIIT Logo" 
-                      className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop shrink-0"
+                      className="h-11 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop shrink-0"
                     />
-                    <div className="hidden sm:flex flex-col select-none">
-                      <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                    <div className="flex flex-col select-none">
+                      <span className="font-display font-black text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         Jaypee Institute of
                       </span>
-                      <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                      <span className="font-display font-black text-[7.5px] min-[380px]:text-[8.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         Information Technology
                       </span>
-                      <span className="text-[8.5px] sm:text-[9px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-semibold text-white/95 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                      <span className="text-[6.5px] min-[380px]:text-[7.5px] sm:text-[9px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-semibold text-white/95 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         विद्या तत्व ज्योतिसम:
                       </span>
                     </div>
@@ -367,7 +393,7 @@ export default function App() {
                 </div>
 
                 {/* Extreme Right Controls (Theme Toggle, JYC Logo, & Mobile Menu) */}
-                <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
                   <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
                   {/* JYC Logo on Top Right with text 'JYC PRESENTS' / 'JAI 2026' in 2 lines bold */}
@@ -375,13 +401,13 @@ export default function App() {
                     <img 
                       src="/imgs/jyc.png" 
                       alt="JYC Logo" 
-                      className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop"
+                      className="h-11 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop"
                     />
                     <div className="flex flex-col items-center justify-center mt-0.5 leading-[1.1]">
-                      <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                      <span className="font-display font-black text-[7px] min-[380px]:text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
                         JYC PRESENTS
                       </span>
-                      <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                      <span className="font-display font-black text-[7px] min-[380px]:text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
                         JAI 2026
                       </span>
                     </div>
@@ -390,10 +416,10 @@ export default function App() {
                   {/* Mobile Hamburger Menu Button (Only for narrow mobile viewports <1024px) */}
                   <button 
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="lg:hidden p-2 rounded-xl bg-white/70 dark:bg-slate-900/80 text-slate-800 dark:text-white shadow-md hover:bg-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                    className="lg:hidden p-1.5 sm:p-2 rounded-xl bg-white/70 dark:bg-slate-900/80 text-slate-800 dark:text-white shadow-md hover:bg-white dark:hover:bg-slate-800 transition-colors cursor-pointer"
                     aria-label="Toggle Menu"
                   >
-                    {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
                   </button>
                 </div>
 
@@ -402,7 +428,7 @@ export default function App() {
               {/* BOTTOM-LEFT HERO TYPOGRAPHY & DETAILS */}
               <div className="w-full max-w-3xl lg:max-w-4xl pb-2 sm:pb-3 lg:pb-4 pt-2 sm:pt-4 text-left">
                 {/* Headline: Jaypee Agentic AI (White) + International Summit 2026 (Gradient Blue) */}
-                <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.15rem] tracking-tight leading-[1.1]">
+                <h1 className="font-display font-black text-2xl min-[380px]:text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.15rem] tracking-tight leading-[1.1]">
                   <span className="text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] block">
                     Jaypee Agentic AI
                   </span>
@@ -412,15 +438,15 @@ export default function App() {
                 </h1>
 
                 {/* Bolder, Larger Location & Date Badge */}
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm md:text-base text-white mt-3 sm:mt-4 font-bold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 shrink-0 drop-shadow" />
-                    <span className="font-extrabold text-white text-xs sm:text-sm md:text-base">JIIT Sector 128, Wish Town, Noida</span>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm md:text-base text-white mt-2.5 sm:mt-4 font-bold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <MapPin className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-sky-400 shrink-0 drop-shadow" />
+                    <span className="font-extrabold text-white text-[11px] min-[360px]:text-xs sm:text-sm md:text-base">JIIT Sector 128, Wish Town, Noida</span>
                   </div>
                   <span className="hidden sm:inline text-slate-400 font-semibold text-base sm:text-lg">|</span>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 shrink-0 drop-shadow" />
-                    <span className="font-extrabold text-white text-xs sm:text-sm md:text-base">October 30 – 31, 2026</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <Calendar className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-sky-400 shrink-0 drop-shadow" />
+                    <span className="font-extrabold text-white text-[11px] min-[360px]:text-xs sm:text-sm md:text-base">October 30 – 31, 2026</span>
                   </div>
                 </div>
               </div>
@@ -428,23 +454,6 @@ export default function App() {
             </div>
 
           </div>
-
-          {/* Mobile Drawer */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden fixed inset-x-4 top-24 z-50 border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl p-6 rounded-3xl shadow-2xl flex flex-col gap-2.5 font-display animate-fadeIn">
-              <button onClick={() => navigateTo('home')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/50">Home</button>
-              <button onClick={() => navigateTo('home', 'about')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">About</button>
-              <button onClick={() => navigateTo('home', 'highlights')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Highlights</button>
-              <button onClick={() => navigateTo('home', 'thematic-areas')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Themes</button>
-              <button onClick={() => navigateTo('home', 'hackathon')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Hackathon</button>
-              <button onClick={() => navigateTo('home', 'schedule')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Schedule</button>
-              <button onClick={() => navigateTo('home', 'directions')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Venue</button>
-              <button onClick={() => navigateTo('home', 'sponsors')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Sponsors</button>
-              <button onClick={() => navigateTo('home', 'contact')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Contact</button>
-              <button onClick={() => navigateTo('team')} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Team</button>
-              <a href={registrationLink} target="_blank" rel="noopener noreferrer" className="mt-3 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm py-3 rounded-xl text-center uppercase tracking-wider shadow-lg">Register for Summit</a>
-            </div>
-          )}
 
           {/* =====================================================================
               2. CENTERPIECE AGENTIC AI SUMMIT LOGO & FLOATING STATS CARD
@@ -475,44 +484,44 @@ export default function App() {
               </div>
 
               {/* FLOATING 4-COLUMN STATS CARD (With matching Agentic AI font colors) */}
-              <div className="w-full max-w-3xl lg:max-w-4xl bg-white/95 dark:bg-[#0c162d]/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_6px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_6px_25px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 px-4 sm:px-8 py-3 sm:py-3.5 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800 pointer-events-auto">
+              <div className="w-full max-w-3xl lg:max-w-4xl bg-white/95 dark:bg-[#0c162d]/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_6px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_6px_25px_rgba(0,0,0,0.4)] border border-slate-100 dark:border-slate-800/80 px-2 sm:px-8 py-2.5 sm:py-3.5 grid grid-cols-4 divide-x divide-slate-100 dark:divide-slate-800 pointer-events-auto">
                 
                 {/* Stat 1: Themes */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#0c2b75] dark:text-white leading-none">
+                <div className="flex flex-col items-center px-0.5 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl min-[360px]:text-2xl sm:text-3xl lg:text-4xl text-[#0c2b75] dark:text-white leading-none">
                     {animatedStats.themes}
                   </span>
-                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
+                  <span className="font-display font-extrabold text-[7px] min-[360px]:text-[8px] min-[400px]:text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-wider sm:tracking-widest uppercase mt-1 whitespace-nowrap">
                     THEMES
                   </span>
                 </div>
 
                 {/* Stat 2: Events */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#0c2b75] dark:text-white leading-none">
+                <div className="flex flex-col items-center px-0.5 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl min-[360px]:text-2xl sm:text-3xl lg:text-4xl text-[#0c2b75] dark:text-white leading-none">
                     {animatedStats.events}
                   </span>
-                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
+                  <span className="font-display font-extrabold text-[7px] min-[360px]:text-[8px] min-[400px]:text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-wider sm:tracking-widest uppercase mt-1 whitespace-nowrap">
                     EVENTS
                   </span>
                 </div>
 
                 {/* Stat 3: Prize Pool (Agentic AI vibrant blue) */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
+                <div className="flex flex-col items-center px-0.5 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl min-[360px]:text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
                     ₹{animatedStats.prize}L
                   </span>
-                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
+                  <span className="font-display font-extrabold text-[7px] min-[360px]:text-[8px] min-[400px]:text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-wider sm:tracking-widest uppercase mt-1 whitespace-nowrap">
                     PRIZE POOL
                   </span>
                 </div>
 
                 {/* Stat 4: Pre-Seed Pool (Agentic AI vibrant blue) */}
-                <div className="flex flex-col items-center px-1 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
-                  <span className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
+                <div className="flex flex-col items-center px-0.5 sm:px-3 group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5">
+                  <span className="font-display font-black text-xl min-[360px]:text-2xl sm:text-3xl lg:text-4xl text-[#1a56db] dark:text-cyan-400 leading-none">
                     ₹{animatedStats.preSeed}Cr
                   </span>
-                  <span className="font-display font-extrabold text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-widest uppercase mt-1">
+                  <span className="font-display font-extrabold text-[7px] min-[360px]:text-[8px] min-[400px]:text-[9px] sm:text-[11px] text-slate-400 dark:text-slate-400 tracking-wider sm:tracking-widest uppercase mt-1 whitespace-nowrap">
                     PRE-SEED POOL
                   </span>
                 </div>
@@ -525,12 +534,12 @@ export default function App() {
           {/* =====================================================================
               BODY CONTENT SECTIONS
               ===================================================================== */}
-          <main className="max-w-[1584px] mx-auto px-4 sm:px-6 lg:px-12 py-10 space-y-16">
+          <main className="max-w-[1584px] mx-auto px-3 sm:px-6 lg:px-12 py-8 sm:py-10 space-y-10 sm:space-y-16">
 
             {/* =====================================================================
                 1. SUMMIT HIGHLIGHTS (IMPROVED UI - ENGAGING, HIGH-TECH & VISUAL)
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="highlights">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="highlights">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
                 <div>
                   <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 font-display">
@@ -641,7 +650,7 @@ export default function App() {
             </section>
 
             {/* 2. OVERVIEW & 3 STACKED CARDS */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="about">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="about">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 
                 {/* Left Column: Heading + Editorial Intro */}
@@ -710,7 +719,7 @@ export default function App() {
             {/* =====================================================================
                 3. KEY THEMATIC AREAS (IMPROVED UI - RICH LUXURY TRACK CARDS)
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="thematic-areas">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="thematic-areas">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
                 <div>
                   <span className="text-xs font-extrabold uppercase tracking-wider text-blue-600 dark:text-cyan-400 font-display">
@@ -841,8 +850,8 @@ export default function App() {
             {/* =====================================================================
                 4. HACKATHON SPOTLIGHT (With Agentic AI Graphic & QR Code)
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-6 sm:p-10 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="hackathon">
-              <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-2xl sm:rounded-3xl p-8 sm:p-14 border border-blue-900/60 shadow-xl">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="hackathon">
+              <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-14 border border-blue-900/60 shadow-xl">
                 
                 {/* Background Agentic Silhouette Motif */}
                 <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-15 pointer-events-none mix-blend-screen overflow-hidden">
@@ -959,7 +968,7 @@ export default function App() {
             {/* =====================================================================
                 5. TENTATIVE SUMMIT SCHEDULE (TBD)
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="schedule">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="schedule">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
                 <div>
                   <span className="text-xs font-extrabold uppercase tracking-wider text-blue-600 dark:text-cyan-400 font-display">
@@ -974,11 +983,11 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 
                 {/* Day 1 Card */}
-                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1">
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 sm:p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                     <div className="font-black text-lg sm:text-xl text-slate-900 dark:text-white font-display">
                       Day 1: Friday, Oct 30, 2026
                     </div>
@@ -988,8 +997,8 @@ export default function App() {
                   </div>
 
                   <div className="space-y-5">
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 09:00 – 10:30 AM
                       </span>
                       <div>
@@ -998,8 +1007,8 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 11:00 AM
                       </span>
                       <div>
@@ -1008,8 +1017,8 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 11:30 AM – 01:00 PM
                       </span>
                       <div>
@@ -1018,8 +1027,8 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 02:30 – 05:00 PM
                       </span>
                       <div>
@@ -1031,8 +1040,8 @@ export default function App() {
                 </div>
 
                 {/* Day 2 Card */}
-                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1">
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 sm:p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                     <div className="font-black text-lg sm:text-xl text-slate-900 dark:text-white font-display">
                       Day 2: Saturday, Oct 31, 2026
                     </div>
@@ -1042,8 +1051,8 @@ export default function App() {
                   </div>
 
                   <div className="space-y-5">
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 09:30 – 11:00 AM
                       </span>
                       <div>
@@ -1052,8 +1061,8 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 11:30 AM – 01:30 PM
                       </span>
                       <div>
@@ -1062,8 +1071,8 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 02:30 – 04:00 PM
                       </span>
                       <div>
@@ -1072,8 +1081,8 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 w-32 shrink-0 flex items-center gap-1.5">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 04:30 – 05:30 PM
                       </span>
                       <div>
@@ -1090,7 +1099,7 @@ export default function App() {
             {/* =====================================================================
                 6. VENUE & DIRECTIONS (JIIT Sector 128 + Google Maps)
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="directions">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="directions">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
                 <div>
                   <span className="text-xs font-extrabold uppercase tracking-wider text-blue-600 dark:text-cyan-400 font-display">
@@ -1155,7 +1164,7 @@ export default function App() {
             {/* =====================================================================
                 7. SPONSORS & ECOSYSTEM PARTNERS (Compact & Impactful)
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="sponsors">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="sponsors">
               <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-5">
                   <span className="text-[11px] font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-800 px-3.5 py-1 rounded-full font-display">
@@ -1210,7 +1219,7 @@ export default function App() {
             {/* =====================================================================
                 8. CONTACT & LIAISON DESK
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-6 sm:p-10 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="contact">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="contact">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
                 <div>
                   <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 font-display">
@@ -1303,8 +1312,8 @@ export default function App() {
       {/* =========================================================================
           FOOTER: With Home, About, Highlights, Themes, Hackathon, Schedule, Venue, Team
           ========================================================================= */}
-      <footer className="w-full max-w-[1584px] mx-auto px-4 sm:px-6 lg:px-12 pb-12 pt-6">
-        <div className="bg-white dark:bg-[#070c18] border border-slate-200/90 dark:border-slate-800 text-slate-600 dark:text-slate-400 rounded-3xl p-8 sm:p-12 space-y-8 shadow-sm">
+      <footer className="w-full max-w-[1584px] mx-auto px-3 sm:px-6 lg:px-12 pb-12 pt-6">
+        <div className="bg-white dark:bg-[#070c18] border border-slate-200/90 dark:border-slate-800 text-slate-600 dark:text-slate-400 rounded-3xl p-5 sm:p-8 md:p-12 space-y-8 shadow-sm">
           
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-slate-200/80 dark:border-slate-800/80">
             <div className="flex items-center gap-5">
@@ -1351,12 +1360,12 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-display">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-display text-center sm:text-left">
             <div className="font-extrabold tracking-wider text-slate-700 dark:text-slate-300 uppercase">
               PEOPLE &nbsp;|&nbsp; IDEAS &nbsp;|&nbsp; PERSPECTIVE &nbsp;|&nbsp; A BETTER TOMORROW
             </div>
             <div className="text-slate-500">
-              © 2026 Jaypee Agentic AI International Summit. All rights reserved. &nbsp;|&nbsp; Made by Renesha and Madhav
+              © 2026 Jaypee Agentic AI International Summit. All rights reserved. &nbsp;|&nbsp; Made by Renesha Sagar and Madhav Gairola
             </div>
           </div>
 
