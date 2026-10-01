@@ -134,6 +134,139 @@ export const teamCategories = [
   }
 ];
 
+export const studentCategories = [
+  {
+    id: "student-leads",
+    name: "Student Steering Committee",
+    description: "Core student leadership responsible for overall summit orchestration and functional execution.",
+    members: [
+      { name: "Amrit Kumar Jha" },
+      { name: "Devansh Tripathi" },
+      { name: "Daksh Sachdeva" }
+    ]
+  },
+  {
+    id: "design-pr",
+    name: "Design and PR",
+    description: "Visual identity, creative media, communications, and public relations.",
+    members: [
+      { name: "Shriya Singh" },
+      { name: "Srishti Mehta" }
+    ]
+  },
+  {
+    id: "registration",
+    name: "Registration",
+    description: "Participant onboarding, registrations, delegate passes, and helpdesk.",
+    members: [
+      { name: "Lakshya Mishra" },
+      { name: "Adhira Sethi" },
+      { name: "Chehak Trehan" },
+      { name: "Vatsalya Singh" }
+    ]
+  },
+  {
+    id: "technical",
+    name: "Technical",
+    description: "Hackathon architecture, technical tracks, computing labs, and execution.",
+    members: [
+      { name: "Renesha Sagar" },
+      { name: "Madhav Gairola" },
+      { name: "Aanya Goel" },
+      { name: "Chehak Trehan" },
+      { name: "Shourya Dixit" },
+      { name: "Vatsalya Singh" },
+      { name: "Lakshya Mishra" }
+    ]
+  },
+  {
+    id: "leadership-outreach",
+    name: "Leadership Outreach",
+    description: "Institutional partnerships, academic liaisons, and dignitary invitations.",
+    members: [
+      { name: "Divye Bajaj" },
+      { name: "Aradhyaa Singh" },
+      { name: "Amrit Kumar Jha" },
+      { name: "Devansh Tripathi" },
+      { name: "Daksh Sachdeva" },
+      { name: "Saksham Kotia" }
+    ]
+  },
+  {
+    id: "roundtable-planning",
+    name: "Roundtable Planning",
+    description: "Executive roundtables, policy forums, and strategic brainstorms.",
+    members: [
+      { name: "Divye Bajaj" },
+      { name: "Aradhyaa Singh" },
+      { name: "Amrit Kumar Jha" },
+      { name: "Devansh Tripathi" },
+      { name: "Daksh Sachdeva" },
+      { name: "Saksham Kotia" }
+    ]
+  },
+  {
+    id: "panel-expert-talks",
+    name: "Panel Discussion & Expert Talks",
+    description: "Keynote curation, industry panellists, and academic discourse moderation.",
+    members: [
+      { name: "Divye Bajaj" },
+      { name: "Aradhyaa Singh" },
+      { name: "Pratik Singh" },
+      { name: "Vansh Mahajan" }
+    ]
+  },
+  {
+    id: "expo",
+    name: "Expo",
+    description: "Startup demo booths, tech showcases, and sponsor engagement arena.",
+    members: [
+      { name: "Divye Bajaj" }
+    ]
+  },
+  {
+    id: "hospitality",
+    name: "Hospitality",
+    description: "Guest reception, accommodation, catering, and campus protocol.",
+    members: [
+      { name: "Juhi Hatuka" },
+      { name: "Asmi Srivastava" }
+    ]
+  },
+  {
+    id: "logistic",
+    name: "Logistic",
+    description: "Venue infrastructure, transportation, equipment, and event operations.",
+    members: [
+      { name: "Pratik Singh" },
+      { name: "Revant Srivastava" },
+      { name: "Amrit Kumar Jha" },
+      { name: "Devansh Tripathi" },
+      { name: "Daksh Sachdeva" },
+      { name: "Saksham Kotia" }
+    ]
+  },
+  {
+    id: "venue-management",
+    name: "Venue Management",
+    description: "Stage, seating arrangements, audio-video systems, and on-ground operations.",
+    members: [
+      { name: "Amrit Kumar Jha" },
+      { name: "Devansh Tripathi" },
+      { name: "Daksh Sachdeva" },
+      { name: "Saksham Kotia" },
+      { name: "Aradhyaa Singh" },
+      { name: "Divye Bajaj" },
+      { name: "Revant Srivastava" },
+      { name: "Pratik Singh" },
+      { name: "Vansh Mahajan" },
+      { name: "Juhi Hatuka" },
+      { name: "Shriya Singh" },
+      { name: "Asmi Srivastava" }
+    ]
+  }
+];
+
 // Helper to get initials
 export function getInitials(name) {
   if (!name) return "AI";

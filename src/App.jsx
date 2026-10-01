@@ -1118,115 +1118,143 @@ export default function App() {
             </section>
 
             {/* =====================================================================
-                7. SPONSORS & ECOSYSTEM PARTNERS
+                7. SPONSORS & ECOSYSTEM PARTNERS (Compact & Impactful)
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-14 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 text-center" id="sponsors">
-              <div className="max-w-4xl mx-auto space-y-6">
-                <div>
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-800 px-4 py-1.5 rounded-full font-display">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="sponsors">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-5">
+                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-800 px-3.5 py-1 rounded-full font-display">
                     Summit Benefactors & Partners
                   </span>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight font-display mt-3">
+                  <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight font-display mt-2">
                     Supported by RIDE
                   </h2>
                 </div>
 
-                {/* Big Center RIDE Logo */}
-                <div className="py-6 sm:py-8 flex flex-col items-center justify-center">
-                  <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-inner max-w-sm sm:max-w-md w-full flex items-center justify-center transition-transform hover:scale-105 duration-300">
+                {/* Compact Side-by-Side Grid: RIDE Center Box + Open for Sponsors Callout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 items-stretch">
+                  
+                  {/* Left: Sleek RIDE Logo Card */}
+                  <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-col items-center justify-center text-center">
                     <img 
                       src="/imgs/ride.png" 
                       alt="RIDE Initiative" 
-                      className="h-24 sm:h-32 md:h-36 w-auto object-contain logo-clean-drop"
+                      className="h-16 sm:h-20 w-auto object-contain logo-clean-drop transition-transform hover:scale-105 duration-200"
                     />
+                    <p className="mt-2.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-display">
+                      Research, Innovation, Development & Entrepreneurship
+                    </p>
                   </div>
-                  <p className="mt-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-display">
-                    Research, Innovation, Development & Entrepreneurship
-                  </p>
-                </div>
 
-                {/* Open for Sponsors Callout */}
-                <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/50 to-blue-50 dark:from-blue-950/40 dark:via-indigo-950/30 dark:to-blue-950/40 border border-blue-200 dark:border-blue-800/60 max-w-2xl mx-auto space-y-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-100/80 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 font-display">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Open for Sponsors</span>
+                  {/* Right: Open for Sponsors Callout */}
+                  <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50/70 via-indigo-50/40 to-blue-50/70 dark:from-blue-950/40 dark:via-indigo-950/30 dark:to-blue-950/40 border border-blue-200/70 dark:border-blue-800/60 flex flex-col justify-between space-y-3">
+                    <div>
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-100/80 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 font-display mb-2">
+                        <Sparkles className="w-3 h-3" />
+                        <span>Open for Sponsors</span>
+                      </div>
+                      <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                        We invite industry leaders, tech enterprises, and forward-thinking organizations to partner with JAI 2026. Reach out to our sponsorship liaison desk.
+                      </p>
+                    </div>
+                    <div className="pt-1">
+                      <button 
+                        onClick={() => navigateTo('home', 'contact')}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider bg-blue-600 hover:bg-blue-700 text-white font-display shadow-sm transition-all cursor-pointer hover:scale-105"
+                      >
+                        <Handshake className="w-3.5 h-3.5" />
+                        <span>Contact Sponsorship Desk</span>
+                      </button>
+                    </div>
                   </div>
-                  <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
-                    We invite industry leaders, tech enterprises, and forward-thinking organizations to partner with JAI 2026. If you would like to apply to be an event sponsor, our partnership desk is open.
-                  </p>
-                  <div className="pt-2">
-                    <button 
-                      onClick={() => navigateTo('home', 'contact')}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider bg-blue-600 hover:bg-blue-700 text-white font-display shadow-md transition-all cursor-pointer hover:scale-105"
-                    >
-                      <Handshake className="w-4 h-4" />
-                      <span>Contact Sponsorship Desk</span>
-                    </button>
-                  </div>
-                </div>
 
+                </div>
               </div>
             </section>
 
             {/* =====================================================================
                 8. CONTACT & LIAISON DESK
                 ===================================================================== */}
-            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-8 sm:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="contact">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-6 sm:p-10 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="contact">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7">
                 <div>
                   <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-cyan-400 font-display">
                     Get In Touch
                   </span>
-                  <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight font-display mt-1">
+                  <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight font-display mt-1">
                     Contact & Inquiries
                   </h2>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/70 border border-amber-200 dark:border-amber-800 font-display">
-                  <span>Contact details pending at the moment</span>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-200 dark:border-emerald-800 font-display">
+                  <span>Official Communication Desks</span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
                 
-                {/* Card 1: Sponsorship */}
-                <div className="rounded-2xl p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-cyan-400 flex items-center justify-center">
-                    <Handshake className="w-6 h-6" />
+                {/* Card 1: Sponsorship Liaison */}
+                <div className="rounded-2xl p-5 sm:p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2.5">
+                    <div className="w-11 h-11 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-cyan-400 flex items-center justify-center">
+                      <Handshake className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white font-display">Sponsorship Liaison</h3>
+                    <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      For corporate sponsorships, booth exhibitions, and ecosystem collaborations.
+                    </p>
                   </div>
-                  <h3 className="text-lg font-black text-slate-900 dark:text-white font-display">Sponsorship Liaison</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    For corporate sponsorships, booth exhibitions, and ecosystem collaborations.
-                  </p>
-                  <div className="pt-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 italic">
-                    Liaison contact details will be announced shortly.
-                  </div>
-                </div>
-
-                {/* Card 2: Hackathon & Registrations */}
-                <div className="rounded-2xl p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
-                    <Trophy className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-black text-slate-900 dark:text-white font-display">Hackathon Desk</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    For participant inquiries, team formations, and challenge submissions.
-                  </p>
-                  <div className="pt-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 italic">
-                    Helpline contact details will be announced shortly.
+                  <div className="pt-2">
+                    <a 
+                      href="mailto:jiityouthclub128@gmail.com" 
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-blue-700 dark:text-cyan-300 bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/60 transition-colors w-full break-all"
+                    >
+                      <Mail className="w-3.5 h-3.5 shrink-0 text-blue-600 dark:text-cyan-400" />
+                      <span>jiityouthclub128@gmail.com</span>
+                    </a>
                   </div>
                 </div>
 
-                {/* Card 3: General Inquiries */}
-                <div className="rounded-2xl p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center">
-                    <Building2 className="w-6 h-6" />
+                {/* Card 2: Hackathon Desk */}
+                <div className="rounded-2xl p-5 sm:p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2.5">
+                    <div className="w-11 h-11 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                      <Trophy className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white font-display">Hackathon Desk</h3>
+                    <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      For participant inquiries, team formations, and challenge submissions.
+                    </p>
                   </div>
-                  <h3 className="text-lg font-black text-slate-900 dark:text-white font-display">Campus Secretariat</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Jaypee Institute of Information Technology, Sector 128, Wish Town, Noida.
-                  </p>
-                  <div className="pt-2 text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 italic">
-                    Secretariat desk details will be announced shortly.
+                  <div className="pt-2">
+                    <a 
+                      href="mailto:hackathonquery.jai@gmail.com" 
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-200 dark:border-cyan-800 hover:bg-cyan-100 dark:hover:bg-cyan-900/60 transition-colors w-full break-all"
+                    >
+                      <Mail className="w-3.5 h-3.5 shrink-0 text-cyan-600 dark:text-cyan-400" />
+                      <span>hackathonquery.jai@gmail.com</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Card 3: Campus Secretariat */}
+                <div className="rounded-2xl p-5 sm:p-6 bg-slate-50 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2.5">
+                    <div className="w-11 h-11 rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white font-display">Campus Secretariat</h3>
+                    <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Jaypee Institute of Information Technology, Sector 128, Wish Town, Noida.
+                    </p>
+                  </div>
+                  <div className="pt-2">
+                    <a 
+                      href="mailto:sponsorquery.jai@gmail.com" 
+                      className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/80 border border-purple-200 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 transition-colors w-full break-all"
+                    >
+                      <Mail className="w-3.5 h-3.5 shrink-0 text-purple-600 dark:text-purple-400" />
+                      <span>sponsorquery.jai@gmail.com</span>
+                    </a>
                   </div>
                 </div>
 

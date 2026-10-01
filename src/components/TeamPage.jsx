@@ -6,51 +6,7 @@ import {
   GraduationCap,
   Clock
 } from 'lucide-react';
-import { summitChairs, teamCategories, getInitials } from '../data/teamData';
-
-// Student committees data structure (Details and photos pending)
-const studentCategories = [
-  {
-    id: "student-leads",
-    name: "Student Steering Committee",
-    description: "Core student leadership responsible for overall summit orchestration and volunteer mobilization.",
-    members: [
-      { name: "Student Lead (TBA)", role: "Overall Student Coordinator", department: "Department of CSE & IT", filename: "student-lead-1.jpg" },
-      { name: "Student Lead (TBA)", role: "Deputy Student Coordinator", department: "Department of CSE & IT", filename: "student-lead-2.jpg" },
-      { name: "Student Lead (TBA)", role: "Operations Secretariat Lead", department: "Department of CSE & IT", filename: "student-lead-3.jpg" }
-    ]
-  },
-  {
-    id: "student-hackathon",
-    name: "Hackathon Technical Operations",
-    description: "Student engineers managing hackathon infrastructure, platform workflows, and mentor coordination.",
-    members: [
-      { name: "Tech Lead (TBA)", role: "Platform Architecture Lead", department: "Department of CSE & IT", filename: "student-tech-1.jpg" },
-      { name: "Tech Co-Lead (TBA)", role: "Hackathon Operations Co-Lead", department: "Department of CSE & IT", filename: "student-tech-2.jpg" },
-      { name: "DevOps Lead (TBA)", role: "Cloud & Lab Systems Co-Lead", department: "Department of CSE & IT", filename: "student-tech-3.jpg" }
-    ]
-  },
-  {
-    id: "student-design",
-    name: "Media, Design & PR Team",
-    description: "Creative student leads managing summit branding, social media amplification, and UI/UX.",
-    members: [
-      { name: "Design Lead (TBA)", role: "Creative & Brand Lead", department: "Department of CSE & IT", filename: "student-media-1.jpg" },
-      { name: "Media Lead (TBA)", role: "Public Relations & Media Lead", department: "Department of CSE & IT", filename: "student-media-2.jpg" },
-      { name: "Content Lead (TBA)", role: "Digital Content & Socials", department: "Department of CSE & IT", filename: "student-media-3.jpg" }
-    ]
-  },
-  {
-    id: "student-logistics",
-    name: "Logistics, Hospitality & Registration",
-    description: "Student team organizing on-ground registration desks, participant escorting, and campus navigation.",
-    members: [
-      { name: "Logistics Lead (TBA)", role: "Hospitality & Venue Coordinator", department: "Department of CSE & IT", filename: "student-log-1.jpg" },
-      { name: "Registration Lead (TBA)", role: "Registration Desk Management", department: "Department of CSE & IT", filename: "student-log-2.jpg" },
-      { name: "Volunteer Lead (TBA)", role: "Student Volunteer Coordinator", department: "Department of CSE & IT", filename: "student-log-3.jpg" }
-    ]
-  }
-];
+import { summitChairs, teamCategories, studentCategories, getInitials } from '../data/teamData';
 
 export default function TeamPage({ onNavigateHome, darkMode }) {
   const [teamType, setTeamType] = useState('faculty'); // 'faculty' | 'students'
@@ -103,7 +59,6 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
 
     const matchingMembers = cat.members.filter((m) => 
       m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      m.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
       cat.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
@@ -159,13 +114,6 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
               >
                 <GraduationCap className="w-3.5 h-3.5" />
                 <span>Students Team</span>
-                <span className={`text-[9px] font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider ${
-                  teamType === 'students' 
-                    ? 'bg-white/20 text-white dark:bg-slate-950/30 dark:text-slate-950' 
-                    : 'bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-300/60 dark:border-amber-700/60'
-                }`}>
-                  Pending
-                </span>
               </button>
             </div>
           </div>
@@ -201,17 +149,6 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
                 "Meet the student leadership, technical architects, and volunteers coordinating event operations, hackathon workflows, and participant hospitality."
               )}
             </p>
-
-            {/* If students tab is selected, show pending notification banner */}
-            {teamType === 'students' && (
-              <div className="flex items-center gap-2.5 p-3.5 sm:p-4 rounded-xl bg-amber-50 dark:bg-amber-950/50 border border-amber-200/80 dark:border-amber-800 text-amber-900 dark:text-amber-200 text-xs sm:text-sm font-medium mt-3 shadow-sm">
-                <Clock className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
-                <div>
-                  <span className="font-bold">Details Pending at the Moment: </span>
-                  Student team nominations, profile photographs, and committee assignments are currently being compiled.
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Search & Category Filter Controls */}
@@ -453,44 +390,24 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4">
                   {category.members.map((member, mIdx) => {
                     return (
                       <div 
                         key={mIdx}
-                        className="relative group rounded-2xl p-4 sm:p-4.5 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-cyan-400/80 dark:hover:border-cyan-500/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md flex flex-col justify-between"
+                        className="relative group rounded-xl p-3.5 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-cyan-400/80 dark:hover:border-cyan-500/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md flex items-center gap-3.5"
                       >
-                        <div className="flex items-start gap-3.5">
-                          {/* Photo / Avatar Placeholder */}
-                          <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 shadow-sm flex items-center justify-center text-white border bg-gradient-to-tr from-cyan-600 to-blue-700 border-cyan-400/50">
-                            {!imageErrors[member.filename] ? (
-                              <img 
-                                src={`/imgs/team/${member.filename}`} 
-                                alt={member.name}
-                                onError={(e) => handleImageError(member.filename, e)}
-                                className="w-full h-full object-cover object-top"
-                              />
-                            ) : (
-                              <GraduationCap className="w-5 h-5 text-white/90" />
-                            )}
-                          </div>
-
-                          {/* Name & Role */}
-                          <div className="space-y-0.5 flex-1">
-                            <span className="inline-block px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider font-display text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-200 dark:border-cyan-800">
-                              {member.role}
-                            </span>
-
-                            <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white font-display leading-tight">
-                              {member.name}
-                            </h3>
-
-                            <p className="text-[11px] text-slate-400">
-                              {member.department}
-                            </p>
-                          </div>
+                        {/* Avatar Placeholder with GraduationCap Symbol */}
+                        <div className="relative w-11 h-11 rounded-xl overflow-hidden shrink-0 shadow-sm flex items-center justify-center text-white border bg-gradient-to-tr from-cyan-600 to-blue-700 border-cyan-400/50">
+                          <GraduationCap className="w-5 h-5 text-white/95" />
                         </div>
 
+                        {/* Student Name Only */}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white font-display leading-tight truncate">
+                            {member.name}
+                          </h3>
+                        </div>
                       </div>
                     );
                   })}
