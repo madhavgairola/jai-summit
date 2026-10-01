@@ -159,63 +159,63 @@ export default function App() {
         <div className="w-full">
           {/* Top Navbar for Team Page */}
           <header className="sticky top-0 z-50 w-full backdrop-blur-xl border-b transition-colors duration-300 bg-white/95 dark:bg-[#070b16]/95 border-slate-200/80 dark:border-slate-800/80 shadow-sm">
-            <div className="w-full max-w-[1700px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-2 lg:gap-3 xl:gap-6">
+            <div className="w-full max-w-[1750px] mx-auto px-2.5 sm:px-4 lg:px-4 xl:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-1.5 sm:gap-2 lg:gap-2.5 xl:gap-5">
               
               {/* Extreme Left: JIIT Logo + Text */}
-              <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
+              <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
                 <button 
                   onClick={() => navigateTo('home')}
-                  className="flex items-center gap-2.5 sm:gap-3.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
+                  className="flex items-center gap-2 sm:gap-2.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                   title="Jaypee Institute of Information Technology"
                 >
                   <img 
                     src="/imgs/jiit.png" 
                     alt="JIIT Logo" 
-                    className="h-10 sm:h-12 md:h-13 lg:h-14 xl:h-16 w-auto object-contain logo-clean-drop shrink-0"
+                    className="h-12 sm:h-13 md:h-14 lg:h-15 xl:h-16 w-auto object-contain logo-clean-drop shrink-0"
                   />
                   <div className="hidden sm:flex flex-col select-none">
-                    <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                    <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
                       Jaypee Institute of
                     </span>
-                    <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
+                    <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
                       Information Technology
                     </span>
-                    <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
-                      विद्‌या तत्व ज्योतिसम:
+                    <span className="text-[8.5px] sm:text-[9px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-semibold text-blue-700 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi">
+                      विद्या तत्व ज्योतिसम:
                     </span>
                   </div>
                 </button>
               </div>
 
               {/* Center Pill Nav - Perfectly centered with balanced compact padding to prevent any overlap */}
-              <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1 xl:px-3">
-                <nav className="flex items-center gap-0.5 xl:gap-1 px-1.5 lg:px-2 xl:px-2.5 py-1 sm:py-1.2 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm shrink-0">
-                  <button onClick={() => navigateTo('home')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Home</button>
-                  <button onClick={() => navigateTo('home', 'about')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">About</button>
-                  <button onClick={() => navigateTo('home', 'highlights')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Highlights</button>
-                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Themes</button>
-                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Hackathon</button>
-                  <button onClick={() => navigateTo('home', 'schedule')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Schedule</button>
-                  <button onClick={() => navigateTo('home', 'directions')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Venue</button>
-                  <button onClick={() => navigateTo('home', 'sponsors')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Sponsors</button>
-                  <button onClick={() => navigateTo('home', 'contact')} className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Contact</button>
-                  <button onClick={() => navigateTo('team')} className="px-2 lg:px-2.5 xl:px-3 2xl:px-3.5 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-semibold bg-blue-600 text-white shadow-sm cursor-pointer whitespace-nowrap">Team</button>
+              <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1">
+                <nav className="flex items-center gap-0.5 xl:gap-1 px-1 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm shrink-0">
+                  <button onClick={() => navigateTo('home')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Home</button>
+                  <button onClick={() => navigateTo('home', 'about')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">About</button>
+                  <button onClick={() => navigateTo('home', 'highlights')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Highlights</button>
+                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Themes</button>
+                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Hackathon</button>
+                  <button onClick={() => navigateTo('home', 'schedule')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Schedule</button>
+                  <button onClick={() => navigateTo('home', 'directions')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Venue</button>
+                  <button onClick={() => navigateTo('home', 'sponsors')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Sponsors</button>
+                  <button onClick={() => navigateTo('home', 'contact')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Contact</button>
+                  <button onClick={() => navigateTo('team')} className="px-2 lg:px-2.5 xl:px-3 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-semibold bg-blue-600 text-white shadow-sm cursor-pointer whitespace-nowrap">Team</button>
                 </nav>
               </div>
 
               {/* Extreme Right: Theme Toggle, JYC Logo, & Mobile Menu */}
-              <div className="flex items-center gap-2 sm:gap-3 lg:gap-3.5 shrink-0 pr-1">
+              <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
                 <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-                {/* JYC Logo on Top Right with text 'JYC Presents JAI 2026' */}
+                {/* JYC Logo on Top Right with text 'JYC PRESENTS JAI 2026' in black */}
                 <div className="flex flex-col items-center justify-center select-none shrink-0 text-center">
                   <img 
                     src="/imgs/jyc.png" 
                     alt="JYC Logo" 
-                    className="h-10 sm:h-12 md:h-13 lg:h-14 xl:h-16 w-auto object-contain logo-clean-drop"
+                    className="h-10 sm:h-11 md:h-12 lg:h-12 xl:h-14 w-auto object-contain logo-clean-drop"
                   />
-                  <span className="font-display font-black text-[7px] sm:text-[8px] md:text-[9px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-[#0a1945] dark:text-white mt-0.5">
-                    JYC Presents JAI 2026
+                  <span className="font-display font-black text-[7px] sm:text-[7.5px] md:text-[8px] xl:text-[8.5px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white mt-0.5">
+                    JYC PRESENTS JAI 2026
                   </span>
                 </div>
 
@@ -264,97 +264,97 @@ export default function App() {
             <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none" />
 
             {/* Content Container inside the Banner */}
-            <div className="relative z-10 w-full h-full flex flex-col justify-between py-2 sm:py-3 lg:py-4 px-2 sm:px-4 lg:px-6 xl:px-10">
+            <div className="relative z-10 w-full h-full flex flex-col justify-between py-2 sm:py-3 lg:py-4 px-2.5 sm:px-4 lg:px-4 xl:px-6">
               
               {/* TOP HEADER ROW - Perfectly padded with balanced spacing */}
-              <header className="w-full flex items-center justify-between gap-2 lg:gap-3 xl:gap-6">
+              <header className="w-full flex items-center justify-between gap-1.5 sm:gap-2 lg:gap-2.5 xl:gap-5">
                 
                 {/* Extreme Left: Enlarged JIIT Logo in Top Bar + Text in PURE WHITE for Light Mode */}
-                <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
+                <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
                   <button 
                     onClick={() => navigateTo('home')}
-                    className="flex items-center gap-2.5 sm:gap-3.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
+                    className="flex items-center gap-2 sm:gap-2.5 transition-transform hover:scale-105 cursor-pointer text-left focus:outline-none"
                     title="Jaypee Institute of Information Technology"
                   >
                     <img 
                       src="/imgs/jiit.png" 
                       alt="JIIT Logo" 
-                      className="h-10 sm:h-12 md:h-13 lg:h-14 xl:h-16 w-auto object-contain logo-clean-drop shrink-0"
+                      className="h-12 sm:h-13 md:h-14 lg:h-15 xl:h-16 w-auto object-contain logo-clean-drop shrink-0"
                     />
                     <div className="hidden sm:flex flex-col select-none">
-                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                      <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         Jaypee Institute of
                       </span>
-                      <span className="font-display font-black text-[11px] sm:text-xs md:text-sm tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                      <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                         Information Technology
                       </span>
-                      <span className="text-[10px] sm:text-[11px] md:text-xs font-semibold text-white/95 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-                        विद्‌या तत्व ज्योतिसम:
+                      <span className="text-[8.5px] sm:text-[9px] md:text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-semibold text-white/95 dark:text-cyan-300 tracking-wider mt-0.5 font-hindi drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        विद्या तत्व ज्योतिसम:
                       </span>
                     </div>
                   </button>
                 </div>
 
                 {/* Center: Frosted Capsule Pill Navbar - Perfectly centered with balanced compact padding to prevent any overlap */}
-                <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1 xl:px-3">
-                  <nav className="flex items-center gap-0.5 xl:gap-1 px-1.5 lg:px-2 xl:px-2.5 py-1 sm:py-1.2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md shrink-0">
+                <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1">
+                  <nav className="flex items-center gap-0.5 xl:gap-1 px-1 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md shrink-0">
                     <button 
                       onClick={() => navigateTo('home')}
-                      className="px-2 lg:px-2.5 xl:px-3 2xl:px-3.5 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm whitespace-nowrap"
+                      className="px-2 lg:px-2.5 xl:px-3 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm whitespace-nowrap"
                     >
                       Home
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'about')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       About
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'highlights')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Highlights
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'thematic-areas')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Themes
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'hackathon')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Hackathon
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'schedule')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Schedule
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'directions')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Venue
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'sponsors')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Sponsors
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'contact')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Contact
                     </button>
                     <button 
                       onClick={() => navigateTo('team')}
-                      className="px-1.5 lg:px-2 xl:px-2.5 2xl:px-3 py-1 sm:py-1.2 xl:py-1.5 rounded-full text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Team
                     </button>
@@ -362,18 +362,18 @@ export default function App() {
                 </div>
 
                 {/* Extreme Right Controls (Theme Toggle, JYC Logo, & Mobile Menu) */}
-                <div className="flex items-center gap-2 sm:gap-3 lg:gap-3.5 shrink-0 pr-1">
+                <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
                   <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-                  {/* JYC Logo on Top Right with text 'JYC Presents JAI 2026' */}
+                  {/* JYC Logo on Top Right with text 'JYC PRESENTS JAI 2026' in black */}
                   <div className="flex flex-col items-center justify-center select-none shrink-0 text-center">
                     <img 
                       src="/imgs/jyc.png" 
                       alt="JYC Logo" 
-                      className="h-10 sm:h-12 md:h-13 lg:h-14 xl:h-16 w-auto object-contain logo-clean-drop"
+                      className="h-10 sm:h-11 md:h-12 lg:h-12 xl:h-14 w-auto object-contain logo-clean-drop"
                     />
-                    <span className="font-display font-black text-[7px] sm:text-[8px] md:text-[9px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mt-0.5">
-                      JYC Presents JAI 2026
+                    <span className="font-display font-black text-[7px] sm:text-[7.5px] md:text-[8px] xl:text-[8.5px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white mt-0.5">
+                      JYC PRESENTS JAI 2026
                     </span>
                   </div>
 

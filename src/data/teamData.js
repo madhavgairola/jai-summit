@@ -35,7 +35,7 @@ export const teamCategories = [
     description: "Visual identity, creative media, communications, and public relations.",
     members: [
       { name: "Aakriti Bhardwaj", role: "Team Lead", designation: "Assistant Professor", filename: "aakriti-bhardwaj.jpg" },
-      { name: "Aparna Arya", role: "Faculty Member", designation: "Faculty Member", filename: "aparna-arya.jpg" },
+      { name: "Aparna Arya", role: "Faculty Member", designation: "Assistant Professor", filename: "aparna-arya.jpg" },
       { name: "Shagun Gupta", role: "Faculty Member", designation: "Assistant Professor", filename: "shagun-gupta.jpg" }
     ]
   },
@@ -54,15 +54,15 @@ export const teamCategories = [
     description: "Hackathon architecture, technical tracks, computing labs, and execution.",
     members: [
       { name: "Akanksha Mehndiratta", role: "Lead - Planning", designation: "Assistant Professor", filename: "akanksha-mehndiratta.jpg" },
-      { name: "Sandeep Raj", role: "Lead - Execution", designation: "Faculty Member", filename: "sandeep-raj.jpg" },
+      { name: "Sandeep Raj", role: "Lead - Execution", designation: "Assistant Professor", filename: "sandeep-raj.jpg" },
       { name: "Ruchika Bala", role: "Faculty Member", designation: "Assistant Professor", filename: "ruchika-bala.jpg" },
       { name: "Akanksha Singh", role: "Faculty Member", designation: "Assistant Professor", filename: "akanksha-singh.jpg" },
       { name: "Meenu Shukla", role: "Faculty Member", designation: "Assistant Professor", filename: "meenu-shukla.jpg" },
       { name: "Neeraj Pathak", role: "Faculty Member", designation: "Assistant Professor", filename: "neeraj-pathak.jpg" },
       { name: "Noor Mohammad", role: "Faculty Member", designation: "Assistant Professor", filename: "noor-mohammad.jpg" },
       { name: "Santosh Ray", role: "Faculty Member", designation: "Assistant Professor", filename: "santosh-ray.jpg" },
-      { name: "Jiddu Krishnan O P", role: "Faculty Member", designation: "Faculty Member", filename: "jiddu-krishnan-op.jpg" },
-      { name: "Piyush Kushwaha", role: "Faculty Member", designation: "Faculty Member", filename: "piyush-kushwaha.jpg" },
+      { name: "Jiddu Krishnan O P", role: "Faculty Member", designation: "Assistant Professor", filename: "jiddu-krishnan-op.jpg" },
+      { name: "Piyush Kushwaha", role: "Faculty Member", designation: "Assistant Professor", filename: "piyush-kushwaha.jpg" },
       { name: "Santosh Kumar", role: "Faculty Member", designation: "Assistant Professor", filename: "santosh-kumar.jpg" }
     ]
   },
@@ -73,7 +73,7 @@ export const teamCategories = [
     members: [
       { name: "Sajai Vir Singh", role: "Team Lead", designation: "Professor", filename: "sajai-vir-singh.jpg" },
       { name: "Ankur Gupta", role: "Faculty Member", designation: "Assistant Professor", filename: "ankur-gupta.jpg" },
-      { name: "Ila Naqvi", role: "Faculty Member", designation: "Faculty Member", filename: "ila-naqvi.jpg" },
+      { name: "Ila Naqvi", role: "Faculty Member", designation: "Assistant Professor", filename: "ila-naqvi.jpg" },
       { name: "Rajshree Singh", role: "Faculty Member", designation: "Assistant Professor", filename: "rajshree-singh.jpg" },
       { name: "Vaibhav Sharma", role: "Faculty Member", designation: "Assistant Professor", filename: "vaibhav-sharma.jpg" }
     ]
@@ -84,7 +84,7 @@ export const teamCategories = [
     description: "Executive roundtables, policy forums, and strategic brainstorms.",
     members: [
       { name: "Divya Kaushik", role: "Team Lead", designation: "Assistant Professor", filename: "divya-kaushik.jpg" },
-      { name: "Kumar Mohit", role: "Faculty Member", designation: "Faculty Member", filename: "kumar-mohit.jpg" },
+      { name: "Kumar Mohit", role: "Faculty Member", designation: "Assistant Professor", filename: "kumar-mohit.jpg" },
       { name: "Deepti Singh", role: "Faculty Member", designation: "Assistant Professor", filename: "deepti-singh.jpg" }
     ]
   },
