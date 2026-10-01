@@ -140,9 +140,10 @@ export const studentCategories = [
     name: "Student Steering Committee",
     description: "Core student leadership responsible for overall summit orchestration and functional execution.",
     members: [
-      { name: "Amrit Kumar Jha" },
       { name: "Devansh Tripathi" },
-      { name: "Daksh Sachdeva" }
+      { name: "Amrit Kumar Jha" },
+      { name: "Daksh Sachdeva" },
+      { name: "Saksham Kotia" }
     ]
   },
   {
