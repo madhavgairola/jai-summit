@@ -171,7 +171,7 @@ export default function App() {
                   <img 
                     src="/imgs/jiit.png" 
                     alt="JIIT Logo" 
-                    className="h-12 sm:h-13 md:h-14 lg:h-15 xl:h-16 w-auto object-contain logo-clean-drop shrink-0"
+                    className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop shrink-0"
                   />
                   <div className="hidden sm:flex flex-col select-none">
                     <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-[#0a1945] dark:text-white uppercase leading-tight">
@@ -207,16 +207,21 @@ export default function App() {
               <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
                 <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-                {/* JYC Logo on Top Right with text 'JYC PRESENTS JAI 2026' in black */}
+                {/* JYC Logo on Top Right with text 'JYC PRESENTS' / 'JAI 2026' in 2 lines bold */}
                 <div className="flex flex-col items-center justify-center select-none shrink-0 text-center">
                   <img 
                     src="/imgs/jyc.png" 
                     alt="JYC Logo" 
-                    className="h-10 sm:h-11 md:h-12 lg:h-12 xl:h-14 w-auto object-contain logo-clean-drop"
+                    className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop"
                   />
-                  <span className="font-display font-black text-[7px] sm:text-[7.5px] md:text-[8px] xl:text-[8.5px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white mt-0.5">
-                    JYC PRESENTS JAI 2026
-                  </span>
+                  <div className="flex flex-col items-center justify-center mt-0.5 leading-[1.1]">
+                    <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                      JYC PRESENTS
+                    </span>
+                    <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                      JAI 2026
+                    </span>
+                  </div>
                 </div>
 
                 <button 
@@ -279,7 +284,7 @@ export default function App() {
                     <img 
                       src="/imgs/jiit.png" 
                       alt="JIIT Logo" 
-                      className="h-12 sm:h-13 md:h-14 lg:h-15 xl:h-16 w-auto object-contain logo-clean-drop shrink-0"
+                      className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop shrink-0"
                     />
                     <div className="hidden sm:flex flex-col select-none">
                       <span className="font-display font-black text-[9.5px] sm:text-[10px] md:text-[10.5px] lg:text-[11px] xl:text-xs tracking-wider text-white uppercase leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
@@ -365,16 +370,21 @@ export default function App() {
                 <div className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 xl:gap-5 shrink-0">
                   <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
-                  {/* JYC Logo on Top Right with text 'JYC PRESENTS JAI 2026' in black */}
+                  {/* JYC Logo on Top Right with text 'JYC PRESENTS' / 'JAI 2026' in 2 lines bold */}
                   <div className="flex flex-col items-center justify-center select-none shrink-0 text-center">
                     <img 
                       src="/imgs/jyc.png" 
                       alt="JYC Logo" 
-                      className="h-10 sm:h-11 md:h-12 lg:h-12 xl:h-14 w-auto object-contain logo-clean-drop"
+                      className="h-13 sm:h-14 md:h-15 lg:h-16 xl:h-18 w-auto object-contain logo-clean-drop"
                     />
-                    <span className="font-display font-black text-[7px] sm:text-[7.5px] md:text-[8px] xl:text-[8.5px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white mt-0.5">
-                      JYC PRESENTS JAI 2026
-                    </span>
+                    <div className="flex flex-col items-center justify-center mt-0.5 leading-[1.1]">
+                      <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                        JYC PRESENTS
+                      </span>
+                      <span className="font-display font-black text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] xl:text-[10px] tracking-wider uppercase whitespace-nowrap text-black dark:text-white leading-[1.1]">
+                        JAI 2026
+                      </span>
+                    </div>
                   </div>
 
                   {/* Mobile Hamburger Menu Button (Only for narrow mobile viewports <1024px) */}
