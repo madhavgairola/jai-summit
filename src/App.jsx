@@ -36,7 +36,7 @@ export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const registrationLink = "https://forms.gle/E1x9CT8mF5z1R4YC8";
+  const registrationLink = "https://unstop.com/o/XAfa40i?lb=HG5JUnJm&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Adhiraox19770";
 
   // Light / Dark mode management
   const [darkMode, setDarkMode] = useState(() => {
@@ -903,60 +903,29 @@ export default function App() {
                   {/* Right Column: QR Code Registration Card */}
                   <div className="lg:col-span-4 bg-white text-slate-900 rounded-2xl p-6 sm:p-8 text-center flex flex-col items-center shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
                     <span className="text-xs font-black uppercase tracking-widest text-slate-500 font-display">
-                      Scan to Register
+                      Scan to Register on Unstop
                     </span>
 
-                    {/* Vector QR Code */}
-                    <div className="w-44 h-44 bg-white border border-slate-200 rounded-xl p-3 my-4 flex items-center justify-center shadow-inner">
-                      <svg width="140" height="140" viewBox="0 0 100 100" fill="#0f172a" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="5" width="28" height="28" rx="3" fill="#0f172a"/>
-                        <rect x="9" y="9" width="20" height="20" rx="1" fill="#ffffff"/>
-                        <rect x="13" y="13" width="12" height="12" fill="#0f172a"/>
-
-                        <rect x="67" y="5" width="28" height="28" rx="3" fill="#0f172a"/>
-                        <rect x="71" y="9" width="20" height="20" rx="1" fill="#ffffff"/>
-                        <rect x="75" y="13" width="12" height="12" fill="#0f172a"/>
-
-                        <rect x="5" y="67" width="28" height="28" rx="3" fill="#0f172a"/>
-                        <rect x="9" y="71" width="20" height="20" rx="1" fill="#ffffff"/>
-                        <rect x="13" y="75" width="12" height="12" fill="#0f172a"/>
-
-                        <rect x="38" y="8" width="6" height="6" fill="#0f172a"/>
-                        <rect x="48" y="8" width="12" height="6" fill="#0f172a"/>
-                        <rect x="38" y="18" width="12" height="6" fill="#0f172a"/>
-                        <rect x="54" y="18" width="6" height="6" fill="#0f172a"/>
-
-                        <rect x="8" y="38" width="6" height="12" fill="#0f172a"/>
-                        <rect x="18" y="38" width="6" height="6" fill="#0f172a"/>
-                        <rect x="18" y="48" width="12" height="6" fill="#0f172a"/>
-
-                        <rect x="38" y="38" width="24" height="24" rx="2" fill="#0f172a"/>
-                        <text x="50" y="53" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">JAI</text>
-
-                        <rect x="68" y="38" width="12" height="6" fill="#0f172a"/>
-                        <rect x="84" y="38" width="8" height="12" fill="#0f172a"/>
-                        <rect x="68" y="48" width="8" height="12" fill="#0f172a"/>
-
-                        <rect x="38" y="68" width="8" height="6" fill="#0f172a"/>
-                        <rect x="50" y="68" width="12" height="6" fill="#0f172a"/>
-                        <rect x="42" y="84" width="16" height="8" fill="#0f172a"/>
-                        <rect x="68" y="68" width="24" height="6" fill="#0f172a"/>
-                        <rect x="68" y="78" width="12" height="12" fill="#0f172a"/>
-                        <rect x="84" y="84" width="8" height="8" fill="#0f172a"/>
-                      </svg>
+                    {/* Official Unstop QR Code Image */}
+                    <div className="w-48 h-48 bg-white border border-slate-200 rounded-2xl p-2.5 my-4 flex items-center justify-center shadow-inner">
+                      <img 
+                        src="/imgs/unstop-qr.png" 
+                        alt="Scan to Register on Unstop - JAI 2026 Hackathon" 
+                        className="w-full h-full object-contain rounded-xl"
+                      />
                     </div>
 
-                    <div className="text-xs font-mono font-bold text-blue-700 mb-3">
-                      forms.gle/E1x9CT8mF5z1R4YC8
+                    <div className="text-xs font-mono font-bold text-blue-700 mb-3 truncate max-w-full">
+                      unstop.com/o/XAfa40i
                     </div>
 
                     <a 
                       href={registrationLink} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="w-full bg-slate-900 hover:bg-slate-800 text-white font-black font-display text-xs py-3 rounded-full inline-flex items-center justify-center gap-1.5 transition-colors shadow-sm hover:shadow"
+                      className="w-full bg-[#1c4980] hover:bg-[#153866] text-white font-black font-display text-xs py-3 rounded-full inline-flex items-center justify-center gap-1.5 transition-colors shadow-sm hover:shadow cursor-pointer"
                     >
-                      <span>Open Form</span>
+                      <span>Register on Unstop</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>
@@ -966,7 +935,7 @@ export default function App() {
             </section>
 
             {/* =====================================================================
-                5. TENTATIVE SUMMIT SCHEDULE (TBD)
+                5. OFFICIAL SUMMIT SCHEDULE
                 ===================================================================== */}
             <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="schedule">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
@@ -975,119 +944,219 @@ export default function App() {
                     Program Itinerary
                   </span>
                   <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight font-display mt-1">
-                    Tentative Summit Schedule (TBD)
+                    Summit Schedule
                   </h2>
                 </div>
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Tentative timeline framework for the two-day summit. Detailed sessions to be announced.
+                  Official two-day program timeline for the Jaypee Agentic AI International Summit.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 
                 {/* Day 1 Card */}
-                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 sm:p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1">
-                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
-                    <div className="font-black text-lg sm:text-xl text-slate-900 dark:text-white font-display">
-                      Day 1: Friday, Oct 30, 2026
-                    </div>
-                    <span className="text-xs font-extrabold bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-blue-800 px-3 py-1 rounded-full font-display">
-                      Tentative Outline (TBD)
-                    </span>
-                  </div>
-
-                  <div className="space-y-5">
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 09:00 – 10:30 AM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Inaugural Ceremony & Opening Keynote</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Welcome address and opening perspectives on Agentic AI.</p>
+                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 sm:p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+                      <div className="font-black text-lg sm:text-xl text-slate-900 dark:text-white font-display">
+                        Day 1: Friday, Oct 30, 2026
                       </div>
+                      <span className="text-xs font-extrabold bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-blue-800 px-3 py-1 rounded-full font-display">
+                        Day 1 Schedule
+                      </span>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 11:00 AM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Agentic AI Hackathon Sprint Kickoff</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Problem statement deep dive and development sprint begins.</p>
+                    <div className="space-y-3.5">
+                      {/* Day 1 - Item 1 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>10:30 AM – 12:00 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Inauguration &amp; Expo Opening
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          1 Hr. 30 Mins
+                        </span>
                       </div>
-                    </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 11:30 AM – 01:00 PM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Global Tech Talks</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Presentations from autonomous agents researchers.</p>
+                      {/* Day 1 - Item 2 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>12:30 PM – 1:30 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Panel Discussion
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          1 Hr.
+                        </span>
                       </div>
-                    </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 02:30 – 05:00 PM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Research Track & Panel Discussions</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Parallel sessions across cybersecurity, health, and NLP.</p>
+                      {/* Day 1 - Item 3 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>1:30 PM – 2:00 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Hackathon Briefing
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          30 Mins
+                        </span>
+                      </div>
+
+                      {/* Day 1 - Item 4 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>3:00 PM – 5:30 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Hackathon – Round 1
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          2 Hrs. 30 Mins
+                        </span>
+                      </div>
+
+                      {/* Day 1 - Item 5 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>5:30 PM – 8:00 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Hackathon – Round 2
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          2 Hrs. 30 Mins
+                        </span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Day 2 Card */}
-                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 sm:p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1">
-                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
-                    <div className="font-black text-lg sm:text-xl text-slate-900 dark:text-white font-display">
-                      Day 2: Saturday, Oct 31, 2026
-                    </div>
-                    <span className="text-xs font-extrabold bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-blue-800 px-3 py-1 rounded-full font-display">
-                      Tentative Outline (TBD)
-                    </span>
-                  </div>
-
-                  <div className="space-y-5">
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 09:30 – 11:00 AM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Industry Perspectives & Expo</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Live demonstration stalls and enterprise case studies.</p>
+                <div className="bg-slate-50 dark:bg-slate-900/80 rounded-2xl p-5 sm:p-7 border border-slate-200/80 dark:border-slate-800 transition-transform duration-200 hover:-translate-y-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+                      <div className="font-black text-lg sm:text-xl text-slate-900 dark:text-white font-display">
+                        Day 2: Saturday, Oct 31, 2026
                       </div>
+                      <span className="text-xs font-extrabold bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-blue-800 px-3 py-1 rounded-full font-display">
+                        Day 2 Schedule
+                      </span>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 11:30 AM – 01:30 PM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Hackathon Demos & Jury Evaluation</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Finalist teams showcase working autonomous agent prototypes.</p>
+                    <div className="space-y-3.5">
+                      {/* Day 2 - Item 1 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>10:00 AM – 10:30 AM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Expo Visit
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          30 Mins
+                        </span>
                       </div>
-                    </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 02:30 – 04:00 PM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Pre-Seed Venture Pitch Session</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Pitches for the INR 1 Crore pre-seed funding pool.</p>
+                      {/* Day 2 - Item 2 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>10:30 AM – 12:00 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Networking &amp; Industry Meet-Up
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          1 Hr. 30 Mins
+                        </span>
                       </div>
-                    </div>
 
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400 sm:w-32 shrink-0 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-cyan-400" /> 04:30 – 05:30 PM
-                      </span>
-                      <div>
-                        <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">Valedictory & Prize Distribution</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Awarding INR 15 Lakh in prizes and concluding remarks.</p>
+                      {/* Day 2 - Item 3 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>12:30 PM – 1:30 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            VIP Interaction &amp; Networking
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          1 Hr.
+                        </span>
+                      </div>
+
+                      {/* Day 2 - Item 4 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>1:30 PM – 4:00 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Hackathon – Final Round
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          2 Hrs. 30 Mins
+                        </span>
+                      </div>
+
+                      {/* Day 2 - Item 5 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>4:30 PM – 5:00 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Tech Talk
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          30 Mins
+                        </span>
+                      </div>
+
+                      {/* Day 2 - Item 6 */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 sm:p-3.5 rounded-xl bg-white/80 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800 hover:border-blue-300 dark:hover:border-cyan-800 transition-colors">
+                        <div className="space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-cyan-400 font-mono">
+                            <Clock className="w-3.5 h-3.5 shrink-0" />
+                            <span>5:00 PM – 6:00 PM</span>
+                          </div>
+                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white font-display">
+                            Closing Ceremony
+                          </h4>
+                        </div>
+                        <span className="self-start sm:self-center text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-700/60 px-2.5 py-1 rounded-full shrink-0">
+                          1 Hr.
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -1249,11 +1318,11 @@ export default function App() {
                   </div>
                   <div className="pt-2">
                     <a 
-                      href="mailto:jiityouthclub128@gmail.com" 
+                      href="mailto:sponsorquery.jai@gmail.com" 
                       className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-blue-700 dark:text-cyan-300 bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/60 transition-colors w-full break-all"
                     >
                       <Mail className="w-3.5 h-3.5 shrink-0 text-blue-600 dark:text-cyan-400" />
-                      <span>jiityouthclub128@gmail.com</span>
+                      <span>sponsorquery.jai@gmail.com</span>
                     </a>
                   </div>
                 </div>
@@ -1293,11 +1362,11 @@ export default function App() {
                   </div>
                   <div className="pt-2">
                     <a 
-                      href="mailto:sponsorquery.jai@gmail.com" 
+                      href="mailto:jiityouthclub128@gmail.com" 
                       className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/80 border border-purple-200 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-900/60 transition-colors w-full break-all"
                     >
                       <Mail className="w-3.5 h-3.5 shrink-0 text-purple-600 dark:text-purple-400" />
-                      <span>sponsorquery.jai@gmail.com</span>
+                      <span>jiityouthclub128@gmail.com</span>
                     </a>
                   </div>
                 </div>

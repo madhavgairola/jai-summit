@@ -56,7 +56,7 @@ Official web portal for the **Jaypee Agentic AI International Summit (JAI 2026)*
   - Interactive search bar and committee filter pills.
   - Smart fallback initials avatars until photos are uploaded.
   - 1-click filename copy buttons and built-in photo upload reference guide.
-- 📅 **Tentative Summit Schedule**: Dual-day structured outline for Day 1 (Oct 30) and Day 2 (Oct 31).
+- 📅 **Summit Schedule**: Dual-day structured program itinerary for Day 1 (Oct 30) and Day 2 (Oct 31).
 - 📍 **Venue & Directions**: Wish Town Campus Sector-128 Noida address with interactive Google Maps embed.
 
 ---
@@ -170,7 +170,7 @@ public/imgs/team/[filename].jpg
 
 - **Venue**: Jaypee Institute of Information Technology (JIIT), Wish Town Campus, Sector-128, Noida, Uttar Pradesh 201304, India
 - **Dates**: October 30 – 31, 2026
-- **Registration**: [Official Summit Google Form](https://forms.gle/E1x9CT8mF5z1R4YC8)
+- **Registration**: [Official Summit Unstop Portal](https://unstop.com/o/XAfa40i?lb=HG5JUnJm&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Adhiraox19770)
 
 ---
 
