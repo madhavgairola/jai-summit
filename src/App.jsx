@@ -31,9 +31,12 @@ import {
 import TeamPage from './components/TeamPage';
 import ThemeToggle from './components/ThemeToggle';
 import InteractiveCircuitry from './components/InteractiveCircuitry';
+import DelegatesSection from './components/DelegatesSection';
+import ResultsModal from './components/ResultsModal';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [resultsModalOpen, setResultsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const registrationLink = "https://unstop.com/o/XAfa40i?lb=HG5JUnJm&utm_medium=Share&utm_source=online_coding_challenge&utm_campaign=Adhiraox19770";
@@ -171,8 +174,10 @@ export default function App() {
             <button onClick={() => { navigateTo('home', 'schedule'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Schedule</button>
             <button onClick={() => { navigateTo('home', 'directions'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Venue</button>
             <button onClick={() => { navigateTo('home', 'sponsors'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Sponsors</button>
+            <button onClick={() => { navigateTo('home', 'delegates'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Delegates</button>
             <button onClick={() => { navigateTo('home', 'contact'); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Contact</button>
             <button onClick={() => { navigateTo('team'); setMobileMenuOpen(false); }} className={`text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl transition-colors ${currentPage === 'team' ? 'text-blue-600 dark:text-cyan-400 bg-blue-50 dark:bg-blue-950/50' : 'text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400'}`}>Team</button>
+            <button onClick={() => { setResultsModalOpen(true); setMobileMenuOpen(false); }} className="text-left text-sm font-black uppercase tracking-wider py-2.5 px-4 rounded-xl text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400">Results</button>
             <a href={registrationLink} target="_blank" rel="noopener noreferrer" className="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm py-3 rounded-xl text-center uppercase tracking-wider shadow-lg">Register for Summit</a>
           </div>
         </>
@@ -213,19 +218,21 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Center Pill Nav - Perfectly centered with balanced compact padding to prevent any overlap */}
-              <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1">
-                <nav className="flex items-center gap-0.5 xl:gap-1 px-1 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm shrink-0">
-                  <button onClick={() => navigateTo('home')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Home</button>
-                  <button onClick={() => navigateTo('home', 'about')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">About</button>
-                  <button onClick={() => navigateTo('home', 'highlights')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Highlights</button>
-                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Themes</button>
-                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Hackathon</button>
-                  <button onClick={() => navigateTo('home', 'schedule')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Schedule</button>
-                  <button onClick={() => navigateTo('home', 'directions')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Venue</button>
-                  <button onClick={() => navigateTo('home', 'sponsors')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Sponsors</button>
-                  <button onClick={() => navigateTo('home', 'contact')} className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Contact</button>
-                  <button onClick={() => navigateTo('team')} className="px-2 lg:px-2.5 xl:px-3 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-semibold bg-blue-600 text-white shadow-sm cursor-pointer whitespace-nowrap">Team</button>
+              {/* Center Pill Nav - Shifted slightly left to be perfectly centralized between logos without overlap */}
+              <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1 lg:-translate-x-3 xl:-translate-x-6 2xl:-translate-x-8">
+                <nav className="flex items-center gap-0.5 xl:gap-0.8 2xl:gap-1 px-1 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 rounded-full bg-slate-100/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 shadow-sm shrink-0">
+                  <button onClick={() => navigateTo('home')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Home</button>
+                  <button onClick={() => navigateTo('home', 'about')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">About</button>
+                  <button onClick={() => navigateTo('home', 'highlights')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Highlights</button>
+                  <button onClick={() => navigateTo('home', 'thematic-areas')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Themes</button>
+                  <button onClick={() => navigateTo('home', 'hackathon')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Hackathon</button>
+                  <button onClick={() => navigateTo('home', 'schedule')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Schedule</button>
+                  <button onClick={() => navigateTo('home', 'directions')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Venue</button>
+                  <button onClick={() => navigateTo('home', 'sponsors')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Sponsors</button>
+                  <button onClick={() => navigateTo('home', 'delegates')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Delegates</button>
+                  <button onClick={() => navigateTo('home', 'contact')} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Contact</button>
+                  <button onClick={() => navigateTo('team')} className="px-2 xl:px-2.5 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-semibold bg-blue-600 text-white shadow-sm cursor-pointer whitespace-nowrap">Team</button>
+                  <button onClick={() => setResultsModalOpen(true)} className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-bold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap">Results</button>
                 </nav>
               </div>
 
@@ -326,68 +333,80 @@ export default function App() {
                   </button>
                 </div>
 
-                {/* Center: Frosted Capsule Pill Navbar - Perfectly centered with balanced compact padding to prevent any overlap */}
-                <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1">
-                  <nav className="flex items-center gap-0.5 xl:gap-1 px-1 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md shrink-0">
+                {/* Center: Frosted Capsule Pill Navbar - Shifted slightly left to be perfectly centralized between logos without overlap */}
+                <div className="hidden lg:flex items-center justify-center flex-1 min-w-0 px-1 lg:-translate-x-3 xl:-translate-x-6 2xl:-translate-x-8">
+                  <nav className="flex items-center gap-0.5 xl:gap-0.8 2xl:gap-1 px-1 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/70 dark:border-slate-700/60 shadow-md shrink-0">
                     <button 
                       onClick={() => navigateTo('home')}
-                      className="px-2 lg:px-2.5 xl:px-3 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm whitespace-nowrap"
+                      className="px-2 xl:px-2.5 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-semibold transition-all duration-200 cursor-pointer bg-blue-600 text-white shadow-sm whitespace-nowrap"
                     >
                       Home
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'about')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       About
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'highlights')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Highlights
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'thematic-areas')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Themes
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'hackathon')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Hackathon
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'schedule')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Schedule
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'directions')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Venue
                     </button>
                     <button 
                       onClick={() => navigateTo('home', 'sponsors')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Sponsors
                     </button>
                     <button 
+                      onClick={() => navigateTo('home', 'delegates')}
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                    >
+                      Delegates
+                    </button>
+                    <button 
                       onClick={() => navigateTo('home', 'contact')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Contact
                     </button>
                     <button 
                       onClick={() => navigateTo('team')}
-                      className="px-1.5 lg:px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[10px] lg:text-[10.5px] xl:text-xs 2xl:text-[13px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
                     >
                       Team
+                    </button>
+                    <button 
+                      onClick={() => setResultsModalOpen(true)}
+                      className="px-1.5 xl:px-2 py-0.5 sm:py-1 xl:py-1.2 rounded-full text-[9.5px] lg:text-[10px] xl:text-[11px] 2xl:text-[12.5px] font-bold text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer whitespace-nowrap"
+                    >
+                      Results
                     </button>
                   </nav>
                 </div>
@@ -935,6 +954,45 @@ export default function App() {
             </section>
 
             {/* =====================================================================
+                4.5 SHORTLISTED TEAMS FOR ROUND 2 (HACKATHON RESULTS)
+                ===================================================================== */}
+            <section className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-950 text-white rounded-3xl p-6 sm:p-8 md:p-10 border border-blue-500/30 shadow-xl overflow-hidden relative" id="results">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                <div className="space-y-2 text-center md:text-left">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 font-display">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Official Announcement</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-4xl font-black tracking-tight font-display text-white">
+                    Shortlisted Teams for Round 2
+                  </h2>
+                  <p className="text-slate-300 text-sm max-w-xl">
+                    Results for Round 1 of the Agentic AI Hackathon (JAI'26) are out! Click below to view the 100 shortlisted teams moving forward to the Round 2 development sprint.
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                  <button
+                    onClick={() => setResultsModalOpen(true)}
+                    className="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black font-display text-xs sm:text-sm px-6 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-400/25 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <span>View Shortlisted Teams</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                  <a
+                    href="/imgs/shortlisted-teams-round2.jpg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold font-display text-xs sm:text-sm px-5 py-3.5 rounded-full inline-flex items-center gap-2 transition-colors"
+                  >
+                    <span>Open Poster</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* =====================================================================
                 5. OFFICIAL SUMMIT SCHEDULE
                 ===================================================================== */}
             <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-12 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="schedule">
@@ -1286,6 +1344,11 @@ export default function App() {
             </section>
 
             {/* =====================================================================
+                7.5 SUMMIT DELEGATES & SPEAKERS
+                ===================================================================== */}
+            <DelegatesSection darkMode={darkMode} />
+
+            {/* =====================================================================
                 8. CONTACT & LIAISON DESK
                 ===================================================================== */}
             <section className="bg-white dark:bg-[#0b1329] rounded-3xl p-5 sm:p-8 md:p-10 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300" id="contact">
@@ -1420,11 +1483,17 @@ export default function App() {
               <button onClick={() => navigateTo('home', 'sponsors')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
                 Sponsors
               </button>
+              <button onClick={() => navigateTo('home', 'delegates')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
+                Delegates
+              </button>
               <button onClick={() => navigateTo('home', 'contact')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
                 Contact
               </button>
               <button onClick={() => navigateTo('team')} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer">
                 Team
+              </button>
+              <button onClick={() => setResultsModalOpen(true)} className="hover:text-blue-600 dark:hover:text-cyan-300 transition-colors cursor-pointer font-bold">
+                Results
               </button>
             </div>
           </div>
@@ -1452,6 +1521,12 @@ export default function App() {
           <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-translate-y-0.5" />
         </button>
       )}
+
+      {/* Global Results Modal (Shortlisted Teams for Round 2) */}
+      <ResultsModal 
+        isOpen={resultsModalOpen} 
+        onClose={() => setResultsModalOpen(false)} 
+      />
 
     </div>
   );
