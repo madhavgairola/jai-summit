@@ -140,10 +140,10 @@ export const studentCategories = [
     name: "Student Steering Committee",
     description: "Core student leadership responsible for overall summit orchestration and functional execution.",
     members: [
-      { name: "Devansh Tripathi" },
-      { name: "Amrit Kumar Jha" },
-      { name: "Daksh Sachdeva" },
-      { name: "Saksham Kotia" }
+      { name: "Devansh Tripathi", filename: "devansh-tripathi.jpg" },
+      { name: "Amrit Kumar Jha", filename: "amrit-kumar-jha.jpg" },
+      { name: "Daksh Sachdeva", filename: "daksh-sachdeva.jpg" },
+      { name: "Saksham Kotia", filename: "saksham-kotia.jpg" }
     ]
   },
   {
@@ -151,8 +151,8 @@ export const studentCategories = [
     name: "Design and PR",
     description: "Visual identity, creative media, communications, and public relations.",
     members: [
-      { name: "Srishti Mehta" },
-      { name: "Shriya Singh" }
+      { name: "Srishti Mehta", filename: "srishti-mehta.jpg" },
+      { name: "Shriya Singh", filename: "shriya-singh.jpg" }
     ]
   },
   {
@@ -160,10 +160,10 @@ export const studentCategories = [
     name: "Registration",
     description: "Participant onboarding, registrations, delegate passes, and helpdesk.",
     members: [
-      { name: "Adhira Sethi" },
-      { name: "Vatsalya Singh" },
-      { name: "Chehak Trehan" },
-      { name: "Lakshya Mishra" }
+      { name: "Adhira Sethi", filename: "adhira-sethi.jpg" },
+      { name: "Vatsalya Singh", filename: "vatsalya-singh.jpg" },
+      { name: "Chehak Trehan", filename: "chehak-trehan.jpg" },
+      { name: "Lakshya Mishra", filename: "lakshya-mishra.jpg" }
     ]
   },
   {
@@ -171,13 +171,13 @@ export const studentCategories = [
     name: "Technical",
     description: "Hackathon architecture, technical tracks, computing labs, and execution.",
     members: [
-      { name: "Renesha Sagar" },
-      { name: "Madhav Gairola" },
-      { name: "Aanya Goel" },
-      { name: "Chehak Trehan" },
-      { name: "Shourya Dixit" },
-      { name: "Vatsalya Singh" },
-      { name: "Lakshya Mishra" }
+      { name: "Renesha Sagar", filename: "renesha-sagar.jpg" },
+      { name: "Madhav Gairola", filename: "madhav-gairola.jpg" },
+      { name: "Aanya Goel", filename: "aanya-goel.jpg" },
+      { name: "Chehak Trehan", filename: "chehak-trehan.jpg" },
+      { name: "Shourya Dixit", filename: "shourya-dixit.jpg" },
+      { name: "Vatsalya Singh", filename: "vatsalya-singh.jpg" },
+      { name: "Lakshya Mishra", filename: "lakshya-mishra.jpg" }
     ]
   },
   {
@@ -185,12 +185,12 @@ export const studentCategories = [
     name: "Leadership Outreach",
     description: "Institutional partnerships, academic liaisons, and dignitary invitations.",
     members: [
-      { name: "Divye Bajaj" },
-      { name: "Aradhyaa Singh" },
-      { name: "Amrit Kumar Jha" },
-      { name: "Devansh Tripathi" },
-      { name: "Daksh Sachdeva" },
-      { name: "Saksham Kotia" }
+      { name: "Divye Bajaj", filename: "divye-bajaj.jpg" },
+      { name: "Aradhyaa Singh", filename: "aradhyaa-singh.jpg" },
+      { name: "Amrit Kumar Jha", filename: "amrit-kumar-jha.jpg" },
+      { name: "Devansh Tripathi", filename: "devansh-tripathi.jpg" },
+      { name: "Daksh Sachdeva", filename: "daksh-sachdeva.jpg" },
+      { name: "Saksham Kotia", filename: "saksham-kotia.jpg" }
     ]
   },
   {
@@ -198,12 +198,12 @@ export const studentCategories = [
     name: "Roundtable Planning",
     description: "Executive roundtables, policy forums, and strategic brainstorms.",
     members: [
-      { name: "Divye Bajaj" },
-      { name: "Aradhyaa Singh" },
-      { name: "Amrit Kumar Jha" },
-      { name: "Devansh Tripathi" },
-      { name: "Daksh Sachdeva" },
-      { name: "Saksham Kotia" }
+      { name: "Divye Bajaj", filename: "divye-bajaj.jpg" },
+      { name: "Aradhyaa Singh", filename: "aradhyaa-singh.jpg" },
+      { name: "Amrit Kumar Jha", filename: "amrit-kumar-jha.jpg" },
+      { name: "Devansh Tripathi", filename: "devansh-tripathi.jpg" },
+      { name: "Daksh Sachdeva", filename: "daksh-sachdeva.jpg" },
+      { name: "Saksham Kotia", filename: "saksham-kotia.jpg" }
     ]
   },
   {
@@ -211,10 +211,10 @@ export const studentCategories = [
     name: "Panel Discussion & Expert Talks",
     description: "Keynote curation, industry panellists, and academic discourse moderation.",
     members: [
-      { name: "Divye Bajaj" },
-      { name: "Aradhyaa Singh" },
-      { name: "Pratik Singh" },
-      { name: "Vansh Mahajan" }
+      { name: "Divye Bajaj", filename: "divye-bajaj.jpg" },
+      { name: "Aradhyaa Singh", filename: "aradhyaa-singh.jpg" },
+      { name: "Pratik Singh", filename: "pratik-singh.jpg" },
+      { name: "Vansh Mahajan", filename: "vansh-mahajan.jpg" }
     ]
   },
   {
@@ -222,7 +222,7 @@ export const studentCategories = [
     name: "Expo",
     description: "Startup demo booths, tech showcases, and sponsor engagement arena.",
     members: [
-      { name: "Divye Bajaj" }
+      { name: "Divye Bajaj", filename: "divye-bajaj.jpg" }
     ]
   },
   {
@@ -230,8 +230,8 @@ export const studentCategories = [
     name: "Hospitality",
     description: "Guest reception, accommodation, catering, and campus protocol.",
     members: [
-      { name: "Juhi Hatuka" },
-      { name: "Asmi Srivastava" }
+      { name: "Juhi Hatuka", filename: "juhi-hatuka.jpg" },
+      { name: "Asmi Srivastava", filename: "asmi-srivastava.jpg" }
     ]
   },
   {
@@ -239,12 +239,12 @@ export const studentCategories = [
     name: "Logistic",
     description: "Venue infrastructure, transportation, equipment, and event operations.",
     members: [
-      { name: "Pratik Singh" },
-      { name: "Revant Srivastava" },
-      { name: "Amrit Kumar Jha" },
-      { name: "Devansh Tripathi" },
-      { name: "Daksh Sachdeva" },
-      { name: "Saksham Kotia" }
+      { name: "Pratik Singh", filename: "pratik-singh.jpg" },
+      { name: "Revant Srivastava", filename: "revant-srivastava.jpg" },
+      { name: "Amrit Kumar Jha", filename: "amrit-kumar-jha.jpg" },
+      { name: "Devansh Tripathi", filename: "devansh-tripathi.jpg" },
+      { name: "Daksh Sachdeva", filename: "daksh-sachdeva.jpg" },
+      { name: "Saksham Kotia", filename: "saksham-kotia.jpg" }
     ]
   },
   {
@@ -252,18 +252,18 @@ export const studentCategories = [
     name: "Venue Management",
     description: "Stage, seating arrangements, audio-video systems, and on-ground operations.",
     members: [
-      { name: "Amrit Kumar Jha" },
-      { name: "Devansh Tripathi" },
-      { name: "Daksh Sachdeva" },
-      { name: "Saksham Kotia" },
-      { name: "Aradhyaa Singh" },
-      { name: "Divye Bajaj" },
-      { name: "Revant Srivastava" },
-      { name: "Pratik Singh" },
-      { name: "Vansh Mahajan" },
-      { name: "Juhi Hatuka" },
-      { name: "Shriya Singh" },
-      { name: "Asmi Srivastava" }
+      { name: "Amrit Kumar Jha", filename: "amrit-kumar-jha.jpg" },
+      { name: "Devansh Tripathi", filename: "devansh-tripathi.jpg" },
+      { name: "Daksh Sachdeva", filename: "daksh-sachdeva.jpg" },
+      { name: "Saksham Kotia", filename: "saksham-kotia.jpg" },
+      { name: "Aradhyaa Singh", filename: "aradhyaa-singh.jpg" },
+      { name: "Divye Bajaj", filename: "divye-bajaj.jpg" },
+      { name: "Revant Srivastava", filename: "revant-srivastava.jpg" },
+      { name: "Pratik Singh", filename: "pratik-singh.jpg" },
+      { name: "Vansh Mahajan", filename: "vansh-mahajan.jpg" },
+      { name: "Juhi Hatuka", filename: "juhi-hatuka.jpg" },
+      { name: "Shriya Singh", filename: "shriya-singh.jpg" },
+      { name: "Asmi Srivastava", filename: "asmi-srivastava.jpg" }
     ]
   }
 ];

@@ -392,14 +392,27 @@ export default function TeamPage({ onNavigateHome, darkMode }) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4">
                   {category.members.map((member, mIdx) => {
+                    const hasImgError = imageErrors[member.filename];
+
                     return (
                       <div 
                         key={mIdx}
-                        className="relative group rounded-xl p-3.5 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-cyan-400/80 dark:hover:border-cyan-500/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md flex items-center gap-3.5"
+                        className="relative group rounded-xl p-3 sm:p-3.5 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-cyan-400/80 dark:hover:border-cyan-500/80 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md flex items-center gap-3.5"
                       >
-                        {/* Avatar Placeholder with GraduationCap Symbol */}
-                        <div className="relative w-11 h-11 rounded-xl overflow-hidden shrink-0 shadow-sm flex items-center justify-center text-white border bg-gradient-to-tr from-cyan-600 to-blue-700 border-cyan-400/50">
-                          <GraduationCap className="w-5 h-5 text-white/95" />
+                        {/* Student Photo (Same size as faculty team: w-12 h-12 rounded-xl) */}
+                        <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 shadow-sm flex items-center justify-center text-white border bg-gradient-to-tr from-cyan-700 to-blue-900 border-cyan-500/40">
+                          {member.filename && !hasImgError ? (
+                            <img 
+                              src={`/imgs/team/${member.filename}`} 
+                              alt={member.name}
+                              onError={(e) => handleImageError(member.filename, e)}
+                              className="w-full h-full object-cover object-top"
+                            />
+                          ) : (
+                            <span className="font-display font-black text-sm tracking-wider">
+                              {getInitials(member.name)}
+                            </span>
+                          )}
                         </div>
 
                         {/* Student Name Only */}

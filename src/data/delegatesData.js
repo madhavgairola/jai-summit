@@ -42,7 +42,7 @@ export const delegateSections = [
         role: "Senior Vice President",
         organization: "Naukri.com",
         detail: "PhD (NLP, Computer Vision, Machine Learning, Deep Learning, Optimization, IoT, HCI)",
-        image: "/imgs/delegates/niharika-sachdeva.jpg",
+        image: "/imgs/delegates/niharika-sachdeva.png",
       },
     ]
   },
@@ -64,7 +64,7 @@ export const delegateSections = [
         name: "Sanju Rathi",
         role: "Deputy General Manager",
         organization: "HCL Technologies",
-        image: null,
+        image: "/imgs/delegates/sanju-rathi.jpg",
       },
       {
         name: "Apal Goel",
@@ -116,8 +116,8 @@ export const delegateSections = [
       },
       {
         name: "Rajesh Koul",
-        role: "Global Transformation Leader, Executive Director",
-        organization: "Head Transformation",
+        role: "Associate Partner - Head Transformation",
+        organization: "KPMG Global Services",
         image: "/imgs/delegates/rajesh-koul.jpg",
       },
       {
@@ -177,22 +177,6 @@ export const delegateSections = [
         role: "Co-Founder & Investor Relations",
         organization: "Raise Money",
         image: "/imgs/delegates/aman-ranjan.jpg",
-      },
-    ]
-  },
-  {
-    id: "international-delegates",
-    title: "Proposed International Delegates for Agentic AI",
-    badge: "Global Delegations",
-    color: "from-emerald-600 to-teal-500",
-    badgeColor: "text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/80 border-emerald-200 dark:border-emerald-800",
-    description: "International leaders bringing global perspectives and ecosystem alliances to JAI 2026.",
-    delegates: [
-      {
-        name: "Sam Malik",
-        role: "AVP of Sales",
-        organization: "Persistent Systems",
-        image: "/imgs/delegates/sam-malik.jpg",
       },
     ]
   }

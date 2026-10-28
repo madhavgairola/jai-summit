@@ -971,23 +971,14 @@ export default function App() {
                     Results for Round 1 of the Agentic AI Hackathon (JAI'26) are out! Click below to view the 100 shortlisted teams moving forward to the Round 2 development sprint.
                   </p>
                 </div>
-                <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                <div className="flex items-center justify-center shrink-0">
                   <button
                     onClick={() => setResultsModalOpen(true)}
-                    className="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black font-display text-xs sm:text-sm px-6 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-400/25 hover:-translate-y-0.5 cursor-pointer"
+                    className="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black font-display text-xs sm:text-sm px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-400/25 hover:-translate-y-0.5 cursor-pointer"
                   >
                     <span>View Shortlisted Teams</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
-                  <a
-                    href="/imgs/shortlisted-teams-round2.jpg"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold font-display text-xs sm:text-sm px-5 py-3.5 rounded-full inline-flex items-center gap-2 transition-colors"
-                  >
-                    <span>Open Poster</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
                 </div>
               </div>
             </section>
